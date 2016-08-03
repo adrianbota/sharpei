@@ -1,4 +1,4 @@
 # sharpei
-UI Kit
+UI Kit - work in progress
 
-independent ui components pushed to npm
+[Preview](https://adrianbota.github.io/sharpei/)
