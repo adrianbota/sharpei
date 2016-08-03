@@ -1,0 +1,43 @@
+@import (reference) 'btn-sizes';
+@import (reference) 'btn-shapes';
+
+.btn {
+  font: inherit;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  cursor: pointer;
+
+  outline: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+
+  transition: 200ms ease-out;
+  transition-property: box-shadow, background-color, color, opacity;
+  will-change: box-shadow;
+
+  position: relative;
+  vertical-align: middle;
+
+  display: inline-block;
+  box-sizing: border-box;
+  width: auto;
+  margin: 0;
+
+  &[disabled][disabled],
+  &.disabled.disabled {
+    cursor: not-allowed;
+
+    a& {
+      pointer-events: none;
+    }
+  }
+
+  &:extend(.clearfix all);
+  &:extend(.btn-md all);
+  &:extend(.btn-rounded all);
+}
