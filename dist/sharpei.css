@@ -45,6 +45,9 @@ body {
 .btn-default-dark,
 .btn-accent-dark,
 .btn-candy-dark {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   font: inherit;
   letter-spacing: 0;
   white-space: nowrap;
@@ -60,6 +63,7 @@ body {
   border: none;
   background: transparent;
   color: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: 200ms ease-out;
   transition-property: box-shadow, background-color, color, opacity;
   will-change: box-shadow;

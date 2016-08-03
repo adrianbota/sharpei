@@ -2,6 +2,8 @@
 @import (reference) 'btn-shapes';
 
 .btn {
+  appearance: none;
+
   font: inherit;
   letter-spacing: 0;
   white-space: nowrap;
@@ -15,6 +17,7 @@
   border: none;
   background: transparent;
   color: inherit;
+  -webkit-tap-highlight-color: fade(black, 0%);
 
   transition: 200ms ease-out;
   transition-property: box-shadow, background-color, color, opacity;
