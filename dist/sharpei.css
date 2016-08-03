@@ -14,6 +14,8 @@
   height: 0;
 }
 .antialiased,
+.btn,
+.btn-default,
 .btn-accent,
 .btn-candy,
 .btn-default-dark,
@@ -21,6 +23,16 @@
 .btn-candy-dark {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 *,
 :before,
@@ -64,7 +76,7 @@ body {
   background: transparent;
   color: inherit;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: 0.15s ease-out;
+  transition: 0.1s ease-out;
   transition-property: box-shadow, background-color, color, opacity;
   will-change: box-shadow;
   position: relative;
@@ -107,70 +119,155 @@ a.btn-candy-dark.disabled.disabled {
   pointer-events: none;
 }
 .btn-default {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: black;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.9);
 }
-.btn-default:not(:hover):not(:active):focus {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.07);
+.btn-default:not(:active):not(.active):hover,
+[type=checkbox]:not(:checked) + label[for].btn-default:not(:active):not(.active):hover,
+[type=radio]:not(:checked) + label[for].btn-default:not(:active):not(.active):hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.btn-default:not(:hover):not(:active):focus,
+[type=checkbox]:focus + label[for].btn-default:not(:hover):not(:active),
+[type=radio]:focus + label[for].btn-default:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
 }
 .btn-default:active,
-.btn-default.active {
-  background-color: rgba(0, 0, 0, 0.22);
+.btn-default.active,
+[type=checkbox]:checked + label[for].btn-default,
+[type=radio]:checked + label[for].btn-default {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.9);
+}
+.btn-default:not(:hover):not(:active).active:focus,
+[type=checkbox]:checked:focus + label[for].btn-default:not(:hover):not(:active),
+[type=radio]:checked:focus + label[for].btn-default:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
 }
 .btn-accent {
   background-color: #3f51b5;
   color: white;
 }
-.btn-accent:not(:hover):not(:active):focus {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
+.btn-accent:not(:active):not(.active):hover,
+[type=checkbox]:not(:checked) + label[for].btn-accent:not(:active):not(.active):hover,
+[type=radio]:not(:checked) + label[for].btn-accent:not(:active):not(.active):hover {
+  background-color: #4d5ec1;
+}
+.btn-accent:not(:hover):not(:active):focus,
+[type=checkbox]:focus + label[for].btn-accent:not(:hover):not(:active),
+[type=radio]:focus + label[for].btn-accent:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #8591d5;
 }
 .btn-accent:active,
-.btn-accent.active {
-  background-color: #32408f;
+.btn-accent.active,
+[type=checkbox]:checked + label[for].btn-accent,
+[type=radio]:checked + label[for].btn-accent {
+  background-color: #252f69;
+}
+.btn-accent:not(:hover):not(:active).active:focus,
+[type=checkbox]:checked:focus + label[for].btn-accent:not(:hover):not(:active),
+[type=radio]:checked:focus + label[for].btn-accent:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #7280ce;
 }
 .btn-candy {
   background-color: #ff0d5f;
   color: white;
 }
-.btn-candy:not(:hover):not(:active):focus {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
+.btn-candy:not(:active):not(.active):hover,
+[type=checkbox]:not(:checked) + label[for].btn-candy:not(:active):not(.active):hover,
+[type=radio]:not(:checked) + label[for].btn-candy:not(:active):not(.active):hover {
+  background-color: #ff2770;
+}
+.btn-candy:not(:hover):not(:active):focus,
+[type=checkbox]:focus + label[for].btn-candy:not(:hover):not(:active),
+[type=radio]:focus + label[for].btn-candy:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #ffa6c4;
 }
 .btn-candy:active,
-.btn-candy.active {
-  background-color: #d9004a;
+.btn-candy.active,
+[type=checkbox]:checked + label[for].btn-candy,
+[type=radio]:checked + label[for].btn-candy {
+  background-color: #a60038;
 }
-.btn-accent-dark {
-  background-color: #3f51b5;
-  color: white;
-}
-.btn-accent-dark:not(:hover):not(:active):focus {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
-}
-.btn-accent-dark:active,
-.btn-accent-dark.active {
-  background-color: #606fc7;
+.btn-candy:not(:hover):not(:active).active:focus,
+[type=checkbox]:checked:focus + label[for].btn-candy:not(:hover):not(:active),
+[type=radio]:checked:focus + label[for].btn-candy:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #ff5a92;
 }
 .btn-default-dark {
-  background-color: rgba(255, 255, 255, 0.22);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
 }
-.btn-default-dark:not(:hover):not(:active):focus {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.17);
+.btn-default-dark:not(:active):not(.active):hover,
+[type=checkbox]:not(:checked) + label[for].btn-default-dark:not(:active):not(.active):hover,
+[type=radio]:not(:checked) + label[for].btn-default-dark:not(:active):not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.btn-default-dark:not(:hover):not(:active):focus,
+[type=checkbox]:focus + label[for].btn-default-dark:not(:hover):not(:active),
+[type=radio]:focus + label[for].btn-default-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 .btn-default-dark:active,
-.btn-default-dark.active {
-  background-color: rgba(255, 255, 255, 0.32);
+.btn-default-dark.active,
+[type=checkbox]:checked + label[for].btn-default-dark,
+[type=radio]:checked + label[for].btn-default-dark {
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.btn-candy-dark {
-  background-color: #ff0d5f;
+.btn-default-dark:not(:hover):not(:active).active:focus,
+[type=checkbox]:checked:focus + label[for].btn-default-dark:not(:hover):not(:active),
+[type=radio]:checked:focus + label[for].btn-default-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+.btn-accent-dark {
+  background-color: #32408f;
   color: white;
 }
-.btn-candy-dark:not(:hover):not(:active):focus {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
+.btn-accent-dark:not(:active):not(.active):hover,
+[type=checkbox]:not(:checked) + label[for].btn-accent-dark:not(:active):not(.active):hover,
+[type=radio]:not(:checked) + label[for].btn-accent-dark:not(:active):not(.active):hover {
+  background-color: #3849a2;
+}
+.btn-accent-dark:not(:hover):not(:active):focus,
+[type=checkbox]:focus + label[for].btn-accent-dark:not(:hover):not(:active),
+[type=radio]:focus + label[for].btn-accent-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #606fc7;
+}
+.btn-accent-dark:active,
+.btn-accent-dark.active,
+[type=checkbox]:checked + label[for].btn-accent-dark,
+[type=radio]:checked + label[for].btn-accent-dark {
+  background-color: #606fc7;
+}
+.btn-accent-dark:not(:hover):not(:active).active:focus,
+[type=checkbox]:checked:focus + label[for].btn-accent-dark:not(:hover):not(:active),
+[type=radio]:checked:focus + label[for].btn-accent-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #98a2db;
+}
+.btn-candy-dark {
+  background-color: #a60038;
+  color: white;
+}
+.btn-candy-dark:not(:active):not(.active):hover,
+[type=checkbox]:not(:checked) + label[for].btn-candy-dark:not(:active):not(.active):hover,
+[type=radio]:not(:checked) + label[for].btn-candy-dark:not(:active):not(.active):hover {
+  background-color: #c00041;
+}
+.btn-candy-dark:not(:hover):not(:active):focus,
+[type=checkbox]:focus + label[for].btn-candy-dark:not(:hover):not(:active),
+[type=radio]:focus + label[for].btn-candy-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #ff0d5f;
 }
 .btn-candy-dark:active,
-.btn-candy-dark.active {
-  background-color: #ff4081;
+.btn-candy-dark.active,
+[type=checkbox]:checked + label[for].btn-candy-dark,
+[type=radio]:checked + label[for].btn-candy-dark {
+  background-color: #ff0d5f;
+}
+.btn-candy-dark:not(:hover):not(:active).active:focus,
+[type=checkbox]:checked:focus + label[for].btn-candy-dark:not(:hover):not(:active),
+[type=radio]:checked:focus + label[for].btn-candy-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #ffa6c4;
 }
 .btn-md,
 .btn,

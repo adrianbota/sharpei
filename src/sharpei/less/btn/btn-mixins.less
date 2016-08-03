@@ -1,11 +1,50 @@
+@import (reference) '../common/mixins';
+
+.btn-focus-border(@color) {
+  .inner-border(2px; @color);
+}
+
 .btn-size-mixin(@size) {
   line-height: @size;
   min-width: @size;
   height: @size;
 }
 
-.btn-focus-mixin(@color) {
-  &:not(:hover):not(:active):focus {
-    box-shadow: inset 0 0 0 2px @color;
+.btn-focus-mixin(@rules) {
+  &:not(:hover):not(:active) {
+    &:focus,
+    [type=checkbox]:focus + label[for]&,
+    [type=radio]:focus + label[for]& {
+      @rules();
+    }
+  }
+}
+
+.btn-hover-mixin(@rules) {
+  &:not(:active):not(.active):hover {
+    &,
+    [type=checkbox]:not(:checked) + label[for]&,
+    [type=radio]:not(:checked) + label[for]& {
+      @rules();
+    }
+  }
+}
+
+.btn-active-mixin(@rules) {
+  &:active,
+  &.active,
+  [type=checkbox]:checked + label[for]&,
+  [type=radio]:checked + label[for]& {
+    @rules();
+  }
+}
+
+.btn-active-focus-mixin(@rules) {
+  &:not(:hover):not(:active) {
+    &.active:focus,
+    [type=checkbox]:checked:focus + label[for]&,
+    [type=radio]:checked:focus + label[for]& {
+        @rules();
+    }
   }
 }

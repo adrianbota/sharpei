@@ -1,0 +1,27 @@
+@import (reference) 'btn-mixins';
+@import (reference) 'btn';
+
+.btn-candy-dark {
+  @color: #ff0d5f;
+
+  &:extend(.btn all);
+
+  background-color: darken(@color, 20%);
+  color: white;
+
+  .btn-hover-mixin({
+    background-color: darken(@color, 15%);
+  });
+
+  .btn-focus-mixin({
+    .btn-focus-border(lighten(@color, 0%));
+  });
+
+  .btn-active-mixin({
+    background-color: lighten(@color, 0%);
+  });
+
+  .btn-active-focus-mixin({
+    .btn-focus-border(lighten(@color, 30%));
+  });
+}

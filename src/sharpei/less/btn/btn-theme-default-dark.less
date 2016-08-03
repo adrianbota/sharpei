@@ -1,0 +1,25 @@
+@import (reference) 'btn-mixins';
+@import (reference) 'btn';
+
+.btn-default-dark {
+  &:extend(.btn all);
+
+  background-color: fade(white, 15%);
+  color: fade(white, 90%);
+
+  .btn-hover-mixin({
+    background-color: fade(white, 20%);
+  });
+
+  .btn-focus-mixin({
+    .btn-focus-border(fade(white, 15%));
+  });
+
+  .btn-active-mixin({
+    background-color: fade(white, 30%);
+  });
+
+  .btn-active-focus-mixin({
+    .btn-focus-border(fade(white, 25%));
+  });
+}

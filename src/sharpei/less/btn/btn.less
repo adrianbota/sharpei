@@ -1,3 +1,4 @@
+@import (reference) '../common/utils';
 @import (reference) 'btn-sizes';
 @import (reference) 'btn-shapes';
 
@@ -19,7 +20,7 @@
   color: inherit;
   -webkit-tap-highlight-color: fade(black, 0%);
 
-  transition: 0.15s ease-out;
+  transition: 0.1s ease-out;
   transition-property: box-shadow, background-color, color, opacity;
   will-change: box-shadow;
 
@@ -41,6 +42,7 @@
   }
 
   &:extend(.clearfix all);
+  &:extend(.antialiased all);
   &:extend(.btn-md all);
   &:extend(.btn-rounded all);
 }
