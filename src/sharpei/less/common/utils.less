@@ -1,4 +1,5 @@
-.clearfix:after {
+.clearfix:after,
+.clearfix.clearfix:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -7,12 +8,19 @@
   height: 0;
 }
 
-.antialiased {
+.antialiased,
+.antialiased.antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.visually-hidden {
+.hidden,
+.hidden.hidden {
+  display: none;
+}
+
+.visually-hidden,
+.visually-hidden.visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -21,4 +29,9 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.invisible,
+.invisible.invisible {
+  visibility: hidden;
 }
