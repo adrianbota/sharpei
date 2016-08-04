@@ -6,22 +6,14 @@
 
   &:extend(.btn all);
 
-  background-color: darken(@color, 10%);
-  color: white;
-
-  .btn-hover-mixin({
-    background-color: darken(@color, 5%);
-  });
-
-  .btn-focus-mixin({
-    .btn-focus-border(lighten(@color, 10%));
-  });
-
-  .btn-active-mixin({
-    background-color: lighten(@color, 10%);
-  });
-
-  .btn-active-focus-mixin({
-    .btn-focus-border(lighten(@color, 25%));
-  });
+  .btn-colors-mixin(
+    @bg-color: darken(@color, 10%);
+    @color: white;
+    @hover-bg-color: darken(@color, 5%);
+    @hover-color: white;
+    @active-bg-color: lighten(@color, 10%);
+    @active-color: white;
+    @focus-color: lighten(@color, 10%);
+    @active-focus-color: lighten(@color, 25%);
+  );
 }

@@ -1,4 +1,5 @@
 @import (reference) '../common/mixins';
+@import (reference) '../common/utils';
 
 .btn-focus-border(@color) {
   .inner-border(2px; @color);
@@ -10,41 +11,72 @@
   height: @size;
 }
 
-.btn-focus-mixin(@rules) {
-  &:not(:hover):not(:active) {
-    &:focus,
-    [type=checkbox]:focus + label[for]&,
-    [type=radio]:focus + label[for]& {
-      @rules();
+.btn-colors-mixin(
+  @bg-color;
+  @color;
+  @hover-bg-color;
+  @hover-color;
+  @active-bg-color;
+  @active-color;
+  @focus-color;
+  @active-focus-color;
+) {
+  background-color: @bg-color;
+  color: @color;
+  .btn-focus-border(fade(@focus-color, 0%));
+
+  &:focus,
+  input[type=checkbox]:focus + label[for]&,
+  input[type=radio]:focus + label[for]& {
+    &:not(:hover) {
+      .btn-focus-border(@focus-color);
     }
   }
-}
 
-.btn-hover-mixin(@rules) {
-  &:not(:active):not(.active):hover {
-    &,
-    [type=checkbox]:not(:checked) + label[for]&,
-    [type=radio]:not(:checked) + label[for]& {
-      @rules();
-    }
+  &:hover {
+    background-color: @hover-bg-color;
+    color: @hover-color;
+    .btn-focus-border(fade(@focus-color, 0%));
   }
-}
 
-.btn-active-mixin(@rules) {
   &:active,
   &.active,
-  [type=checkbox]:checked + label[for]&,
-  [type=radio]:checked + label[for]& {
-    @rules();
+  input[type=checkbox]:checked + label[for]&,
+  input[type=radio]:checked + label[for]& {
+    background-color: @active-bg-color;
+    color: @active-color;
+    .btn-focus-border(fade(@active-focus-color, 0%));
   }
-}
 
-.btn-active-focus-mixin(@rules) {
-  &:not(:hover):not(:active) {
-    &.active:focus,
-    [type=checkbox]:checked:focus + label[for]&,
-    [type=radio]:checked:focus + label[for]& {
-        @rules();
+  &.active:focus,
+  input[type=checkbox]:checked:focus + label[for]&,
+  input[type=radio]:checked:focus + label[for]& {
+    &:not(:hover) {
+      .btn-focus-border(@active-focus-color);
     }
+  }
+
+  &.disabled.disabled,
+  &:disabled:disabled,
+  &[disabled][disabled],
+  input[type=checkbox]:disabled:disabled + label[for]&,
+  input[type=radio]:disabled:disabled + label[for]&,
+  input[type=checkbox][disabled][disabled] + label[for]&,
+  input[type=radio][disabled][disabled] + label[for]& {
+    background-color: @bg-color;
+    color: @color;
+    .btn-focus-border(fade(@focus-color, 0%));
+  }
+
+  &.active.disabled.disabled,
+  &.active:disabled:disabled,
+  &.active[disabled][disabled],
+  input[type=checkbox]:checked:disabled:disabled + label[for]&,
+  input[type=radio]:checked:disabled:disabled + label[for]&,
+  input[type=checkbox]:checked[disabled][disabled] + label[for]&,
+  input[type=radio]:checked[disabled][disabled] + label[for]& {
+    background-color: @active-bg-color;
+    color: @active-color;
+    .btn-focus-border(fade(@active-focus-color, 0%));
   }
 }

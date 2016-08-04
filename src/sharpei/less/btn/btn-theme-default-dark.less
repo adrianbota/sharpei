@@ -4,22 +4,14 @@
 .btn-default-dark {
   &:extend(.btn all);
 
-  background-color: fade(white, 15%);
-  color: fade(white, 90%);
-
-  .btn-hover-mixin({
-    background-color: fade(white, 20%);
-  });
-
-  .btn-focus-mixin({
-    .btn-focus-border(fade(white, 15%));
-  });
-
-  .btn-active-mixin({
-    background-color: fade(white, 30%);
-  });
-
-  .btn-active-focus-mixin({
-    .btn-focus-border(fade(white, 25%));
-  });
+  .btn-colors-mixin(
+    @bg-color: fade(white, 15%);
+    @color: fade(white, 90%);
+    @hover-bg-color: fade(white, 20%);
+    @hover-color: fade(white, 90%);
+    @active-bg-color: fade(white, 30%);
+    @active-color: fade(white, 90%);
+    @focus-color: fade(white, 15%);
+    @active-focus-color: fade(white, 25%);
+  );
 }

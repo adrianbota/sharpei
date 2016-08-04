@@ -34,22 +34,33 @@
     <br>
 
     <div style="background:black;padding:20px;">
-      <button type="button" class="btn-candy-dark">Button</button>
+      <button type="button" class="btn-candy-dark" disabled>Button</button>
+      <button type="button" class="btn-default-dark" disabled>Button</button>
+      <button type="button" class="btn-accent-dark" disabled>Button</button>
       <button type="button" class="btn-candy-dark active">Selected Button</button>
 
-      <input type="radio" name="foo" id="cb1" class="visually-hidden">
+      <input type="radio" disabled name="foo" id="cb1" class="visually-hidden">
       <label class="btn-candy-dark" for="cb1">Option 1</label>
 
-      <input type="radio" name="foo" id="cb2" class="visually-hidden">
+      <input type="radio" checked disabled name="foo" id="cb2" class="visually-hidden">
       <label class="btn-candy-dark" for="cb2">Option 2</label>
 
-      <input type="checkbox" name="bar" id="cb3" class="visually-hidden">
+      <input type="checkbox" name="bar" id="cb3" disabled class="visually-hidden">
       <label class="btn-candy-dark" for="cb3">Toggle me</label>
+
+      <br>
+      <br>
+      <br>
+
+      <input type="checkbox" name="bar" id="cb4" class="visually-hidden">
+      <label class="toggle-default-dark" for="cb4">Toggle me</label>
     </div>
 
 
     <div style="background:white;padding:20px;">
-      <button type="button" class="btn-candy">Button</button>
+      <button type="button" class="btn-candy" disabled>Button</button>
+      <button type="button" class="btn-default" disabled>Button</button>
+      <button type="button" class="btn-accent" disabled>Button</button>
       <button type="button" class="btn-candy active">Selected Button</button>
 
       <input type="radio" name="foo1" id="cb11" class="visually-hidden">
@@ -60,6 +71,13 @@
 
       <input type="checkbox" name="bar1" id="cb33" class="visually-hidden">
       <label class="btn-candy" for="cb33">Toggle me</label>
+
+      <br>
+      <br>
+      <br>
+
+      <input type="checkbox" name="bar" id="cb44" class="visually-hidden">
+      <label class="toggle-default" for="cb44">Toggle me</label>
     </div>
   </body>
 </html>
