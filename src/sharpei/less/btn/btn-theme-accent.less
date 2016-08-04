@@ -1,19 +1,19 @@
 @import (reference) 'btn-mixins';
 @import (reference) 'btn';
 
-.btn-accent {
-  @color: #3f51b5;
+@accent-theme-color: #4183d7;
 
+.btn-accent {
   &:extend(.btn all);
 
-  .btn-colors-mixin(
-    @bg-color: @color;
+  .btn-theme-mixin(
+    @bg-color: @accent-theme-color;
     @color: white;
-    @hover-bg-color: lighten(@color, 5%);
+    @hover-bg-color: lighten(@accent-theme-color, 5%);
     @hover-color: white;
-    @active-bg-color: darken(@color, 20%);
+    @active-bg-color: darken(@accent-theme-color, 20%);
     @active-color: white;
-    @focus-color: lighten(@color, 20%);
-    @active-focus-color: lighten(@color, 15%);
+    @focus-color: lighten(@accent-theme-color, 20%);
+    @active-focus-color: lighten(@accent-theme-color, 15%);
   );
 }

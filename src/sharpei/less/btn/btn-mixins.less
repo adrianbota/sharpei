@@ -5,13 +5,7 @@
   .inner-border(2px; @color);
 }
 
-.btn-size-mixin(@size) {
-  line-height: @size;
-  min-width: @size;
-  height: @size;
-}
-
-.btn-colors-mixin(
+.btn-theme-mixin(
   @bg-color;
   @color;
   @hover-bg-color;
@@ -21,41 +15,78 @@
   @focus-color;
   @active-focus-color;
 ) {
-  background-color: @bg-color;
-  color: @color;
-  .btn-focus-border(fade(@focus-color, 0%));
+  // define states
+  @normal-state: {
+    background-color: @bg-color;
+    color: @color;
+  };
 
+  @hover-state: {
+    background-color: @hover-bg-color;
+    color: @hover-color;
+  };
+
+  @active-state: {
+    background-color: @active-bg-color;
+    color: @active-color;
+  };
+
+  @focus-state: {
+    .btn-focus-border(@focus-color);
+  };
+
+  @active-focus-state: {
+    .btn-focus-border(@active-focus-color);
+  };
+
+  @no-focus-state: {
+    .btn-focus-border(fade(@focus-color, 0%));
+  };
+
+  @no-active-focus-state: {
+    .btn-focus-border(fade(@active-focus-color, 0%));
+  };
+
+  // normal state
+  & {
+    @normal-state();
+    @no-focus-state();
+  }
+
+  // focus state
   &:focus,
   input[type=checkbox]:focus + label[for]&,
   input[type=radio]:focus + label[for]& {
-    &:not(:hover) {
-      .btn-focus-border(@focus-color);
+    &:not(:hover):not(:active) {
+      @focus-state();
     }
   }
 
+  // hover state
   &:hover {
-    background-color: @hover-bg-color;
-    color: @hover-color;
-    .btn-focus-border(fade(@focus-color, 0%));
+    @hover-state();
+    @no-focus-state();
   }
 
+  // active state
   &:active,
   &.active,
   input[type=checkbox]:checked + label[for]&,
   input[type=radio]:checked + label[for]& {
-    background-color: @active-bg-color;
-    color: @active-color;
-    .btn-focus-border(fade(@active-focus-color, 0%));
+    @active-state();
+    @no-active-focus-state();
   }
 
+  // active focus state
   &.active:focus,
   input[type=checkbox]:checked:focus + label[for]&,
   input[type=radio]:checked:focus + label[for]& {
-    &:not(:hover) {
-      .btn-focus-border(@active-focus-color);
+    &:not(:hover):not(:active) {
+      @active-focus-state();
     }
   }
 
+  // disabled state
   &.disabled.disabled,
   &:disabled:disabled,
   &[disabled][disabled],
@@ -63,11 +94,11 @@
   input[type=radio]:disabled:disabled + label[for]&,
   input[type=checkbox][disabled][disabled] + label[for]&,
   input[type=radio][disabled][disabled] + label[for]& {
-    background-color: @bg-color;
-    color: @color;
-    .btn-focus-border(fade(@focus-color, 0%));
+    @normal-state();
+    @no-focus-state();
   }
 
+  // active disabled state
   &.active.disabled.disabled,
   &.active:disabled:disabled,
   &.active[disabled][disabled],
@@ -75,8 +106,7 @@
   input[type=radio]:checked:disabled:disabled + label[for]&,
   input[type=checkbox]:checked[disabled][disabled] + label[for]&,
   input[type=radio]:checked[disabled][disabled] + label[for]& {
-    background-color: @active-bg-color;
-    color: @active-color;
-    .btn-focus-border(fade(@active-focus-color, 0%));
+    @active-state();
+    @no-active-focus-state();
   }
 }

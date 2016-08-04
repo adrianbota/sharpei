@@ -1,19 +1,23 @@
+@import (reference) '../common/sizes';
 @import (reference) 'btn-mixins';
 
 .btn-md {
-  .btn-size-mixin(32px);
-  font-size: 14px;
+  &:extend(.md-size all);
+  line-height: @md-height;
+  min-width: @md-height;
   padding: 0 12px;
 }
 
 .btn-sm {
-  .btn-size-mixin(24px);
-  font-size: 12px;
+  &:extend(.sm-size all);
+  line-height: @sm-height;
+  min-width: @sm-height;
   padding: 0 9px;
 }
 
 .btn-lg {
-  .btn-size-mixin(56px);
-  font-size: 16px;
+  &:extend(.lg-size all);
+  line-height: @lg-height;
+  min-width: @lg-height;
   padding: 0 24px;
 }

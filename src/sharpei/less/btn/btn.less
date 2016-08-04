@@ -1,7 +1,7 @@
 @import (reference) '../common/utils';
+@import (reference) '../common/shapes';
 @import (reference) 'btn-mixins';
 @import (reference) 'btn-sizes';
-@import (reference) 'btn-shapes';
 
 .btn {
   appearance: none;
@@ -50,6 +50,6 @@
 
   &:extend(.clearfix all);
   &:extend(.antialiased all);
+  &:extend(.rounded-shape all);
   &:extend(.btn-md all);
-  &:extend(.btn-rounded all);
 }

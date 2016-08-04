@@ -1,67 +1,3 @@
-.clearfix:after,
-.clearfix.clearfix:after,
-.btn:after,
-.btn.btn:after,
-.btn-default:after,
-.btn-default.btn-default:after,
-.btn-accent:after,
-.btn-accent.btn-accent:after,
-.btn-candy:after,
-.btn-candy.btn-candy:after,
-.btn-default-dark:after,
-.btn-default-dark.btn-default-dark:after,
-.btn-accent-dark:after,
-.btn-accent-dark.btn-accent-dark:after,
-.btn-candy-dark:after,
-.btn-candy-dark.btn-candy-dark:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.antialiased,
-.antialiased.antialiased,
-.btn,
-.btn.btn,
-.btn-default,
-.btn-default.btn-default,
-.btn-accent,
-.btn-accent.btn-accent,
-.btn-candy,
-.btn-candy.btn-candy,
-.btn-default-dark,
-.btn-default-dark.btn-default-dark,
-.btn-accent-dark,
-.btn-accent-dark.btn-accent-dark,
-.btn-candy-dark,
-.btn-candy-dark.btn-candy-dark {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.hidden,
-.hidden.hidden {
-  display: none;
-}
-.visually-hidden,
-.visually-hidden.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-.invisible,
-.invisible.invisible {
-  visibility: hidden;
-}
-.disabled-cursor {
-  cursor: not-allowed;
-}
 *,
 *:before,
 *:after {
@@ -110,6 +46,80 @@ fieldset {
 }
 textarea {
   resize: vertical;
+}
+.clearfix:after,
+.btn:after,
+.btn-default:after,
+.btn-accent:after,
+.btn-candy:after,
+.btn-default-dark:after,
+.btn-accent-dark:after,
+.btn-candy-dark:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.antialiased,
+.btn,
+.btn-default,
+.btn-accent,
+.btn-candy,
+.btn-default-dark,
+.btn-accent-dark,
+.btn-candy-dark {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hidden {
+  display: none;
+}
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.invisible {
+  visibility: hidden;
+}
+.rounded-shape,
+.btn,
+.btn-default,
+.btn-accent,
+.btn-candy,
+.btn-default-dark,
+.btn-accent-dark,
+.btn-candy-dark {
+  border-radius: 2px;
+}
+.pill-shape {
+  border-radius: 1000px;
+}
+.square-shape {
+  border-radius: 0;
+}
+.square-top-shape {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.square-right-shape {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.square-bottom-shape {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.square-left-shape {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 @media print {
   *,
@@ -259,305 +269,24 @@ a.btn-accent-dark.disabled.disabled,
 a.btn-candy-dark.disabled.disabled {
   pointer-events: none;
 }
-.btn-default {
-  background-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
-}
-.btn-default:focus:not(:hover),
-input[type=checkbox]:focus + label[for].btn-default:not(:hover),
-input[type=radio]:focus + label[for].btn-default:not(:hover) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
-}
-.btn-default:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
-}
-.btn-default:active,
-.btn-default.active,
-input[type=checkbox]:checked + label[for].btn-default,
-input[type=radio]:checked + label[for].btn-default {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-default.active:focus:not(:hover),
-input[type=checkbox]:checked:focus + label[for].btn-default:not(:hover),
-input[type=radio]:checked:focus + label[for].btn-default:not(:hover) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
-}
-.btn-default.disabled.disabled,
-.btn-default:disabled:disabled,
-.btn-default[disabled][disabled],
-input[type=checkbox]:disabled:disabled + label[for].btn-default,
-input[type=radio]:disabled:disabled + label[for].btn-default,
-input[type=checkbox][disabled][disabled] + label[for].btn-default,
-input[type=radio][disabled][disabled] + label[for].btn-default {
-  background-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
-}
-.btn-default.active.disabled.disabled,
-.btn-default.active:disabled:disabled,
-.btn-default.active[disabled][disabled],
-input[type=checkbox]:checked:disabled:disabled + label[for].btn-default,
-input[type=radio]:checked:disabled:disabled + label[for].btn-default,
-input[type=checkbox]:checked[disabled][disabled] + label[for].btn-default,
-input[type=radio]:checked[disabled][disabled] + label[for].btn-default {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-accent {
-  background-color: #3f51b5;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(133, 145, 213, 0);
-}
-.btn-accent:focus:not(:hover),
-input[type=checkbox]:focus + label[for].btn-accent:not(:hover),
-input[type=radio]:focus + label[for].btn-accent:not(:hover) {
-  box-shadow: inset 0 0 0 2px #8591d5;
-}
-.btn-accent:hover {
-  background-color: #4d5ec1;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(133, 145, 213, 0);
-}
-.btn-accent:active,
-.btn-accent.active,
-input[type=checkbox]:checked + label[for].btn-accent,
-input[type=radio]:checked + label[for].btn-accent {
-  background-color: #252f69;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(114, 128, 206, 0);
-}
-.btn-accent.active:focus:not(:hover),
-input[type=checkbox]:checked:focus + label[for].btn-accent:not(:hover),
-input[type=radio]:checked:focus + label[for].btn-accent:not(:hover) {
-  box-shadow: inset 0 0 0 2px #7280ce;
-}
-.btn-accent.disabled.disabled,
-.btn-accent:disabled:disabled,
-.btn-accent[disabled][disabled],
-input[type=checkbox]:disabled:disabled + label[for].btn-accent,
-input[type=radio]:disabled:disabled + label[for].btn-accent,
-input[type=checkbox][disabled][disabled] + label[for].btn-accent,
-input[type=radio][disabled][disabled] + label[for].btn-accent {
-  background-color: #3f51b5;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(133, 145, 213, 0);
-}
-.btn-accent.active.disabled.disabled,
-.btn-accent.active:disabled:disabled,
-.btn-accent.active[disabled][disabled],
-input[type=checkbox]:checked:disabled:disabled + label[for].btn-accent,
-input[type=radio]:checked:disabled:disabled + label[for].btn-accent,
-input[type=checkbox]:checked[disabled][disabled] + label[for].btn-accent,
-input[type=radio]:checked[disabled][disabled] + label[for].btn-accent {
-  background-color: #252f69;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(114, 128, 206, 0);
-}
-.btn-candy {
-  background-color: #ff0d5f;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 166, 196, 0);
-}
-.btn-candy:focus:not(:hover),
-input[type=checkbox]:focus + label[for].btn-candy:not(:hover),
-input[type=radio]:focus + label[for].btn-candy:not(:hover) {
-  box-shadow: inset 0 0 0 2px #ffa6c4;
-}
-.btn-candy:hover {
-  background-color: #ff2770;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 166, 196, 0);
-}
-.btn-candy:active,
-.btn-candy.active,
-input[type=checkbox]:checked + label[for].btn-candy,
-input[type=radio]:checked + label[for].btn-candy {
-  background-color: #a60038;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 90, 146, 0);
-}
-.btn-candy.active:focus:not(:hover),
-input[type=checkbox]:checked:focus + label[for].btn-candy:not(:hover),
-input[type=radio]:checked:focus + label[for].btn-candy:not(:hover) {
-  box-shadow: inset 0 0 0 2px #ff5a92;
-}
-.btn-candy.disabled.disabled,
-.btn-candy:disabled:disabled,
-.btn-candy[disabled][disabled],
-input[type=checkbox]:disabled:disabled + label[for].btn-candy,
-input[type=radio]:disabled:disabled + label[for].btn-candy,
-input[type=checkbox][disabled][disabled] + label[for].btn-candy,
-input[type=radio][disabled][disabled] + label[for].btn-candy {
-  background-color: #ff0d5f;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 166, 196, 0);
-}
-.btn-candy.active.disabled.disabled,
-.btn-candy.active:disabled:disabled,
-.btn-candy.active[disabled][disabled],
-input[type=checkbox]:checked:disabled:disabled + label[for].btn-candy,
-input[type=radio]:checked:disabled:disabled + label[for].btn-candy,
-input[type=checkbox]:checked[disabled][disabled] + label[for].btn-candy,
-input[type=radio]:checked[disabled][disabled] + label[for].btn-candy {
-  background-color: #a60038;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 90, 146, 0);
-}
-.btn-default-dark {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-default-dark:focus:not(:hover),
-input[type=checkbox]:focus + label[for].btn-default-dark:not(:hover),
-input[type=radio]:focus + label[for].btn-default-dark:not(:hover) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
-}
-.btn-default-dark:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-default-dark:active,
-.btn-default-dark.active,
-input[type=checkbox]:checked + label[for].btn-default-dark,
-input[type=radio]:checked + label[for].btn-default-dark {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-default-dark.active:focus:not(:hover),
-input[type=checkbox]:checked:focus + label[for].btn-default-dark:not(:hover),
-input[type=radio]:checked:focus + label[for].btn-default-dark:not(:hover) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-}
-.btn-default-dark.disabled.disabled,
-.btn-default-dark:disabled:disabled,
-.btn-default-dark[disabled][disabled],
-input[type=checkbox]:disabled:disabled + label[for].btn-default-dark,
-input[type=radio]:disabled:disabled + label[for].btn-default-dark,
-input[type=checkbox][disabled][disabled] + label[for].btn-default-dark,
-input[type=radio][disabled][disabled] + label[for].btn-default-dark {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-default-dark.active.disabled.disabled,
-.btn-default-dark.active:disabled:disabled,
-.btn-default-dark.active[disabled][disabled],
-input[type=checkbox]:checked:disabled:disabled + label[for].btn-default-dark,
-input[type=radio]:checked:disabled:disabled + label[for].btn-default-dark,
-input[type=checkbox]:checked[disabled][disabled] + label[for].btn-default-dark,
-input[type=radio]:checked[disabled][disabled] + label[for].btn-default-dark {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
-}
-.btn-accent-dark {
-  background-color: #32408f;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(96, 111, 199, 0);
-}
-.btn-accent-dark:focus:not(:hover),
-input[type=checkbox]:focus + label[for].btn-accent-dark:not(:hover),
-input[type=radio]:focus + label[for].btn-accent-dark:not(:hover) {
-  box-shadow: inset 0 0 0 2px #606fc7;
-}
-.btn-accent-dark:hover {
-  background-color: #3849a2;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(96, 111, 199, 0);
-}
-.btn-accent-dark:active,
-.btn-accent-dark.active,
-input[type=checkbox]:checked + label[for].btn-accent-dark,
-input[type=radio]:checked + label[for].btn-accent-dark {
-  background-color: #606fc7;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(152, 162, 219, 0);
-}
-.btn-accent-dark.active:focus:not(:hover),
-input[type=checkbox]:checked:focus + label[for].btn-accent-dark:not(:hover),
-input[type=radio]:checked:focus + label[for].btn-accent-dark:not(:hover) {
-  box-shadow: inset 0 0 0 2px #98a2db;
-}
-.btn-accent-dark.disabled.disabled,
-.btn-accent-dark:disabled:disabled,
-.btn-accent-dark[disabled][disabled],
-input[type=checkbox]:disabled:disabled + label[for].btn-accent-dark,
-input[type=radio]:disabled:disabled + label[for].btn-accent-dark,
-input[type=checkbox][disabled][disabled] + label[for].btn-accent-dark,
-input[type=radio][disabled][disabled] + label[for].btn-accent-dark {
-  background-color: #32408f;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(96, 111, 199, 0);
-}
-.btn-accent-dark.active.disabled.disabled,
-.btn-accent-dark.active:disabled:disabled,
-.btn-accent-dark.active[disabled][disabled],
-input[type=checkbox]:checked:disabled:disabled + label[for].btn-accent-dark,
-input[type=radio]:checked:disabled:disabled + label[for].btn-accent-dark,
-input[type=checkbox]:checked[disabled][disabled] + label[for].btn-accent-dark,
-input[type=radio]:checked[disabled][disabled] + label[for].btn-accent-dark {
-  background-color: #606fc7;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(152, 162, 219, 0);
-}
+.btn-md,
+.btn,
+.btn-default,
+.btn-accent,
+.btn-candy,
+.btn-default-dark,
+.btn-accent-dark,
 .btn-candy-dark {
-  background-color: #a60038;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 13, 95, 0);
+  height: 32px;
+  font-size: 14px;
 }
-.btn-candy-dark:focus:not(:hover),
-input[type=checkbox]:focus + label[for].btn-candy-dark:not(:hover),
-input[type=radio]:focus + label[for].btn-candy-dark:not(:hover) {
-  box-shadow: inset 0 0 0 2px #ff0d5f;
+.btn-sm {
+  height: 24px;
+  font-size: 12px;
 }
-.btn-candy-dark:hover {
-  background-color: #c00041;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 13, 95, 0);
-}
-.btn-candy-dark:active,
-.btn-candy-dark.active,
-input[type=checkbox]:checked + label[for].btn-candy-dark,
-input[type=radio]:checked + label[for].btn-candy-dark {
-  background-color: #ff0d5f;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 166, 196, 0);
-}
-.btn-candy-dark.active:focus:not(:hover),
-input[type=checkbox]:checked:focus + label[for].btn-candy-dark:not(:hover),
-input[type=radio]:checked:focus + label[for].btn-candy-dark:not(:hover) {
-  box-shadow: inset 0 0 0 2px #ffa6c4;
-}
-.btn-candy-dark.disabled.disabled,
-.btn-candy-dark:disabled:disabled,
-.btn-candy-dark[disabled][disabled],
-input[type=checkbox]:disabled:disabled + label[for].btn-candy-dark,
-input[type=radio]:disabled:disabled + label[for].btn-candy-dark,
-input[type=checkbox][disabled][disabled] + label[for].btn-candy-dark,
-input[type=radio][disabled][disabled] + label[for].btn-candy-dark {
-  background-color: #a60038;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 13, 95, 0);
-}
-.btn-candy-dark.active.disabled.disabled,
-.btn-candy-dark.active:disabled:disabled,
-.btn-candy-dark.active[disabled][disabled],
-input[type=checkbox]:checked:disabled:disabled + label[for].btn-candy-dark,
-input[type=radio]:checked:disabled:disabled + label[for].btn-candy-dark,
-input[type=checkbox]:checked[disabled][disabled] + label[for].btn-candy-dark,
-input[type=radio]:checked[disabled][disabled] + label[for].btn-candy-dark {
-  background-color: #ff0d5f;
-  color: white;
-  box-shadow: inset 0 0 0 2px rgba(255, 166, 196, 0);
+.btn-lg {
+  height: 56px;
+  font-size: 16px;
 }
 .btn-md,
 .btn,
@@ -569,53 +298,315 @@ input[type=radio]:checked[disabled][disabled] + label[for].btn-candy-dark {
 .btn-candy-dark {
   line-height: 32px;
   min-width: 32px;
-  height: 32px;
-  font-size: 14px;
   padding: 0 12px;
 }
 .btn-sm {
   line-height: 24px;
   min-width: 24px;
-  height: 24px;
-  font-size: 12px;
   padding: 0 9px;
 }
 .btn-lg {
   line-height: 56px;
   min-width: 56px;
-  height: 56px;
-  font-size: 16px;
   padding: 0 24px;
 }
-.btn-rounded,
-.btn,
-.btn-default,
-.btn-accent,
-.btn-candy,
-.btn-default-dark,
-.btn-accent-dark,
+.btn-default {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
+}
+.btn-default:focus:not(:hover):not(:active),
+input[type=checkbox]:focus + label[for].btn-default:not(:hover):not(:active),
+input[type=radio]:focus + label[for].btn-default:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.btn-default:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: black;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
+}
+.btn-default:active,
+.btn-default.active,
+input[type=checkbox]:checked + label[for].btn-default,
+input[type=radio]:checked + label[for].btn-default {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: black;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
+}
+.btn-default.active:focus:not(:hover):not(:active),
+input[type=checkbox]:checked:focus + label[for].btn-default:not(:hover):not(:active),
+input[type=radio]:checked:focus + label[for].btn-default:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.btn-default.disabled.disabled,
+.btn-default:disabled:disabled,
+.btn-default[disabled][disabled],
+input[type=checkbox]:disabled:disabled + label[for].btn-default,
+input[type=radio]:disabled:disabled + label[for].btn-default,
+input[type=checkbox][disabled][disabled] + label[for].btn-default,
+input[type=radio][disabled][disabled] + label[for].btn-default {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
+}
+.btn-default.active.disabled.disabled,
+.btn-default.active:disabled:disabled,
+.btn-default.active[disabled][disabled],
+input[type=checkbox]:checked:disabled:disabled + label[for].btn-default,
+input[type=radio]:checked:disabled:disabled + label[for].btn-default,
+input[type=checkbox]:checked[disabled][disabled] + label[for].btn-default,
+input[type=radio]:checked[disabled][disabled] + label[for].btn-default {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: black;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
+}
+.btn-accent {
+  background-color: #4183d7;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(149, 186, 233, 0);
+}
+.btn-accent:focus:not(:hover):not(:active),
+input[type=checkbox]:focus + label[for].btn-accent:not(:hover):not(:active),
+input[type=radio]:focus + label[for].btn-accent:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #95bae9;
+}
+.btn-accent:hover {
+  background-color: #5691db;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(149, 186, 233, 0);
+}
+.btn-accent:active,
+.btn-accent.active,
+input[type=checkbox]:checked + label[for].btn-accent,
+input[type=radio]:checked + label[for].btn-accent {
+  background-color: #1f5293;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(128, 172, 228, 0);
+}
+.btn-accent.active:focus:not(:hover):not(:active),
+input[type=checkbox]:checked:focus + label[for].btn-accent:not(:hover):not(:active),
+input[type=radio]:checked:focus + label[for].btn-accent:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #80ace4;
+}
+.btn-accent.disabled.disabled,
+.btn-accent:disabled:disabled,
+.btn-accent[disabled][disabled],
+input[type=checkbox]:disabled:disabled + label[for].btn-accent,
+input[type=radio]:disabled:disabled + label[for].btn-accent,
+input[type=checkbox][disabled][disabled] + label[for].btn-accent,
+input[type=radio][disabled][disabled] + label[for].btn-accent {
+  background-color: #4183d7;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(149, 186, 233, 0);
+}
+.btn-accent.active.disabled.disabled,
+.btn-accent.active:disabled:disabled,
+.btn-accent.active[disabled][disabled],
+input[type=checkbox]:checked:disabled:disabled + label[for].btn-accent,
+input[type=radio]:checked:disabled:disabled + label[for].btn-accent,
+input[type=checkbox]:checked[disabled][disabled] + label[for].btn-accent,
+input[type=radio]:checked[disabled][disabled] + label[for].btn-accent {
+  background-color: #1f5293;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(128, 172, 228, 0);
+}
+.btn-candy {
+  background-color: #ad0731;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(246, 36, 89, 0);
+}
+.btn-candy:focus:not(:hover):not(:active),
+input[type=checkbox]:focus + label[for].btn-candy:not(:hover):not(:active),
+input[type=radio]:focus + label[for].btn-candy:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #f62459;
+}
+.btn-candy:hover {
+  background-color: #c60838;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(246, 36, 89, 0);
+}
+.btn-candy:active,
+.btn-candy.active,
+input[type=checkbox]:checked + label[for].btn-candy,
+input[type=radio]:checked + label[for].btn-candy {
+  background-color: #7c0523;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(245, 11, 71, 0);
+}
+.btn-candy.active:focus:not(:hover):not(:active),
+input[type=checkbox]:checked:focus + label[for].btn-candy:not(:hover):not(:active),
+input[type=radio]:checked:focus + label[for].btn-candy:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #f50b47;
+}
+.btn-candy.disabled.disabled,
+.btn-candy:disabled:disabled,
+.btn-candy[disabled][disabled],
+input[type=checkbox]:disabled:disabled + label[for].btn-candy,
+input[type=radio]:disabled:disabled + label[for].btn-candy,
+input[type=checkbox][disabled][disabled] + label[for].btn-candy,
+input[type=radio][disabled][disabled] + label[for].btn-candy {
+  background-color: #ad0731;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(246, 36, 89, 0);
+}
+.btn-candy.active.disabled.disabled,
+.btn-candy.active:disabled:disabled,
+.btn-candy.active[disabled][disabled],
+input[type=checkbox]:checked:disabled:disabled + label[for].btn-candy,
+input[type=radio]:checked:disabled:disabled + label[for].btn-candy,
+input[type=checkbox]:checked[disabled][disabled] + label[for].btn-candy,
+input[type=radio]:checked[disabled][disabled] + label[for].btn-candy {
+  background-color: #7c0523;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(245, 11, 71, 0);
+}
+.btn-default-dark {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+.btn-default-dark:focus:not(:hover):not(:active),
+input[type=checkbox]:focus + label[for].btn-default-dark:not(:hover):not(:active),
+input[type=radio]:focus + label[for].btn-default-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+.btn-default-dark:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+.btn-default-dark:active,
+.btn-default-dark.active,
+input[type=checkbox]:checked + label[for].btn-default-dark,
+input[type=radio]:checked + label[for].btn-default-dark {
+  background-color: rgba(255, 255, 255, 0.35);
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+.btn-default-dark.active:focus:not(:hover):not(:active),
+input[type=checkbox]:checked:focus + label[for].btn-default-dark:not(:hover):not(:active),
+input[type=radio]:checked:focus + label[for].btn-default-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+.btn-default-dark.disabled.disabled,
+.btn-default-dark:disabled:disabled,
+.btn-default-dark[disabled][disabled],
+input[type=checkbox]:disabled:disabled + label[for].btn-default-dark,
+input[type=radio]:disabled:disabled + label[for].btn-default-dark,
+input[type=checkbox][disabled][disabled] + label[for].btn-default-dark,
+input[type=radio][disabled][disabled] + label[for].btn-default-dark {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+.btn-default-dark.active.disabled.disabled,
+.btn-default-dark.active:disabled:disabled,
+.btn-default-dark.active[disabled][disabled],
+input[type=checkbox]:checked:disabled:disabled + label[for].btn-default-dark,
+input[type=radio]:checked:disabled:disabled + label[for].btn-default-dark,
+input[type=checkbox]:checked[disabled][disabled] + label[for].btn-default-dark,
+input[type=radio]:checked[disabled][disabled] + label[for].btn-default-dark {
+  background-color: rgba(255, 255, 255, 0.35);
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+.btn-accent-dark {
+  background-color: #163b69;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(35, 94, 168, 0);
+}
+.btn-accent-dark:focus:not(:hover):not(:active),
+input[type=checkbox]:focus + label[for].btn-accent-dark:not(:hover):not(:active),
+input[type=radio]:focus + label[for].btn-accent-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #235ea8;
+}
+.btn-accent-dark:hover {
+  background-color: #1b467e;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(35, 94, 168, 0);
+}
+.btn-accent-dark:active,
+.btn-accent-dark.active,
+input[type=checkbox]:checked + label[for].btn-accent-dark,
+input[type=radio]:checked + label[for].btn-accent-dark {
+  background-color: #286abd;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(107, 158, 224, 0);
+}
+.btn-accent-dark.active:focus:not(:hover):not(:active),
+input[type=checkbox]:checked:focus + label[for].btn-accent-dark:not(:hover):not(:active),
+input[type=radio]:checked:focus + label[for].btn-accent-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #6b9ee0;
+}
+.btn-accent-dark.disabled.disabled,
+.btn-accent-dark:disabled:disabled,
+.btn-accent-dark[disabled][disabled],
+input[type=checkbox]:disabled:disabled + label[for].btn-accent-dark,
+input[type=radio]:disabled:disabled + label[for].btn-accent-dark,
+input[type=checkbox][disabled][disabled] + label[for].btn-accent-dark,
+input[type=radio][disabled][disabled] + label[for].btn-accent-dark {
+  background-color: #163b69;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(35, 94, 168, 0);
+}
+.btn-accent-dark.active.disabled.disabled,
+.btn-accent-dark.active:disabled:disabled,
+.btn-accent-dark.active[disabled][disabled],
+input[type=checkbox]:checked:disabled:disabled + label[for].btn-accent-dark,
+input[type=radio]:checked:disabled:disabled + label[for].btn-accent-dark,
+input[type=checkbox]:checked[disabled][disabled] + label[for].btn-accent-dark,
+input[type=radio]:checked[disabled][disabled] + label[for].btn-accent-dark {
+  background-color: #286abd;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(107, 158, 224, 0);
+}
 .btn-candy-dark {
-  border-radius: 2px;
+  background-color: #63041c;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(173, 7, 49, 0);
 }
-.btn-pill {
-  border-radius: 1000px;
+.btn-candy-dark:focus:not(:hover):not(:active),
+input[type=checkbox]:focus + label[for].btn-candy-dark:not(:hover):not(:active),
+input[type=radio]:focus + label[for].btn-candy-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #ad0731;
 }
-.btn-square {
-  border-radius: 0;
+.btn-candy-dark:hover {
+  background-color: #7c0523;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(173, 7, 49, 0);
 }
-.btn-square-top {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.btn-candy-dark:active,
+.btn-candy-dark.active,
+input[type=checkbox]:checked + label[for].btn-candy-dark,
+input[type=radio]:checked + label[for].btn-candy-dark {
+  background-color: #c60838;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(246, 36, 89, 0);
 }
-.btn-square-right {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.btn-candy-dark.active:focus:not(:hover):not(:active),
+input[type=checkbox]:checked:focus + label[for].btn-candy-dark:not(:hover):not(:active),
+input[type=radio]:checked:focus + label[for].btn-candy-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px #f62459;
 }
-.btn-square-bottom {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+.btn-candy-dark.disabled.disabled,
+.btn-candy-dark:disabled:disabled,
+.btn-candy-dark[disabled][disabled],
+input[type=checkbox]:disabled:disabled + label[for].btn-candy-dark,
+input[type=radio]:disabled:disabled + label[for].btn-candy-dark,
+input[type=checkbox][disabled][disabled] + label[for].btn-candy-dark,
+input[type=radio][disabled][disabled] + label[for].btn-candy-dark {
+  background-color: #63041c;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(173, 7, 49, 0);
 }
-.btn-square-left {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.btn-candy-dark.active.disabled.disabled,
+.btn-candy-dark.active:disabled:disabled,
+.btn-candy-dark.active[disabled][disabled],
+input[type=checkbox]:checked:disabled:disabled + label[for].btn-candy-dark,
+input[type=radio]:checked:disabled:disabled + label[for].btn-candy-dark,
+input[type=checkbox]:checked[disabled][disabled] + label[for].btn-candy-dark,
+input[type=radio]:checked[disabled][disabled] + label[for].btn-candy-dark {
+  background-color: #c60838;
+  color: white;
+  box-shadow: inset 0 0 0 2px rgba(246, 36, 89, 0);
 }

@@ -4,13 +4,13 @@
 .btn-default-dark {
   &:extend(.btn all);
 
-  .btn-colors-mixin(
+  .btn-theme-mixin(
     @bg-color: fade(white, 15%);
-    @color: fade(white, 90%);
+    @color: white;
     @hover-bg-color: fade(white, 20%);
-    @hover-color: fade(white, 90%);
-    @active-bg-color: fade(white, 30%);
-    @active-color: fade(white, 90%);
+    @hover-color: white;
+    @active-bg-color: fade(white, 35%);
+    @active-color: white;
     @focus-color: fade(white, 15%);
     @active-focus-color: fade(white, 25%);
   );
