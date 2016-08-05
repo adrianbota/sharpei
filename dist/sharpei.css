@@ -516,7 +516,7 @@ textarea {
 .btn-list .btn-state-label {
   float: left;
 }
-.btn-vertical-list {
+.btn-v-list {
   display: block;
 }
 .btn-list-md > .btn:not(:last-child),
@@ -535,8 +535,8 @@ textarea {
 }
 .btn-v-list-md > .btn:not(:last-child),
 .btn-v-list-md .btn-state-label:not(:last-child) .btn,
-.btn-vertical-list > .btn:not(:last-child),
-.btn-vertical-list .btn-state-label:not(:last-child) .btn {
+.btn-v-list > .btn:not(:last-child),
+.btn-v-list .btn-state-label:not(:last-child) .btn {
   margin-bottom: 10px;
 }
 .btn-v-list-sm > .btn:not(:last-child),
@@ -550,8 +550,8 @@ textarea {
 .btn-block,
 .btn-v-group .btn,
 .btn-v-group .btn-state-label,
-.btn-vertical-list .btn,
-.btn-vertical-list .btn-state-label {
+.btn-v-list .btn,
+.btn-v-list .btn-state-label {
   display: block;
   width: 100%;
 }
