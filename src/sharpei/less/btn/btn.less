@@ -5,7 +5,6 @@
 
 .btn {
   appearance: none;
-
   font: inherit;
   letter-spacing: 0;
   white-space: nowrap;
@@ -14,42 +13,40 @@
   text-transform: none;
   user-select: none;
   cursor: pointer;
-
   outline: none;
   border: none;
   background: transparent;
   color: inherit;
   -webkit-tap-highlight-color: fade(black, 0%);
-
   transition: 0.1s ease-out;
   transition-property: box-shadow, background-color, color, opacity;
   will-change: box-shadow;
-
   position: relative;
   vertical-align: middle;
-
   display: inline-block;
   box-sizing: border-box;
   width: auto;
+  max-width: 100%;
   margin: 0;
+  padding: 0;
 
-  &[disabled][disabled],
-  &:disabled:disabled,
   &.disabled.disabled,
-  input[type=checkbox][disabled][disabled] + label[for]&,
-  input[type=radio][disabled][disabled] + label[for]&,
-  input[type=checkbox]:disabled:disabled + label[for]&,
-  input[type=radio]:disabled:disabled + label[for]& {
+  &:disabled:disabled,
+  .btn-state:disabled:disabled + & {
     cursor: not-allowed;
-    opacity: 0.4;
+    opacity: @btn-disabled-opacity;
   }
 
-  a&.disabled.disabled {
+  &.disabled.disabled:not(button):not(input) {
     pointer-events: none;
   }
 
-  &:extend(.clearfix all);
+  [class*=icon] {
+    line-height: inherit;
+    vertical-align: top;
+  }
+
   &:extend(.antialiased all);
-  &:extend(.rounded-shape all);
+  &:extend(.btn-rounded all);
   &:extend(.btn-md all);
 }

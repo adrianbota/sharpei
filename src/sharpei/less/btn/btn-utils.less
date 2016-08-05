@@ -1,0 +1,14 @@
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-state { // as previous sibling of .btn
+  &:extend(.visually-hidden all);
+}
+
+.btn-state-label { // as parent label of .btn-state and .btn
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}

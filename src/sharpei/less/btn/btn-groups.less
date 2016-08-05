@@ -1,0 +1,46 @@
+@import (reference) '../common/utils';
+@import (reference) 'btn-shapes';
+@import (reference) 'btn-utils';
+
+.btn-group {
+  &:extend(.clearfix all);
+
+  display: inline-block;
+  vertical-align: middle;
+
+  .btn,
+  .btn-state-label {
+    float: left;
+  }
+
+  & > .btn:not(:first-child),
+  .btn-state-label:not(:first-child) .btn {
+    &:extend(.btn-square-left all);
+  }
+
+  & > .btn:not(:last-child),
+  .btn-state-label:not(:last-child) .btn {
+    &:extend(.btn-square-right all);
+    margin-right: 1px;
+  }
+}
+
+.btn-v-group {
+  display: block;
+
+  .btn,
+  .btn-state-label {
+    &:extend(.btn-block all);
+  }
+
+  & > .btn:not(:first-child),
+  .btn-state-label:not(:first-child) .btn {
+    &:extend(.btn-square-top all);
+  }
+
+  & > .btn:not(:last-child),
+  .btn-state-label:not(:last-child) .btn {
+    &:extend(.btn-square-bottom all);
+    margin-bottom: 1px;
+  }
+}

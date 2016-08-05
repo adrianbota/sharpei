@@ -1,112 +1,111 @@
+@import (reference) 'btn-variables';
 @import (reference) '../common/mixins';
 @import (reference) '../common/utils';
 
-.btn-focus-border(@color) {
-  .inner-border(2px; @color);
+.btn-size-mixin(@size) {
+  @height: ~"@{btn-@{size}-height}";
+  @font-size: ~"@{btn-@{size}-font-size}";
+  @icon-font-size: ~"@{btn-@{size}-icon-font-size}";
+  @padding: ~"@{btn-@{size}-padding}";
+
+  font-size: @font-size;
+  line-height: @height;
+  height: @height;
+  min-width: @height;
+
+  &:not(.btn-icon) {
+    padding: 0 @padding;
+  }
+
+  [class*=icon] {
+    font-size: @icon-font-size;
+  }
 }
 
-.btn-theme-mixin(
-  @bg-color;
-  @color;
-  @hover-bg-color;
-  @hover-color;
-  @active-bg-color;
-  @active-color;
-  @focus-color;
-  @active-focus-color;
-) {
-  // define states
-  @normal-state: {
-    background-color: @bg-color;
-    color: @color;
-  };
+.btn-list-size-mixin(@size) {
+  @spacing: ~"@{btn-list-@{size}-spacing}";
 
-  @hover-state: {
-    background-color: @hover-bg-color;
-    color: @hover-color;
-  };
+  & > .btn:not(:last-child),
+  .btn-state-label:not(:last-child) .btn {
+    margin-right: @spacing;
+  }
+}
 
-  @active-state: {
-    background-color: @active-bg-color;
-    color: @active-color;
-  };
+.btn-v-list-size-mixin(@size) {
+  @spacing: ~"@{btn-v-list-@{size}-spacing}";
 
-  @focus-state: {
-    .btn-focus-border(@focus-color);
-  };
+  & > .btn:not(:last-child),
+  .btn-state-label:not(:last-child) .btn {
+    margin-bottom: @spacing;
+  }
+}
 
-  @active-focus-state: {
-    .btn-focus-border(@active-focus-color);
-  };
+.btn-focus-border(@color) {
+  .inner-border(@btn-highlight-width; @color);
+}
 
-  @no-focus-state: {
-    .btn-focus-border(fade(@focus-color, 0%));
-  };
-
-  @no-active-focus-state: {
-    .btn-focus-border(fade(@active-focus-color, 0%));
-  };
+.btn-theme-mixin(@theme) {
+  @normal-background-color: ~"@{btn-@{theme}-normal-background-color}";
+  @hover-background-color: ~"@{btn-@{theme}-hover-background-color}";
+  @active-background-color: ~"@{btn-@{theme}-active-background-color}";
+  @normal-text-color: ~"@{btn-@{theme}-normal-text-color}";
+  @hover-text-color: ~"@{btn-@{theme}-hover-text-color}";
+  @active-text-color: ~"@{btn-@{theme}-active-text-color}";
+  @normal-highlight-color: ~"@{btn-@{theme}-normal-highlight-color}";
+  @active-highlight-color: ~"@{btn-@{theme}-active-highlight-color}";
 
   // normal state
-  & {
-    @normal-state();
-    @no-focus-state();
-  }
+  background-color: @normal-background-color;
+  color: @normal-text-color;
+  .btn-focus-border(transparent);
 
   // focus state
   &:focus,
-  input[type=checkbox]:focus + label[for]&,
-  input[type=radio]:focus + label[for]& {
+  .btn-state:focus + & {
     &:not(:hover):not(:active) {
-      @focus-state();
+      .btn-focus-border(@normal-highlight-color);
     }
   }
 
   // hover state
   &:hover {
-    @hover-state();
-    @no-focus-state();
+    background-color: @hover-background-color;
+    color: @hover-text-color;
+    .btn-focus-border(transparent);
   }
 
   // active state
   &:active,
   &.active,
-  input[type=checkbox]:checked + label[for]&,
-  input[type=radio]:checked + label[for]& {
-    @active-state();
-    @no-active-focus-state();
+  .btn-state:checked + & {
+    background-color: @active-background-color;
+    color: @active-text-color;
+    .btn-focus-border(transparent);
   }
 
   // active focus state
   &.active:focus,
-  input[type=checkbox]:checked:focus + label[for]&,
-  input[type=radio]:checked:focus + label[for]& {
+  .btn-state:checked:focus + & {
     &:not(:hover):not(:active) {
-      @active-focus-state();
+      .btn-focus-border(@active-highlight-color);
     }
   }
 
   // disabled state
   &.disabled.disabled,
   &:disabled:disabled,
-  &[disabled][disabled],
-  input[type=checkbox]:disabled:disabled + label[for]&,
-  input[type=radio]:disabled:disabled + label[for]&,
-  input[type=checkbox][disabled][disabled] + label[for]&,
-  input[type=radio][disabled][disabled] + label[for]& {
-    @normal-state();
-    @no-focus-state();
+  .btn-state:disabled:disabled + & {
+    background-color: @normal-background-color;
+    color: @normal-text-color;
+    .btn-focus-border(transparent);
   }
 
   // active disabled state
   &.active.disabled.disabled,
   &.active:disabled:disabled,
-  &.active[disabled][disabled],
-  input[type=checkbox]:checked:disabled:disabled + label[for]&,
-  input[type=radio]:checked:disabled:disabled + label[for]&,
-  input[type=checkbox]:checked[disabled][disabled] + label[for]&,
-  input[type=radio]:checked[disabled][disabled] + label[for]& {
-    @active-state();
-    @no-active-focus-state();
+  .btn-state:checked:disabled:disabled + & {
+    background-color: @active-background-color;
+    color: @active-text-color;
+    .btn-focus-border(transparent);
   }
 }
