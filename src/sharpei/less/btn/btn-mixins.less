@@ -2,6 +2,9 @@
 @import (reference) '../common/mixins';
 @import (reference) '../common/utils';
 
+// Create button sizes
+// - Button sizes: btn-md, btn-sm, btn-lg
+// @size: md, sm, lg
 .btn-size-mixin(@size) {
   @height: ~"@{btn-@{size}-height}";
   @font-size: ~"@{btn-@{size}-font-size}";
@@ -13,15 +16,19 @@
   height: @height;
   min-width: @height;
 
-  &:not(.btn-icon) {
-    padding: 0 @padding;
-  }
-
   [class*=icon] {
     font-size: @icon-font-size;
   }
+
+  // icon-only button has no padding
+  &:not(.btn-icon) {
+    padding: 0 @padding;
+  }
 }
 
+// Create button spacing variations based on the list size
+// - List sizes: btn-list-md, btn-list-sm, btn-list-lg)
+// @size: md, sm, lg
 .btn-list-size-mixin(@size) {
   @spacing: ~"@{btn-list-@{size}-spacing}";
 
@@ -31,6 +38,9 @@
   }
 }
 
+// Create button spacing variations based on the vertical list size
+// - List sizes: btn-v-list-md, btn-v-list-sm, btn-v-list-lg
+// @size: md, sm, lg
 .btn-v-list-size-mixin(@size) {
   @spacing: ~"@{btn-v-list-@{size}-spacing}";
 
@@ -40,10 +50,15 @@
   }
 }
 
+// Create button focus border using drop shadow
+// @color: focus border color
 .btn-focus-border(@color) {
   .inner-border(@btn-highlight-width; @color);
 }
 
+// Create button theme
+// - dark themes look better on darker backgrounds
+// @theme: default, accent, candy, default-dark, accent-dark, candy-dark
 .btn-theme-mixin(@theme) {
   @normal-background-color: ~"@{btn-@{theme}-normal-background-color}";
   @hover-background-color: ~"@{btn-@{theme}-hover-background-color}";
