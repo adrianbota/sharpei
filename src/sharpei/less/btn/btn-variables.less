@@ -1,3 +1,5 @@
+@import (reference) '../common/variables';
+
 @btn-disabled-opacity: 0.4;
 @btn-highlight-width: 2px;
 
@@ -22,58 +24,54 @@
 @btn-list-lg-spacing: 15px;
 @btn-v-list-lg-spacing: 15px;
 
-@btn-default-theme-color: #9e9e9e;
-@btn-accent-theme-color: #4183d7;
-@btn-candy-theme-color: #ff4081;
-
-@btn-default-normal-background-color: fade(@btn-default-theme-color, 20%);
-@btn-default-hover-background-color: fade(@btn-default-theme-color, 30%);
-@btn-default-active-background-color: fade(@btn-default-theme-color, 60%);
+@btn-default-normal-background-color: fade(@default-color, 20%);
+@btn-default-hover-background-color: fade(@default-color, 30%);
+@btn-default-active-background-color: fade(@default-color, 60%);
 @btn-default-normal-text-color: black;
 @btn-default-hover-text-color: black;
 @btn-default-active-text-color: black;
-@btn-default-normal-highlight-color: fade(@btn-default-theme-color, 20%);
-@btn-default-active-highlight-color: fade(@btn-default-theme-color, 50%);
+@btn-default-normal-highlight-color: fade(@default-color, 20%);
+@btn-default-active-highlight-color: fade(@default-color, 50%);
 
-@btn-default-dark-normal-background-color: fade(@btn-default-theme-color, 20%);
-@btn-default-dark-hover-background-color: fade(@btn-default-theme-color, 30%);
-@btn-default-dark-active-background-color: fade(@btn-default-theme-color, 60%);
+@btn-default-dark-normal-background-color: fade(@default-color, 20%);
+@btn-default-dark-hover-background-color: fade(@default-color, 30%);
+@btn-default-dark-active-background-color: fade(@default-color, 60%);
 @btn-default-dark-normal-text-color: white;
 @btn-default-dark-hover-text-color: white;
 @btn-default-dark-active-text-color: white;
 @btn-default-dark-normal-highlight-color: fade(white, 10%);
 @btn-default-dark-active-highlight-color: fade(white, 20%);
 
-@btn-accent-normal-background-color: @btn-accent-theme-color;
-@btn-accent-hover-background-color: darken(@btn-accent-theme-color, 5%);
-@btn-accent-active-background-color: darken(@btn-accent-theme-color, 25%);
+@btn-accent-normal-background-color: @accent-color;
+@btn-accent-hover-background-color: darken(@accent-color, 5%);
+@btn-accent-active-background-color: darken(@accent-color, 25%);
 @btn-accent-normal-text-color: white;
 @btn-accent-hover-text-color: white;
 @btn-accent-active-text-color: white;
 @btn-accent-normal-highlight-color: fade(white, 30%);
 @btn-accent-active-highlight-color: fade(white, 30%);
 
-@btn-accent-dark-normal-background-color: darken(@btn-accent-theme-color, 20%);
-@btn-accent-dark-hover-background-color: darken(@btn-accent-theme-color, 15%);
-@btn-accent-dark-active-background-color: lighten(@btn-accent-theme-color, 5%);
+@btn-accent-dark-normal-background-color: darken(@accent-color, 20%);
+@btn-accent-dark-hover-background-color: darken(@accent-color, 15%);
+@btn-accent-dark-active-background-color: lighten(@accent-color, 5%);
 @btn-accent-dark-normal-text-color: white;
 @btn-accent-dark-hover-text-color: white;
 @btn-accent-dark-active-text-color: white;
 @btn-accent-dark-normal-highlight-color: fade(black, 25%);
 @btn-accent-dark-active-highlight-color: fade(black, 40%);
 
-@btn-candy-normal-background-color: @btn-candy-theme-color;
-@btn-candy-hover-background-color: darken(@btn-candy-theme-color, 5%);
-@btn-candy-active-background-color: darken(@btn-candy-theme-color, 25%);
+@btn-candy-normal-background-color: @candy-color;
+@btn-candy-hover-background-color: darken(@candy-color, 5%);
+@btn-candy-active-background-color: darken(@candy-color, 25%);
 @btn-candy-normal-text-color: white;
 @btn-candy-hover-text-color: white;
 @btn-candy-active-text-color: white;
 @btn-candy-normal-highlight-color: fade(white, 40%);
 @btn-candy-active-highlight-color: fade(white, 40%);
 
-@btn-candy-dark-normal-background-color: darken(@btn-candy-theme-color, 25%);
-@btn-candy-dark-hover-background-color: darken(@btn-candy-theme-color, 20%);
-@btn-candy-dark-active-background-color: @btn-candy-theme-color;
+@btn-candy-dark-normal-background-color: darken(@candy-color, 25%);
+@btn-candy-dark-hover-background-color: darken(@candy-color, 20%);
+@btn-candy-dark-active-background-color: @candy-color;
 @btn-candy-dark-normal-text-color: white;
 @btn-candy-dark-hover-text-color: white;
 @btn-candy-dark-active-text-color: white;
