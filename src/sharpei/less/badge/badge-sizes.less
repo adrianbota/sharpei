@@ -1,0 +1,7 @@
+@import (reference) 'badge-mixins';
+
+.badge-md { .badge-size-mixin(md); }
+.badge-lg { .badge-size-mixin(lg); }
+
+[data-badge-md]:after { &:extend(.badge-md all); }
+[data-badge-lg]:after { &:extend(.badge-lg all); }

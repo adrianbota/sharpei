@@ -1,0 +1,9 @@
+@import (reference) 'badge-mixins';
+
+.badge-default { .badge-theme-mixin(default); }
+.badge-accent { .badge-theme-mixin(accent); }
+.badge-candy { .badge-theme-mixin(candy); }
+
+[data-badge-default]:after { &:extend(.badge-default all); }
+[data-badge-accent]:after { &:extend(.badge-accent all); }
+[data-badge-candy]:after { &:extend(.badge-candy all); }

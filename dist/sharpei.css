@@ -58,7 +58,9 @@ textarea {
   height: 0;
 }
 .antialiased,
-.btn {
+.btn,
+.badge,
+[data-badge]:after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -81,15 +83,23 @@ textarea {
 }
 .rounded-shape,
 .btn-rounded,
-.btn {
+.badge-rounded.badge-rounded,
+.btn,
+[data-badge-rounded][data-badge-rounded]:after {
   border-radius: 2px;
 }
 .pill-shape,
-.btn-pill {
+.btn-pill,
+.badge-pill,
+.badge,
+[data-badge-pill]:after,
+[data-badge]:after {
   border-radius: 10000px;
 }
 .square-shape,
-.btn-square {
+.btn-square,
+.badge-square,
+[data-badge-square]:after {
   border-radius: 0;
 }
 .square-top-shape,
@@ -559,4 +569,68 @@ textarea {
   display: inline-block;
   margin: 0;
   padding: 0;
+}
+.badge,
+[data-badge]:after {
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  pointer-events: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+[data-badge]:after {
+  content: attr(data-badge);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+.badge-md,
+.badge,
+[data-badge-md]:after,
+[data-badge]:after {
+  font-size: 10px;
+  line-height: 17px;
+  height: 17px;
+  min-width: 17px;
+  padding: 0 5px;
+}
+.badge-lg,
+[data-badge-lg]:after {
+  font-size: 14px;
+  line-height: 24px;
+  height: 24px;
+  min-width: 24px;
+  padding: 0 8px;
+}
+.badge-default,
+.badge,
+[data-badge-default]:after,
+[data-badge]:after {
+  background-color: #9e9e9e;
+  color: white;
+}
+.badge-accent,
+[data-badge-accent]:after {
+  background-color: #4183d7;
+  color: white;
+}
+.badge-candy,
+[data-badge-candy]:after {
+  background-color: #ff4081;
+  color: white;
 }

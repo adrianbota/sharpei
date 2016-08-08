@@ -1,0 +1,27 @@
+@import (reference) 'badge-variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+
+// Create badge sizes
+// @size: md, lg
+.badge-size-mixin(@size) {
+  @height: ~"@{badge-@{size}-height}";
+  @font-size: ~"@{badge-@{size}-font-size}";
+  @padding: ~"@{badge-@{size}-padding}";
+
+  font-size: @font-size;
+  line-height: @height;
+  height: @height;
+  min-width: @height;
+  padding: 0 @padding;
+}
+
+// Create badge theme
+// @theme: default, accent, candy
+.badge-theme-mixin(@theme) {
+  @background-color: ~"@{badge-@{theme}-background-color}";
+  @text-color: ~"@{badge-@{theme}-text-color}";
+
+  background-color: @background-color;
+  color: @text-color;
+}

@@ -1,0 +1,40 @@
+@import (reference) '../common/utils';
+@import (reference) 'badge-mixins';
+@import (reference) 'badge-sizes';
+
+.badge {
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  pointer-events: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  &:extend(.antialiased all);
+  &:extend(.badge-pill all);
+  &:extend(.badge-md all);
+  &:extend(.badge-default all);
+}
+
+[data-badge]:after {
+  &:extend(.badge all);
+
+  content: attr(data-badge);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
