@@ -2,18 +2,17 @@
 @import (reference) 'badge-mixins';
 @import (reference) 'badge-sizes';
 
-.badge {
+.badge,
+[data-badge]:after {
   letter-spacing: 0;
   white-space: nowrap;
   text-align: center;
   text-decoration: none;
   text-transform: none;
-  pointer-events: none;
   outline: none;
   border: none;
   background: transparent;
   color: inherit;
-  position: relative;
   vertical-align: middle;
   display: inline-block;
   box-sizing: border-box;
@@ -24,17 +23,29 @@
   padding: 0;
 
   &:extend(.antialiased all);
-  &:extend(.badge-pill all);
+}
+
+.badge {
+  position: relative;
+
+  &:extend(.badge-rounded all);
   &:extend(.badge-md all);
   &:extend(.badge-default all);
 }
 
 [data-badge]:after {
-  &:extend(.badge all);
-
   content: attr(data-badge);
+  pointer-events: none;
   position: absolute;
-  right: 0;
-  top: 0;
-  transform: translate(50%, -50%);
+
+  &:extend(.has-badge-rounded[data-badge]:after all);
+  &:extend(.has-badge-md[data-badge]:after all);
+  &:extend(.has-badge-default[data-badge]:after all);
+}
+
+.badge:empty,
+[data-badge=""]:after,
+[data-badge=" "]:after,
+[data-badge="  "]:after {
+  display: none;
 }

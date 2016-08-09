@@ -1,11 +1,16 @@
 @import (reference) '../common/shapes';
 
-// since badge-pill is default, and order is rounded-pill-square,
-// increase specificity of badge-rounded
-.badge-rounded.badge-rounded { &:extend(.rounded-shape all); }
-.badge-pill { &:extend(.pill-shape all); }
-.badge-square { &:extend(.square-shape all); }
+.badge-rounded,
+.has-badge-rounded[data-badge]:after {
+  &:extend(.rounded-shape all);
+}
 
-[data-badge-rounded][data-badge-rounded]:after { &:extend(.badge-rounded.badge-rounded all); }
-[data-badge-pill]:after { &:extend(.badge-pill all); }
-[data-badge-square]:after { &:extend(.badge-square all); }
+.badge-pill,
+.has-badge-pill[data-badge]:after {
+  &:extend(.pill-shape all);
+}
+
+.badge-square,
+.has-badge-square[data-badge]:after {
+  &:extend(.square-shape all);
+}

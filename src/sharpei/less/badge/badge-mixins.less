@@ -16,6 +16,16 @@
   padding: 0 @padding;
 }
 
+// Position badge according to size
+// @size: md, lg
+.badge-position-mixin(@size) {
+  @height-var: "badge-@{size}-height";
+  @height: @@height-var;
+
+  right: -(@height / 2);
+  top: -(@height / 2);
+}
+
 // Create badge theme
 // @theme: default, accent, candy
 .badge-theme-mixin(@theme) {

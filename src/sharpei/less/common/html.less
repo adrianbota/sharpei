@@ -1,3 +1,5 @@
+@import (reference) 'mixins';
+
 *,
 *:before,
 *:after {
@@ -10,7 +12,7 @@
 }
 
 html {
-  font: 100% "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  .font(100%; 400);
 }
 
 html,
@@ -21,7 +23,7 @@ body {
 
 body {
   padding: 20px;
-  background: #fff;
+  background: #eee;
 }
 
 hr {

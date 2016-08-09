@@ -1,0 +1,27 @@
+@import (reference) 'card-variables';
+@import (reference) 'card-sizes';
+
+.card {
+  background: @card-background-color;
+
+  &:extend(.card-md all);
+}
+
+.card,
+.card-header,
+.card-body,
+.card-footer {
+  display: block;
+  max-width: 100%;
+  position: relative;
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  &:extend(.clearfix all);
+}
+
+.card-body {
+  overflow: auto;
+}

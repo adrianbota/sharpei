@@ -1,7 +1,19 @@
 @import (reference) 'badge-mixins';
 
-.badge-md { .badge-size-mixin(md); }
-.badge-lg { .badge-size-mixin(lg); }
+.badge-md,
+.has-badge-md[data-badge]:after {
+  .badge-size-mixin(md);
+}
 
-[data-badge-md]:after { &:extend(.badge-md all); }
-[data-badge-lg]:after { &:extend(.badge-lg all); }
+.badge-lg,
+.has-badge-lg[data-badge]:after {
+  .badge-size-mixin(lg);
+}
+
+.has-badge-md[data-badge]:after {
+  .badge-position-mixin(md);
+}
+
+.has-badge-lg[data-badge]:after {
+  .badge-position-mixin(lg);
+}

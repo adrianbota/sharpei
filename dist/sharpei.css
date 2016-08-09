@@ -12,7 +12,9 @@
   text-shadow: none;
 }
 html {
-  font: 100% "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 100%;
+  font-weight: 400;
 }
 html,
 body {
@@ -21,7 +23,7 @@ body {
 }
 body {
   padding: 20px;
-  background: #fff;
+  background: #eee;
 }
 hr {
   display: block;
@@ -49,7 +51,10 @@ textarea {
 }
 .clearfix:after,
 .btn-group:after,
-.btn-list:after {
+.btn-list:after,
+.card-header:after,
+.card-body:after,
+.card-footer:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -81,25 +86,44 @@ textarea {
 .invisible {
   visibility: hidden;
 }
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.shadow {
+  box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+}
 .rounded-shape,
 .btn-rounded,
-.badge-rounded.badge-rounded,
+.badge-rounded,
+.has-badge-rounded[data-badge]:after,
+.card-rounded,
 .btn,
-[data-badge-rounded][data-badge-rounded]:after {
+.badge,
+[data-badge]:after {
   border-radius: 2px;
 }
 .pill-shape,
 .btn-pill,
 .badge-pill,
-.badge,
-[data-badge-pill]:after,
-[data-badge]:after {
+.has-badge-pill[data-badge]:after {
   border-radius: 10000px;
 }
 .square-shape,
 .btn-square,
 .badge-square,
-[data-badge-square]:after {
+.has-badge-square[data-badge]:after {
   border-radius: 0;
 }
 .square-top-shape,
@@ -129,6 +153,13 @@ textarea {
 .btn-group .btn-state-label:not(:first-child) .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.absolute {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
 }
 @media print {
   *,
@@ -577,12 +608,10 @@ textarea {
   text-align: center;
   text-decoration: none;
   text-transform: none;
-  pointer-events: none;
   outline: none;
   border: none;
   background: transparent;
   color: inherit;
-  position: relative;
   vertical-align: middle;
   display: inline-block;
   box-sizing: border-box;
@@ -592,16 +621,23 @@ textarea {
   margin: 0;
   padding: 0;
 }
+.badge {
+  position: relative;
+}
 [data-badge]:after {
   content: attr(data-badge);
+  pointer-events: none;
   position: absolute;
-  right: 0;
-  top: 0;
-  transform: translate(50%, -50%);
+}
+.badge:empty,
+[data-badge=""]:after,
+[data-badge=" "]:after,
+[data-badge="  "]:after {
+  display: none;
 }
 .badge-md,
+.has-badge-md[data-badge]:after,
 .badge,
-[data-badge-md]:after,
 [data-badge]:after {
   font-size: 10px;
   line-height: 17px;
@@ -610,27 +646,76 @@ textarea {
   padding: 0 5px;
 }
 .badge-lg,
-[data-badge-lg]:after {
+.has-badge-lg[data-badge]:after {
   font-size: 14px;
   line-height: 24px;
   height: 24px;
   min-width: 24px;
   padding: 0 8px;
 }
+.has-badge-md[data-badge]:after,
+[data-badge]:after {
+  right: -8.5px;
+  top: -8.5px;
+}
+.has-badge-lg[data-badge]:after {
+  right: -12px;
+  top: -12px;
+}
 .badge-default,
+.has-badge-default[data-badge]:after,
 .badge,
-[data-badge-default]:after,
 [data-badge]:after {
   background-color: #9e9e9e;
   color: white;
 }
 .badge-accent,
-[data-badge-accent]:after {
+.has-badge-accent[data-badge]:after {
   background-color: #4183d7;
   color: white;
 }
 .badge-candy,
-[data-badge-candy]:after {
+.has-badge-candy[data-badge]:after {
   background-color: #ff4081;
+  color: white;
+}
+.badge-contrast,
+.has-badge-contrast[data-badge]:after {
+  box-shadow: 0 0 0 1px white;
+}
+.card {
+  background: white;
+}
+.card,
+.card-header,
+.card-body,
+.card-footer {
+  display: block;
+  max-width: 100%;
+  position: relative;
+}
+.card-body {
+  overflow: auto;
+}
+.card-md .card-header,
+.card-md .card-body,
+.card-md .card-footer,
+.card .card-header,
+.card .card-body,
+.card .card-footer {
+  padding: 20px;
+}
+.card-sm .card-header,
+.card-sm .card-body,
+.card-sm .card-footer {
+  padding: 10px;
+}
+.card-lg .card-header,
+.card-lg .card-body,
+.card-lg .card-footer {
+  padding: 30px;
+}
+.card-dark {
+  background-color: #030306;
   color: white;
 }
