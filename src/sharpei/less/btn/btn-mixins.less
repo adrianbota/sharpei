@@ -57,8 +57,8 @@
 
 // Create button focus border using drop shadow
 // @color: focus border color
-.btn-focus-border(@color) {
-  .inner-border(@btn-highlight-width; @color);
+.btn-focus-border-mixin(@color) {
+  .inner-border-mixin(@btn-highlight-width; @color);
 }
 
 // Create button theme
@@ -77,13 +77,13 @@
   // normal state
   background-color: @normal-background-color;
   color: @normal-text-color;
-  .btn-focus-border(transparent);
+  .btn-focus-border-mixin(transparent);
 
   // focus state
   &:focus,
   .btn-state:focus + & {
     &:not(:hover):not(:active) {
-      .btn-focus-border(@normal-highlight-color);
+      .btn-focus-border-mixin(@normal-highlight-color);
     }
   }
 
@@ -91,7 +91,7 @@
   &:hover {
     background-color: @hover-background-color;
     color: @hover-text-color;
-    .btn-focus-border(transparent);
+    .btn-focus-border-mixin(transparent);
   }
 
   // active state
@@ -100,14 +100,14 @@
   .btn-state:checked + & {
     background-color: @active-background-color;
     color: @active-text-color;
-    .btn-focus-border(transparent);
+    .btn-focus-border-mixin(transparent);
   }
 
   // active focus state
   &.active:focus,
   .btn-state:checked:focus + & {
     &:not(:hover):not(:active) {
-      .btn-focus-border(@active-highlight-color);
+      .btn-focus-border-mixin(@active-highlight-color);
     }
   }
 
@@ -117,7 +117,7 @@
   .btn-state:disabled:disabled + & {
     background-color: @normal-background-color;
     color: @normal-text-color;
-    .btn-focus-border(transparent);
+    .btn-focus-border-mixin(transparent);
   }
 
   // active disabled state
@@ -126,6 +126,6 @@
   .btn-state:checked:disabled:disabled + & {
     background-color: @active-background-color;
     color: @active-text-color;
-    .btn-focus-border(transparent);
+    .btn-focus-border-mixin(transparent);
   }
 }

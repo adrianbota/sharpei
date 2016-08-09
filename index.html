@@ -28,7 +28,7 @@
     <button class="btn btn-accent btn-sm">Accent Button</button>
     <button class="btn btn-candy btn-sm">Candy Button</button>
 
-    <button class="btn btn-default btn-lg">Default Button</button>
+    <button class="btn btn-default btn-lg"><span class="preloader">Loading...</span> Default Button</button>
     <button class="btn btn-accent btn-lg">Accent Button</button>
     <button class="btn btn-candy btn-lg">Candy Button</button>
 
@@ -186,12 +186,68 @@
 
       <div class="card-footer">
         <div class="btn-list pull-right">
-          <button type="button" class="btn btn-accent has-badge-candy" data-badge="23">
+          <button type="button" class="btn display-block-on-phone btn-accent has-badge-candy" data-badge="23">
             <span class="material-icons">cloud_upload</span>
             Save Changes
           </button>
         </div>
       </div>
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="grid">
+      <div class="cell tablet-span-1 span-4">Lorem</div>
+      <div class="cell tablet-span-2 span-4">Ipsum</div>
+      <div class="cell tablet-span-3 span-4">Dolor</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="btn-group">
+      <label class="btn-state-label">
+        <input checked class="btn-state" type="radio" name="tab" value="tab1">
+        <span class="btn btn-default btn-square-bottom">New Chords</span>
+      </label>
+
+      <label class="btn-state-label">
+        <input class="btn-state" type="radio" name="tab" value="tab2">
+        <span class="btn btn-default btn-square-bottom">Chrod Dictionary</span>
+      </label>
+
+      <label class="btn-state-label">
+        <input class="btn-state" type="radio" name="tab" value="tab3">
+        <span class="btn btn-default btn-square-bottom">Settings</span>
+      </label>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <input class="visibility-state" type="checkbox">
+        <div class="">
+          Tab 1 content here
+        </div>
+
+        <input class="visibility-state" checked type="checkbox">
+        <div class="">
+          Tab 2 content here
+        </div>
+
+        <input class="visibility-state" type="checkbox">
+        <div class="">
+          Tab 3 content here
+        </div>
+
+        <div class="preloader">Loading...</div>
+        <div class="preloader preloader-sm">Loading...</div>
+        <div class="preloader preloader-lg">Loading...</div>
+      </div>
+    </div>
+
+
   </body>
 </html>

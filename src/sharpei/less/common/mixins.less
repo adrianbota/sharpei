@@ -1,9 +1,29 @@
-.font(@size, @weight: normal) {
+@import (reference) 'variables';
+
+.font-mixin(@size, @weight: normal) {
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: @size;
   font-weight: @weight;
 }
 
-.inner-border(@width; @color) {
+.inner-border-mixin(@width; @color) {
   box-shadow: inset 0 0 0 @width @color;
+}
+
+.phone-only-mixin(@rules) {
+  @media (max-width: (@tablet-breakpoint - 1)) {
+    @rules();
+  }
+}
+
+.tablet-only-mixin(@rules) {
+  @media (min-width: @tablet-breakpoint) and (max-width: (@desktop-breakpoint - 1)) {
+    @rules();
+  }
+}
+
+.desktop-only-mixin(@rules) {
+  @media (min-width: @desktop-breakpoint) {
+    @rules();
+  }
 }

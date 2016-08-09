@@ -1,0 +1,6 @@
+.cell-span-mixin(@prefix; @grid-size; @span-size: 1) when (@grid-size > @span-size) {
+  .@{prefix}-@{span-size} {
+    width: @span-size * 100% / @grid-size;
+  }
+  .cell-span-mixin(@prefix; @grid-size; (@span-size + 1));
+}

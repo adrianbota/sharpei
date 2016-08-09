@@ -1,0 +1,28 @@
+@import (reference) 'preloader-variables';
+@import (reference) 'preloader-sizes';
+@import (reference) 'preloader-themes';
+
+.preloader {
+  vertical-align: middle;
+  display: inline-block;
+  text-indent: -10000px;
+  position: relative;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    content: " ";
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: solid transparent;
+  }
+
+  &:after {
+    animation: preloader-animation @preloader-animation-duration linear infinite;
+  }
+
+  &:extend(.preloader-md all);
+  &:extend(.preloader-default all);
+}

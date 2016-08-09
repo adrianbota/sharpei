@@ -1,0 +1,27 @@
+@import (reference) '../common/variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+@import (reference) 'grid-variables';
+@import (reference) 'grid-mixins';
+
+.grid {
+  &:extend(.clearfix all);
+
+  .cell {
+    &:extend(.clearfix all);
+    &:extend(.pull-left all);
+    width: 100%;
+  }
+
+  .phone-only-mixin({
+    .cell-span-mixin(phone-span; @phone-grid-size);
+  });
+
+  .tablet-only-mixin({
+    .cell-span-mixin(tablet-span; @tablet-grid-size);
+  });
+
+  .desktop-only-mixin({
+    .cell-span-mixin(span; @desktop-grid-size);
+  });
+}
