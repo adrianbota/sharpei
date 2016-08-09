@@ -5,6 +5,11 @@
   .badge-size-mixin(md);
 }
 
+.badge-sm,
+.has-badge-sm[data-badge]:after {
+  .badge-size-mixin(sm);
+}
+
 .badge-lg,
 .has-badge-lg[data-badge]:after {
   .badge-size-mixin(lg);
@@ -12,6 +17,10 @@
 
 .has-badge-md[data-badge]:after {
   .badge-position-mixin(md);
+}
+
+.has-badge-sm[data-badge]:after {
+  .badge-position-mixin(sm);
 }
 
 .has-badge-lg[data-badge]:after {

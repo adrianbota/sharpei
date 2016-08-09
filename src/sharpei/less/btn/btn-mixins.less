@@ -9,6 +9,7 @@
   @height: ~"@{btn-@{size}-height}";
   @font-size: ~"@{btn-@{size}-font-size}";
   @icon-font-size: ~"@{btn-@{size}-icon-font-size}";
+  @icon-spacing: ~"@{btn-@{size}-icon-spacing}";
   @padding: ~"@{btn-@{size}-padding}";
 
   font-size: @font-size;
@@ -20,9 +21,13 @@
     font-size: @icon-font-size;
   }
 
-  // icon-only button has no padding
+  // icon-only button has no padding or space after the icon
   &:not(.btn-icon) {
     padding: 0 @padding;
+
+    [class*=icon] {
+      margin-right: @icon-spacing;
+    }
   }
 }
 

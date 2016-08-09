@@ -266,11 +266,15 @@ textarea {
 }
 .btn-md [class*=icon],
 .btn [class*=icon] {
-  font-size: 24px;
+  font-size: 18px;
 }
 .btn-md:not(.btn-icon),
 .btn:not(.btn-icon) {
   padding: 0 12px;
+}
+.btn-md:not(.btn-icon) [class*=icon],
+.btn:not(.btn-icon) [class*=icon] {
+  margin-right: 3px;
 }
 .btn-sm {
   font-size: 12px;
@@ -279,10 +283,13 @@ textarea {
   min-width: 24px;
 }
 .btn-sm [class*=icon] {
-  font-size: 18px;
+  font-size: 12px;
 }
 .btn-sm:not(.btn-icon) {
   padding: 0 9px;
+}
+.btn-sm:not(.btn-icon) [class*=icon] {
+  margin-right: 2px;
 }
 .btn-lg {
   font-size: 16px;
@@ -291,52 +298,55 @@ textarea {
   min-width: 56px;
 }
 .btn-lg [class*=icon] {
-  font-size: 36px;
+  font-size: 24px;
 }
 .btn-lg:not(.btn-icon) {
   padding: 0 24px;
 }
+.btn-lg:not(.btn-icon) [class*=icon] {
+  margin-right: 5px;
+}
 .btn-default {
-  background-color: rgba(158, 158, 158, 0.2);
+  background-color: rgba(153, 153, 170, 0.2);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default:focus:not(:hover):not(:active),
 .btn-state:focus + .btn-default:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(158, 158, 158, 0.2);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 .btn-default:hover {
-  background-color: rgba(158, 158, 158, 0.3);
+  background-color: rgba(153, 153, 170, 0.3);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default:active,
 .btn-default.active,
 .btn-state:checked + .btn-default {
-  background-color: rgba(158, 158, 158, 0.6);
+  background-color: rgba(153, 153, 170, 0.6);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-default:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(158, 158, 158, 0.5);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 .btn-default.disabled.disabled,
 .btn-default:disabled:disabled,
 .btn-state:disabled:disabled + .btn-default {
-  background-color: rgba(158, 158, 158, 0.2);
+  background-color: rgba(153, 153, 170, 0.2);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default.active.disabled.disabled,
 .btn-default.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-default {
-  background-color: rgba(158, 158, 158, 0.6);
+  background-color: rgba(153, 153, 170, 0.6);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent {
-  background-color: #4183d7;
+  background-color: #37c;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -345,14 +355,14 @@ textarea {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 .btn-accent:hover {
-  background-color: #2c75d2;
+  background-color: #2e6bb8;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent:active,
 .btn-accent.active,
 .btn-state:checked + .btn-accent {
-  background-color: #1b467e;
+  background-color: #193b66;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -363,19 +373,19 @@ textarea {
 .btn-accent.disabled.disabled,
 .btn-accent:disabled:disabled,
 .btn-state:disabled:disabled + .btn-accent {
-  background-color: #4183d7;
+  background-color: #37c;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent.active.disabled.disabled,
 .btn-accent.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-accent {
-  background-color: #1b467e;
+  background-color: #193b66;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy {
-  background-color: #ff4081;
+  background-color: #b75;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -384,14 +394,14 @@ textarea {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-candy:hover {
-  background-color: #ff2670;
+  background-color: #b06a46;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy:active,
 .btn-candy.active,
 .btn-state:checked + .btn-candy {
-  background-color: #c00041;
+  background-color: #673e29;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -402,19 +412,19 @@ textarea {
 .btn-candy.disabled.disabled,
 .btn-candy:disabled:disabled,
 .btn-state:disabled:disabled + .btn-candy {
-  background-color: #ff4081;
+  background-color: #b75;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy.active.disabled.disabled,
 .btn-candy.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-candy {
-  background-color: #c00041;
+  background-color: #673e29;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark {
-  background-color: rgba(158, 158, 158, 0.2);
+  background-color: rgba(153, 153, 170, 0.2);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -423,14 +433,14 @@ textarea {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 .btn-default-dark:hover {
-  background-color: rgba(158, 158, 158, 0.3);
+  background-color: rgba(153, 153, 170, 0.3);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark:active,
 .btn-default-dark.active,
 .btn-state:checked + .btn-default-dark {
-  background-color: rgba(158, 158, 158, 0.6);
+  background-color: rgba(153, 153, 170, 0.6);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -441,92 +451,92 @@ textarea {
 .btn-default-dark.disabled.disabled,
 .btn-default-dark:disabled:disabled,
 .btn-state:disabled:disabled + .btn-default-dark {
-  background-color: rgba(158, 158, 158, 0.2);
+  background-color: rgba(153, 153, 170, 0.2);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark.active.disabled.disabled,
 .btn-default-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-default-dark {
-  background-color: rgba(158, 158, 158, 0.6);
+  background-color: rgba(153, 153, 170, 0.6);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark {
-  background-color: #1f5293;
+  background-color: #1f477a;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark:focus:not(:hover):not(:active),
 .btn-state:focus + .btn-accent-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 .btn-accent-dark:hover {
-  background-color: #235ea8;
+  background-color: #24538f;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark:active,
 .btn-accent-dark.active,
 .btn-state:checked + .btn-accent-dark {
-  background-color: #5691db;
+  background-color: #4785d1;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-accent-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 .btn-accent-dark.disabled.disabled,
 .btn-accent-dark:disabled:disabled,
 .btn-state:disabled:disabled + .btn-accent-dark {
-  background-color: #1f5293;
+  background-color: #1f477a;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark.active.disabled.disabled,
 .btn-accent-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-accent-dark {
-  background-color: #5691db;
+  background-color: #4785d1;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark {
-  background-color: #c00041;
+  background-color: #673e29;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark:focus:not(:hover):not(:active),
 .btn-state:focus + .btn-candy-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 .btn-candy-dark:hover {
-  background-color: #d9004a;
+  background-color: #794931;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark:active,
 .btn-candy-dark.active,
 .btn-state:checked + .btn-candy-dark {
-  background-color: #ff4081;
+  background-color: #b75;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-candy-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
 }
 .btn-candy-dark.disabled.disabled,
 .btn-candy-dark:disabled:disabled,
 .btn-state:disabled:disabled + .btn-candy-dark {
-  background-color: #c00041;
+  background-color: #673e29;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark.active.disabled.disabled,
 .btn-candy-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-candy-dark {
-  background-color: #ff4081;
+  background-color: #b75;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -640,10 +650,18 @@ textarea {
 .badge,
 [data-badge]:after {
   font-size: 10px;
-  line-height: 17px;
-  height: 17px;
-  min-width: 17px;
-  padding: 0 5px;
+  line-height: 18px;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 6px;
+}
+.badge-sm,
+.has-badge-sm[data-badge]:after {
+  font-size: 8px;
+  line-height: 14px;
+  height: 14px;
+  min-width: 14px;
+  padding: 0 4px;
 }
 .badge-lg,
 .has-badge-lg[data-badge]:after {
@@ -655,8 +673,12 @@ textarea {
 }
 .has-badge-md[data-badge]:after,
 [data-badge]:after {
-  right: -8.5px;
-  top: -8.5px;
+  right: -9px;
+  top: -9px;
+}
+.has-badge-sm[data-badge]:after {
+  right: -7px;
+  top: -7px;
 }
 .has-badge-lg[data-badge]:after {
   right: -12px;
@@ -666,17 +688,17 @@ textarea {
 .has-badge-default[data-badge]:after,
 .badge,
 [data-badge]:after {
-  background-color: #9e9e9e;
+  background-color: #99a;
   color: white;
 }
 .badge-accent,
 .has-badge-accent[data-badge]:after {
-  background-color: #4183d7;
+  background-color: #37c;
   color: white;
 }
 .badge-candy,
 .has-badge-candy[data-badge]:after {
-  background-color: #ff4081;
+  background-color: #b75;
   color: white;
 }
 .badge-contrast,
@@ -694,8 +716,14 @@ textarea {
   max-width: 100%;
   position: relative;
 }
+.card-header {
+  border-bottom: 1px solid #eee;
+}
 .card-body {
   overflow: auto;
+}
+.card-footer {
+  border-top: 1px solid #eee;
 }
 .card-md .card-header,
 .card-md .card-body,
@@ -716,6 +744,10 @@ textarea {
   padding: 30px;
 }
 .card-dark {
-  background-color: #030306;
+  background-color: #202329;
   color: white;
+}
+.card-dark .card-header,
+.card-dark .card-footer {
+  border-color: #303339;
 }
