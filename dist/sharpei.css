@@ -13,8 +13,10 @@
 }
 html {
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 100%;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 1.4;
+  color: #223;
 }
 html,
 body {
@@ -22,7 +24,8 @@ body {
   padding: 0;
 }
 body {
-  padding: 20px;
+  font: inherit;
+  color: inherit;
   background: #eee;
 }
 hr {
@@ -48,6 +51,31 @@ fieldset {
 }
 textarea {
   resize: vertical;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin-top: 0;
+  padding: 0;
+}
+a {
+  color: #37c;
+  text-decoration: none;
+}
+a:hover {
+  color: #37c;
+  text-decoration: underline;
+}
+code {
+  font-family: monospace;
+  background: rgba(153, 153, 170, 0.2);
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0 3px;
 }
 .clearfix:after,
 .btn-group:after,
@@ -718,6 +746,14 @@ textarea {
 }
 .card-header {
   border-bottom: 1px solid #eee;
+}
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5,
+.card-header h6 {
+  margin-bottom: 0;
 }
 .card-body {
   overflow: auto;

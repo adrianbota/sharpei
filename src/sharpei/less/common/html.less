@@ -12,7 +12,9 @@
 }
 
 html {
-  .font-mixin(100%; 400);
+  .font-mixin(14px; 400);
+  line-height: 1.4;
+  color: #223;
 }
 
 html,
@@ -22,7 +24,8 @@ body {
 }
 
 body {
-  padding: 20px;
+  font: inherit;
+  color: inherit;
   background: #eee;
 }
 
@@ -52,4 +55,33 @@ fieldset {
 
 textarea {
   resize: vertical;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin-top: 0;
+  padding: 0;
+}
+
+a {
+  color: @accent-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: @accent-color;
+  text-decoration: underline;
+}
+
+code {
+  font-family: monospace;
+  background: fade(@default-color, 20%);
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0 3px;
 }
