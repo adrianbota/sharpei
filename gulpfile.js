@@ -13,7 +13,7 @@ gulp.task('less', function () {
 
   gulp.src('src/kitchen-sink/less/kitchen-sink.less')
     .pipe(less({ plugins: [autoprefix] }))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('.'))
     .pipe(browserSync.stream());
 });
 

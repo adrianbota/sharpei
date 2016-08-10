@@ -17,18 +17,18 @@
   height: @height;
   min-width: @height;
 
-  [class*=icon] {
+  .icon-inside-btn-mixin({
     font-size: @icon-font-size;
-  }
+  });
 
   // icon-only button has no padding or space after the icon
-  &:not(.btn-icon) {
+  .btn-not-btn-icon-mixin({
     padding: 0 @padding;
 
-    [class*=icon] {
+    .icon-inside-btn-mixin({
       margin-right: @icon-spacing;
-    }
-  }
+    });
+  });
 }
 
 // Create button spacing variations based on the list size
@@ -74,59 +74,115 @@
   @normal-highlight-color: ~"@{btn-@{theme}-normal-highlight-color}";
   @active-highlight-color: ~"@{btn-@{theme}-active-highlight-color}";
 
-  // normal state
-  background-color: @normal-background-color;
-  color: @normal-text-color;
-  .btn-focus-border-mixin(transparent);
+  .btn-normal-state-mixin({
+    background-color: @normal-background-color;
+    color: @normal-text-color;
+    .btn-focus-border-mixin(transparent);
+  });
 
-  // focus state
-  &:focus,
-  .btn-state:focus + & {
-    &:not(:hover):not(:active):not(.disabled) {
-      .btn-focus-border-mixin(@normal-highlight-color);
-    }
-  }
+  .btn-focus-state-mixin({
+    .btn-focus-border-mixin(@normal-highlight-color);
+  });
 
-  // hover state
-  &:hover {
+  .btn-hover-state-mixin({
     text-decoration: none;
     background-color: @hover-background-color;
     color: @hover-text-color;
     .btn-focus-border-mixin(transparent);
-  }
+  });
 
-  // active state
-  &:active,
-  &.active,
-  .btn-state:checked + & {
+  .btn-active-state-mixin({
     background-color: @active-background-color;
     color: @active-text-color;
     .btn-focus-border-mixin(transparent);
-  }
+  });
 
-  // active focus state
-  &.active:focus,
-  .btn-state:checked:focus + & {
-    &:not(:hover):not(:active) {
-      .btn-focus-border-mixin(@active-highlight-color);
-    }
-  }
+  .btn-active-focus-state-mixin({
+    .btn-focus-border-mixin(@active-highlight-color);
+  });
 
-  // disabled state
-  &.disabled.disabled,
-  &:disabled:disabled,
-  .btn-state:disabled:disabled + & {
+  .btn-disabled-state-mixin({
     background-color: @normal-background-color;
     color: @normal-text-color;
     .btn-focus-border-mixin(transparent);
-  }
+  });
 
-  // active disabled state
-  &.active.disabled.disabled,
-  &.active:disabled:disabled,
-  .btn-state:checked:disabled:disabled + & {
+  .btn-active-disabled-state-mixin({
     background-color: @active-background-color;
     color: @active-text-color;
     .btn-focus-border-mixin(transparent);
+  });
+}
+
+// Rules for normal button state
+.btn-normal-state-mixin(@rules) {
+  @rules();
+}
+
+// Rules for button focus state
+.btn-focus-state-mixin(@rules) {
+  &:focus,
+  .btn-state:focus + & {
+    &:not(:hover):not(:active):not(.disabled) {
+      @rules();
+    }
+  }
+}
+
+// Rules for button hover state
+.btn-hover-state-mixin(@rules) {
+  &:hover {
+    @rules();
+  }
+}
+
+// Rules for button active state
+.btn-active-state-mixin(@rules) {
+  &:active,
+  &.active,
+  .btn-state:checked + & {
+    @rules();
+  }
+}
+
+// Rules for button active focus state
+.btn-active-focus-state-mixin(@rules) {
+  &.active:focus,
+  .btn-state:checked:focus + & {
+    &:not(:hover):not(:active) {
+      @rules();
+    }
+  }
+}
+
+// Rules for button disabled state
+.btn-disabled-state-mixin(@rules) {
+  &.disabled.disabled,
+  &:disabled:disabled,
+  .btn-state:disabled:disabled + & {
+    @rules();
+  }
+}
+
+// Rules for button active disabled state
+.btn-active-disabled-state-mixin(@rules) {
+  &.active.disabled.disabled,
+  &.active:disabled:disabled,
+  .btn-state:checked:disabled:disabled + & {
+    @rules();
+  }
+}
+
+// Rules for buttons that are not icon button
+.btn-not-btn-icon-mixin(@rules) {
+  &:not(.btn-icon) {
+    @rules();
+  }
+}
+
+// Rules for the icon inside button
+.icon-inside-btn-mixin(@rules) {
+  [class*=icon] {
+    @rules();
   }
 }

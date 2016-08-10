@@ -29,21 +29,19 @@
   margin: 0;
   padding: 0;
 
-  &.disabled.disabled,
-  &:disabled:disabled,
-  .btn-state:disabled:disabled + & {
+  .btn-disabled-state-mixin({
     cursor: not-allowed;
     opacity: @btn-disabled-opacity;
-  }
+  });
 
   &.disabled.disabled:not(button):not(input) {
     pointer-events: none;
   }
 
-  [class*=icon] {
+  .icon-inside-btn-mixin({
     line-height: inherit;
     vertical-align: top;
-  }
+  });
 
   &:extend(.antialiased all);
   &:extend(.btn-rounded all);
