@@ -82,13 +82,14 @@
   // focus state
   &:focus,
   .btn-state:focus + & {
-    &:not(:hover):not(:active) {
+    &:not(:hover):not(:active):not(.disabled) {
       .btn-focus-border-mixin(@normal-highlight-color);
     }
   }
 
   // hover state
   &:hover {
+    text-decoration: none;
     background-color: @hover-background-color;
     color: @hover-text-color;
     .btn-focus-border-mixin(transparent);

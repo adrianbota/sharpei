@@ -26,13 +26,12 @@ body {
 body {
   font: inherit;
   color: inherit;
-  background: #eee;
 }
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #eee;
   margin: 1em 0;
   padding: 0;
 }
@@ -105,6 +104,7 @@ code {
 [data-badge]:after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
 }
 .text-left {
   text-align: left;
@@ -339,11 +339,12 @@ code {
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
-.btn-default:focus:not(:hover):not(:active),
-.btn-state:focus + .btn-default:not(:hover):not(:active) {
+.btn-default:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-default:not(:hover):not(:active):not(.disabled) {
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 .btn-default:hover {
+  text-decoration: none;
   background-color: rgba(153, 153, 170, 0.3);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
@@ -378,11 +379,12 @@ code {
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
-.btn-accent:focus:not(:hover):not(:active),
-.btn-state:focus + .btn-accent:not(:hover):not(:active) {
+.btn-accent:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-accent:not(:hover):not(:active):not(.disabled) {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 .btn-accent:hover {
+  text-decoration: none;
   background-color: #2e6bb8;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
@@ -417,11 +419,12 @@ code {
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
-.btn-candy:focus:not(:hover):not(:active),
-.btn-state:focus + .btn-candy:not(:hover):not(:active) {
+.btn-candy:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-candy:not(:hover):not(:active):not(.disabled) {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-candy:hover {
+  text-decoration: none;
   background-color: #997a4d;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
@@ -456,11 +459,12 @@ code {
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
-.btn-default-dark:focus:not(:hover):not(:active),
-.btn-state:focus + .btn-default-dark:not(:hover):not(:active) {
+.btn-default-dark:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-default-dark:not(:hover):not(:active):not(.disabled) {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 .btn-default-dark:hover {
+  text-decoration: none;
   background-color: rgba(153, 153, 170, 0.3);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
@@ -495,11 +499,12 @@ code {
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
-.btn-accent-dark:focus:not(:hover):not(:active),
-.btn-state:focus + .btn-accent-dark:not(:hover):not(:active) {
+.btn-accent-dark:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-accent-dark:not(:hover):not(:active):not(.disabled) {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
 }
 .btn-accent-dark:hover {
+  text-decoration: none;
   background-color: #24538f;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
@@ -534,11 +539,12 @@ code {
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
-.btn-candy-dark:focus:not(:hover):not(:active),
-.btn-state:focus + .btn-candy-dark:not(:hover):not(:active) {
+.btn-candy-dark:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-candy-dark:not(:hover):not(:active):not(.disabled) {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 .btn-candy-dark:hover {
+  text-decoration: none;
   background-color: #665233;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
@@ -677,7 +683,7 @@ code {
 .has-badge-md[data-badge]:after,
 .badge,
 [data-badge]:after {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 18px;
   height: 18px;
   min-width: 18px;
@@ -685,7 +691,7 @@ code {
 }
 .badge-sm,
 .has-badge-sm[data-badge]:after {
-  font-size: 8px;
+  font-size: 10px;
   line-height: 14px;
   height: 14px;
   min-width: 14px;
@@ -753,7 +759,9 @@ code {
 .card-header h4,
 .card-header h5,
 .card-header h6 {
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 .card-body {
   overflow: auto;
@@ -886,26 +894,26 @@ code {
 .preloader,
 .preloader:before,
 .preloader:after {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
 }
 .preloader-md:before,
 .preloader-md:after,
 .preloader:before,
 .preloader:after {
-  border-width: 2px;
+  border-width: 3px;
 }
 .preloader-sm,
 .preloader-sm:before,
 .preloader-sm:after {
-  width: 24px;
-  height: 24px;
-  border-radius: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
 }
 .preloader-sm:before,
 .preloader-sm:after {
-  border-width: 3px;
+  border-width: 2px;
 }
 .preloader-lg,
 .preloader-lg:before,
