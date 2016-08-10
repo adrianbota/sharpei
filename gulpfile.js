@@ -10,6 +10,11 @@ gulp.task('less', function () {
     .pipe(less({ plugins: [autoprefix] }))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
+
+  gulp.src('src/kitchen-sink/less/kitchen-sink.less')
+    .pipe(less({ plugins: [autoprefix] }))
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('html', function () {

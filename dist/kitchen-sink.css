@@ -1,0 +1,27 @@
+html {
+  background: #eee;
+}
+.kitchen-sink {
+  padding: 20px;
+}
+.sharpei-logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  box-shadow: 0 0 0 5px white;
+}
+.example {
+  margin-bottom: 20px;
+}
+.example:last-child {
+  margin-bottom: 0;
+}
+.light-bg,
+.dark-bg {
+  padding: 20px;
+}
+.dark-bg {
+  background: #19191c;
+}

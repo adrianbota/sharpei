@@ -9,179 +9,30 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="dist/sharpei.css">
-    <style>
-      html {
-        background: #eee;
-      }
-
-      .kitchen-sink {
-        padding: 20px;
-      }
-
-      .example {
-        margin-bottom: 20px;
-      }
-
-      .example:last-child {
-        margin-bottom: 0;
-      }
-
-      .light-bg,
-      .dark-bg {
-        padding: 20px;
-      }
-
-      .dark-bg {
-        background: #19191c;
-      }
-    </style>
+    <link rel="stylesheet" href="dist/kitchen-sink.css">
   </head>
   <body>
-
     <div class="kitchen-sink">
+      <img src="sharpei-logo.png" class="sharpei-logo" alt="sharpei">
+
       <div class="card example">
         <div class="card-header">
           <h2>Default Button</h2>
         </div>
         <div class="card-body">
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default">
-                Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark">
-                Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default active">
-                Button Active
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark active">
-                Button Active
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default" disabled>
-                Button Disabled
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark" disabled>
-                Button Disabled
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-sm">
-                Small Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-sm">
-                Small Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-lg">
-                Large Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-lg">
-                Large Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-square">
-                Square Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-square">
-                Square Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-pill">
-                Pill Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-pill">
-                Pill Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default">
-                <i class="material-icons">alarm</i> With Icon
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark">
-                <i class="material-icons">face</i> With Icon
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-icon">
-                <i class="material-icons">favorite_border</i>
-              </button>
-              <button type="button" class="btn btn-default btn-icon btn-pill">
-                <i class="material-icons">settings</i>
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-icon">
-                <i class="material-icons">star</i>
-              </button>
-              <button type="button" class="btn btn-default-dark btn-icon btn-pill">
-                <i class="material-icons">thumb_up</i>
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-group">
-              <button type="button" class="btn btn-default btn-icon">
-                <i class="material-icons">verified_user</i>
-              </button>
-              <button type="button" class="btn btn-default btn-icon">
-                <i class="material-icons">flag</i>
-              </button>
-              <button type="button" class="btn btn-default">
-                Group Item
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-group">
-              <button type="button" class="btn btn-default-dark btn-icon">
-                <i class="material-icons">volume_up</i>
-              </button>
-              <button type="button" class="btn btn-default-dark btn-icon">
-                <i class="material-icons">landscape</i>
-              </button>
-              <button type="button" class="btn btn-default-dark">
-                Group Item
-              </button>
-            </div>
-          </div>
+          @@include('kitchen-sink/fragments/btn-default.html')
+          @@include('kitchen-sink/fragments/btn-default-active.html')
+          @@include('kitchen-sink/fragments/btn-default-disabled.html')
+          @@include('kitchen-sink/fragments/btn-default-sm.html')
+          @@include('kitchen-sink/fragments/btn-default-lg.html')
+          @@include('kitchen-sink/fragments/btn-default-square.html')
+          @@include('kitchen-sink/fragments/btn-default-pill.html')
+          @@include('kitchen-sink/fragments/btn-default-with-icon.html')
+          @@include('kitchen-sink/fragments/btn-default-icon-only.html')
+          @@include('kitchen-sink/fragments/btn-default-group.html')
+          @@include('kitchen-sink/fragments/btn-default-v-group.html')
+          @@include('kitchen-sink/fragments/btn-default-toggle.html')
+          @@include('kitchen-sink/fragments/btn-default-options.html')
         </div>
       </div>
 
@@ -190,42 +41,9 @@
           <h2>Accent Button</h2>
         </div>
         <div class="card-body">
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-accent">
-                Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-accent-dark">
-                Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-accent active">
-                Button Active
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-accent-dark active">
-                Button Active
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-accent" disabled>
-                Button Disabled
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-accent-dark" disabled>
-                Button Disabled
-              </button>
-            </div>
-          </div>
+          @@include('kitchen-sink/fragments/btn-accent.html')
+          @@include('kitchen-sink/fragments/btn-accent-active.html')
+          @@include('kitchen-sink/fragments/btn-accent-disabled.html')
         </div>
       </div>
 
@@ -234,42 +52,18 @@
           <h2>Candy Button</h2>
         </div>
         <div class="card-body">
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-candy">
-                Button
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-candy-dark">
-                Button
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-candy active">
-                Button Active
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-candy-dark active">
-                Button Active
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-candy" disabled>
-                Button Disabled
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-candy-dark" disabled>
-                Button Disabled
-              </button>
-            </div>
-          </div>
+          @@include('kitchen-sink/fragments/btn-candy.html')
+          @@include('kitchen-sink/fragments/btn-candy-active.html')
+          @@include('kitchen-sink/fragments/btn-candy-disabled.html')
+        </div>
+      </div>
+
+      <div class="card example">
+        <div class="card-header">
+          <h2>Toggle</h2>
+        </div>
+        <div class="card-body">
+          @@include('kitchen-sink/fragments/toggle.html')
         </div>
       </div>
 
@@ -278,80 +72,11 @@
           <h2>Badge</h2>
         </div>
         <div class="card-body">
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default" data-badge="1">
-                Button with Badge
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark" data-badge="1567">
-                Button with Badge
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default has-badge-pill has-badge-accent" data-badge="238">
-                Button with Pill Badge
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark has-badge-pill has-badge-accent" data-badge="2">
-                Button with Pill Badge
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default has-badge-square has-badge-candy" data-badge="3">
-                Button with Square Badge
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark has-badge-square has-badge-candy" data-badge="32389">
-                Button with Square Badge
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-sm has-badge-sm" data-badge="47">
-                Button with Small Badge
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-sm has-badge-sm" data-badge="4">
-                Button with Small Badge
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <button type="button" class="btn btn-default btn-lg has-badge-lg" data-badge="5">
-                Button with Large Badge
-              </button>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-lg has-badge-lg" data-badge="53">
-                Button with Large Badge
-              </button>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <span class="badge">1</span>
-              <span class="badge badge-square">2</span>
-              <span class="badge badge-pill">3</span>
-              <span class="badge badge-sm">4</span>
-              <span class="badge badge-lg">5</span>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-lg has-badge-lg" data-badge="5">
-                Button with Large Badge
-              </button>
-            </div>
-          </div>
+          @@include('kitchen-sink/fragments/badge.html')
+          @@include('kitchen-sink/fragments/badge-pill.html')
+          @@include('kitchen-sink/fragments/badge-square.html')
+          @@include('kitchen-sink/fragments/badge-sm.html')
+          @@include('kitchen-sink/fragments/badge-lg.html')
         </div>
       </div>
 
@@ -360,30 +85,9 @@
           <h2>Preloader</h2>
         </div>
         <div class="card-body">
-          <div class="grid">
-            <div class="cell span-6 light-bg">
-              <span class="preloader preloader-default">Loading...</span>
-            </div>
-            <div class="cell span-6 dark-bg">
-              <span class="preloader preloader-default-dark">Loading...</span>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg">
-              <span class="preloader preloader-accent preloader-sm">Loading...</span>
-            </div>
-            <div class="cell span-6 dark-bg">
-              <span class="preloader preloader-accent-dark preloader-sm">Loading...</span>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg">
-              <span class="preloader preloader-candy preloader-lg">Loading...</span>
-            </div>
-            <div class="cell span-6 dark-bg">
-              <span class="preloader preloader-candy-dark preloader-lg">Loading...</span>
-            </div>
-          </div>
+          @@include('kitchen-sink/fragments/preloader.html')
+          @@include('kitchen-sink/fragments/preloader-sm.html')
+          @@include('kitchen-sink/fragments/preloader-lg.html')
         </div>
       </div>
     </div>

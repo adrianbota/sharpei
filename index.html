@@ -9,36 +9,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="dist/sharpei.css">
-    <style>
-      html {
-        background: #eee;
-      }
-
-      .kitchen-sink {
-        padding: 20px;
-      }
-
-      .example {
-        margin-bottom: 20px;
-      }
-
-      .example:last-child {
-        margin-bottom: 0;
-      }
-
-      .light-bg,
-      .dark-bg {
-        padding: 20px;
-      }
-
-      .dark-bg {
-        background: #19191c;
-      }
-    </style>
+    <link rel="stylesheet" href="dist/kitchen-sink.css">
   </head>
   <body>
-
     <div class="kitchen-sink">
+      <img src="sharpei-logo.png" class="sharpei-logo" alt="sharpei">
+
       <div class="card example">
         <div class="card-header">
           <h2>Default Button</h2>
@@ -56,6 +32,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default active">
@@ -68,6 +45,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default" disabled>
@@ -80,6 +58,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-sm">
@@ -92,6 +71,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-lg">
@@ -104,6 +84,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-square">
@@ -116,6 +97,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-pill">
@@ -128,6 +110,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default">
@@ -140,6 +123,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-icon">
@@ -158,6 +142,32 @@
               </button>
             </div>
           </div>
+
+          <div class="grid">
+            <div class="cell span-6 light-bg btn-v-group">
+              <button type="button" class="btn btn-default btn-icon">
+                <i class="material-icons">verified_user</i>
+              </button>
+              <button type="button" class="btn btn-default btn-icon">
+                <i class="material-icons">flag</i>
+              </button>
+              <button type="button" class="btn btn-default">
+                Group Item
+              </button>
+            </div>
+            <div class="cell span-6 dark-bg btn-v-group">
+              <button type="button" class="btn btn-default-dark btn-icon">
+                <i class="material-icons">volume_up</i>
+              </button>
+              <button type="button" class="btn btn-default-dark btn-icon">
+                <i class="material-icons">landscape</i>
+              </button>
+              <button type="button" class="btn btn-default-dark">
+                Group Item
+              </button>
+            </div>
+          </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-group">
               <button type="button" class="btn btn-default btn-icon">
@@ -182,6 +192,53 @@
               </button>
             </div>
           </div>
+
+          <div class="grid">
+            <div class="cell span-6 light-bg btn-list">
+              <label class="btn-state-label">
+                <input type="checkbox" class="btn-state">
+                <span class="btn btn-default">
+                  Toggle me
+                </span>
+              </label>
+            </div>
+            <div class="cell span-6 dark-bg btn-list">
+              <label class="btn-state-label">
+                <input type="checkbox" class="btn-state">
+                <span class="btn btn-default-dark">
+                  Toggle me
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="cell span-6 light-bg btn-group">
+              <label class="btn-state-label">
+                <input type="radio" checked class="btn-state" name="foo" value="yes">
+                <span class="btn btn-default btn-pill">Yes</span>
+              </label>
+              <label class="btn-state-label">
+                <input type="radio" class="btn-state" name="foo" value="no">
+                <span class="btn btn-default btn-pill">No</span>
+              </label>
+            </div>
+            <div class="cell span-6 dark-bg btn-list">
+              <label class="btn-state-label">
+                <input type="radio" checked class="btn-state" name="bar" value="yes">
+                <span class="btn btn-default-dark btn-pill btn-icon">
+                  <i class="material-icons">done</i>
+                </span>
+              </label>
+              <label class="btn-state-label">
+                <input type="radio" class="btn-state" name="bar" value="no">
+                <span class="btn btn-default-dark btn-pill btn-icon">
+                  <i class="material-icons">clear</i>
+                </span>
+              </label>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -202,6 +259,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-accent active">
@@ -214,6 +272,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-accent" disabled>
@@ -226,6 +285,7 @@
               </button>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -246,6 +306,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-candy active">
@@ -258,6 +319,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-candy" disabled>
@@ -270,6 +332,33 @@
               </button>
             </div>
           </div>
+
+        </div>
+      </div>
+
+      <div class="card example">
+        <div class="card-header">
+          <h2>Toggle</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid">
+            <div class="cell span-6 light-bg">
+              <label class="toggle toggle-default">
+                <input type="checkbox" class="toggle-state">
+                <span class="toggle-ui" role="presentation"></span>
+              </label>
+            </div>
+            <div class="cell span-6 dark-bg">
+              <label class="toggle toggle-default-dark">
+                <input type="checkbox" class="toggle-state">
+                <span class="toggle-ui" role="presentation">
+                  <span class="toggle-on-label">ON</span>
+                  <span class="toggle-off-label">OFF</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -290,6 +379,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default has-badge-pill has-badge-accent" data-badge="238">
@@ -302,6 +392,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default has-badge-square has-badge-candy" data-badge="3">
@@ -314,6 +405,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-sm has-badge-sm" data-badge="47">
@@ -326,6 +418,7 @@
               </button>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg btn-list">
               <button type="button" class="btn btn-default btn-lg has-badge-lg" data-badge="5">
@@ -338,20 +431,7 @@
               </button>
             </div>
           </div>
-          <div class="grid">
-            <div class="cell span-6 light-bg btn-list">
-              <span class="badge">1</span>
-              <span class="badge badge-square">2</span>
-              <span class="badge badge-pill">3</span>
-              <span class="badge badge-sm">4</span>
-              <span class="badge badge-lg">5</span>
-            </div>
-            <div class="cell span-6 dark-bg btn-list">
-              <button type="button" class="btn btn-default-dark btn-lg has-badge-lg" data-badge="5">
-                Button with Large Badge
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -368,6 +448,7 @@
               <span class="preloader preloader-default-dark">Loading...</span>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg">
               <span class="preloader preloader-accent preloader-sm">Loading...</span>
@@ -376,6 +457,7 @@
               <span class="preloader preloader-accent-dark preloader-sm">Loading...</span>
             </div>
           </div>
+
           <div class="grid">
             <div class="cell span-6 light-bg">
               <span class="preloader preloader-candy preloader-lg">Loading...</span>
@@ -384,6 +466,7 @@
               <span class="preloader preloader-candy-dark preloader-lg">Loading...</span>
             </div>
           </div>
+
         </div>
       </div>
     </div>
