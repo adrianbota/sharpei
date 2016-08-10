@@ -11,21 +11,18 @@
   background: #b3d4fc;
   text-shadow: none;
 }
-html {
-  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #223;
-}
 html,
 body {
   margin: 0;
   padding: 0;
 }
 body {
-  font: inherit;
-  color: inherit;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.8);
+  background: #e6e6ec;
 }
 hr {
   display: block;
@@ -62,11 +59,11 @@ h6 {
   padding: 0;
 }
 a {
-  color: #37c;
+  color: #e368d6;
   text-decoration: none;
 }
 a:hover {
-  color: #37c;
+  color: #e368d6;
   text-decoration: underline;
 }
 code {
@@ -104,7 +101,6 @@ code {
 [data-badge]:after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: geometricPrecision;
 }
 .text-left {
   text-align: left;
@@ -335,87 +331,87 @@ code {
   margin-right: 5px;
 }
 .btn-default {
-  background-color: rgba(153, 153, 170, 0.2);
+  background-color: rgba(153, 153, 170, 0.45);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default:focus:not(:hover):not(:active):not(.disabled),
 .btn-state:focus + .btn-default:not(:hover):not(:active):not(.disabled) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 .btn-default:hover {
   text-decoration: none;
-  background-color: rgba(153, 153, 170, 0.3);
+  background-color: rgba(153, 153, 170, 0.55);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default:active,
 .btn-default.active,
 .btn-state:checked + .btn-default {
-  background-color: rgba(153, 153, 170, 0.6);
+  background-color: rgba(153, 153, 170, 0.8);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-default:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 .btn-default.disabled.disabled,
 .btn-default:disabled:disabled,
 .btn-state:disabled:disabled + .btn-default {
-  background-color: rgba(153, 153, 170, 0.2);
+  background-color: rgba(153, 153, 170, 0.45);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default.active.disabled.disabled,
 .btn-default.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-default {
-  background-color: rgba(153, 153, 170, 0.6);
+  background-color: rgba(153, 153, 170, 0.8);
   color: black;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent {
-  background-color: #37c;
+  background-color: #e368d6;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent:focus:not(:hover):not(:active):not(.disabled),
 .btn-state:focus + .btn-accent:not(:hover):not(:active):not(.disabled) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-accent:hover {
   text-decoration: none;
-  background-color: #2e6bb8;
+  background-color: #df52d0;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent:active,
 .btn-accent.active,
 .btn-state:checked + .btn-accent {
-  background-color: #193b66;
+  background-color: #ac209d;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-accent:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-accent.disabled.disabled,
 .btn-accent:disabled:disabled,
 .btn-state:disabled:disabled + .btn-accent {
-  background-color: #37c;
+  background-color: #e368d6;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent.active.disabled.disabled,
 .btn-accent.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-accent {
-  background-color: #193b66;
+  background-color: #ac209d;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy {
-  background-color: #a85;
+  background-color: #52b875;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -425,14 +421,14 @@ code {
 }
 .btn-candy:hover {
   text-decoration: none;
-  background-color: #997a4d;
+  background-color: #46ab68;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy:active,
 .btn-candy.active,
 .btn-state:checked + .btn-candy {
-  background-color: #55442b;
+  background-color: #28623c;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -443,134 +439,134 @@ code {
 .btn-candy.disabled.disabled,
 .btn-candy:disabled:disabled,
 .btn-state:disabled:disabled + .btn-candy {
-  background-color: #a85;
+  background-color: #52b875;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy.active.disabled.disabled,
 .btn-candy.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-candy {
-  background-color: #55442b;
+  background-color: #28623c;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark {
-  background-color: rgba(153, 153, 170, 0.2);
+  background-color: rgba(153, 153, 170, 0.5);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark:focus:not(:hover):not(:active):not(.disabled),
 .btn-state:focus + .btn-default-dark:not(:hover):not(:active):not(.disabled) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 .btn-default-dark:hover {
   text-decoration: none;
-  background-color: rgba(153, 153, 170, 0.3);
+  background-color: rgba(153, 153, 170, 0.6);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark:active,
 .btn-default-dark.active,
 .btn-state:checked + .btn-default-dark {
-  background-color: rgba(153, 153, 170, 0.6);
+  background-color: rgba(153, 153, 170, 0.85);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-default-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 .btn-default-dark.disabled.disabled,
 .btn-default-dark:disabled:disabled,
 .btn-state:disabled:disabled + .btn-default-dark {
-  background-color: rgba(153, 153, 170, 0.2);
+  background-color: rgba(153, 153, 170, 0.5);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-default-dark.active.disabled.disabled,
 .btn-default-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-default-dark {
-  background-color: rgba(153, 153, 170, 0.6);
+  background-color: rgba(153, 153, 170, 0.85);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark {
-  background-color: #1f477a;
+  background-color: #c124b1;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark:focus:not(:hover):not(:active):not(.disabled),
 .btn-state:focus + .btn-accent-dark:not(:hover):not(:active):not(.disabled) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-accent-dark:hover {
   text-decoration: none;
-  background-color: #24538f;
+  background-color: #d728c4;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark:active,
 .btn-accent-dark.active,
 .btn-state:checked + .btn-accent-dark {
-  background-color: #4785d1;
+  background-color: #e77edc;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-accent-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-accent-dark.disabled.disabled,
 .btn-accent-dark:disabled:disabled,
 .btn-state:disabled:disabled + .btn-accent-dark {
-  background-color: #1f477a;
+  background-color: #c124b1;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-accent-dark.active.disabled.disabled,
 .btn-accent-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-accent-dark {
-  background-color: #4785d1;
+  background-color: #e77edc;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark {
-  background-color: #55442b;
+  background-color: #28623c;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark:focus:not(:hover):not(:active):not(.disabled),
 .btn-state:focus + .btn-candy-dark:not(:hover):not(:active):not(.disabled) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-candy-dark:hover {
   text-decoration: none;
-  background-color: #665233;
+  background-color: #307447;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark:active,
 .btn-candy-dark.active,
 .btn-state:checked + .btn-candy-dark {
-  background-color: #a85;
+  background-color: #52b875;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark.active:focus:not(:hover):not(:active),
 .btn-state:checked:focus + .btn-candy-dark:not(:hover):not(:active) {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 .btn-candy-dark.disabled.disabled,
 .btn-candy-dark:disabled:disabled,
 .btn-state:disabled:disabled + .btn-candy-dark {
-  background-color: #55442b;
+  background-color: #28623c;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
 .btn-candy-dark.active.disabled.disabled,
 .btn-candy-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-candy-dark {
-  background-color: #a85;
+  background-color: #52b875;
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -727,12 +723,12 @@ code {
 }
 .badge-accent,
 .has-badge-accent[data-badge]:after {
-  background-color: #37c;
+  background-color: #e368d6;
   color: white;
 }
 .badge-candy,
 .has-badge-candy[data-badge]:after {
-  background-color: #a85;
+  background-color: #52b875;
   color: white;
 }
 .badge-contrast,
@@ -741,6 +737,7 @@ code {
 }
 .card {
   background: white;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
 }
 .card,
 .card-header,
@@ -862,9 +859,6 @@ code {
   }
 }
 @keyframes preloader-animation {
-  from {
-    transform: rotate(0);
-  }
   to {
     transform: rotate(360deg);
   }
@@ -886,7 +880,7 @@ code {
   border: solid transparent;
 }
 .preloader:after {
-  animation: preloader-animation 0.6s linear infinite;
+  animation: preloader-animation 1s linear infinite;
 }
 .preloader-md,
 .preloader-md:before,
@@ -939,15 +933,15 @@ code {
   border-color: rgba(0, 0, 0, 0.1);
 }
 .preloader-accent:after {
-  border-top-color: #37c;
-  border-right-color: #37c;
+  border-top-color: #e368d6;
+  border-right-color: #e368d6;
 }
 .preloader-candy:before {
   border-color: rgba(0, 0, 0, 0.1);
 }
 .preloader-candy:after {
-  border-top-color: #a85;
-  border-right-color: #a85;
+  border-top-color: #52b875;
+  border-right-color: #52b875;
 }
 .preloader-default-dark:before {
   border-color: rgba(255, 255, 255, 0.1);
@@ -957,16 +951,16 @@ code {
   border-right-color: rgba(153, 153, 170, 0.5);
 }
 .preloader-accent-dark:before {
-  border-color: #24538f;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 .preloader-accent-dark:after {
-  border-top-color: #5c92d6;
-  border-right-color: #5c92d6;
+  border-top-color: #e368d6;
+  border-right-color: #e368d6;
 }
 .preloader-candy-dark:before {
-  border-color: #775f3c;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 .preloader-candy-dark:after {
-  border-top-color: #bba077;
-  border-right-color: #bba077;
+  border-top-color: #52b875;
+  border-right-color: #52b875;
 }

@@ -11,12 +11,6 @@
   text-shadow: none;
 }
 
-html {
-  .font-mixin(14px; 400);
-  line-height: 1.4;
-  color: #223;
-}
-
 html,
 body {
   margin: 0;
@@ -24,8 +18,10 @@ body {
 }
 
 body {
-  font: inherit;
-  color: inherit;
+  .font-mixin(14px; 400);
+  line-height: 1.4;
+  color: fade(black, 80%);;
+  background: #e6e6ec;
 }
 
 hr {

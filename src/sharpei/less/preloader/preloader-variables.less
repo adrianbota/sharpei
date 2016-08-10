@@ -1,4 +1,4 @@
-@preloader-animation-duration: 0.6s;
+@preloader-animation-duration: 1s;
 
 @preloader-md-width: 24px;
 @preloader-md-border-width: 3px;
@@ -21,8 +21,8 @@
 @preloader-default-dark-base-border-color: fade(white, 10%);
 @preloader-default-dark-spinner-border-color: fade(@default-color, 50%);
 
-@preloader-accent-dark-base-border-color: darken(@accent-color, 15%);
-@preloader-accent-dark-spinner-border-color: lighten(@accent-color, 10%);
+@preloader-accent-dark-base-border-color: fade(white, 20%);
+@preloader-accent-dark-spinner-border-color: @accent-color;
 
-@preloader-candy-dark-base-border-color: darken(@candy-color, 15%);
-@preloader-candy-dark-spinner-border-color: lighten(@candy-color, 10%);
+@preloader-candy-dark-base-border-color: fade(white, 20%);
+@preloader-candy-dark-spinner-border-color: @candy-color;
