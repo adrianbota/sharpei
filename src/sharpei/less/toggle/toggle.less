@@ -1,12 +1,33 @@
-@import '../common/variables';
-@import '../common/utils';
+@import (reference) '../common/utils';
+@import (reference) 'toggle-mixins';
+@import (reference) 'toggle-sizes';
+@import (reference) 'toggle-shapes';
+@import (reference) 'toggle-themes';
+
+.toggle,
+.toggle-ui,
+.toggle-on-label,
+.toggle-off-label {
+  font: inherit;
+}
 
 .toggle {
   font: inherit;
   display: inline-block;
+  position: relative;
   margin: 0;
   padding: 0;
+  user-select: none;
   cursor: pointer;
+
+  .toggle-disabled-state-mixin({
+    cursor: not-allowed;
+    opacity: @toggle-disabled-opacity;
+  });
+
+  &:extend(.antialiased all);
+  &:extend(.toggle-rounded all);
+  &:extend(.toggle-md all);
 }
 
 .toggle-state {
@@ -14,40 +35,45 @@
 }
 
 .toggle-ui {
-  display: inline-block;
-  width: 50px;
-  height: 25px;
+  display: block;
   position: relative;
-  background: @accent-color;
-  border-radius: 200px;
   overflow: hidden;
-  transition: 100ms ease-out;
+
+  &:after {
+    content: ' ';
+    overflow: hidden;
+    position: absolute;
+  }
+}
+
+.toggle-on-label,
+.toggle-off-label {
+  position: absolute;
+  text-align: center;
+}
+
+.toggle-state:not(:checked) + .toggle-ui .toggle-on-label,
+.toggle-state:checked + .toggle-ui .toggle-off-label {
+  opacity: 0;
+}
+
+.toggle-ui,
+.toggle-ui:after,
+.toggle-on-label,
+.toggle-off-label {
+  transition: 0.1s ease-out;
+}
+
+.toggle-ui {
   transition-property: background-color;
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 3px;
-    top: 3px;
-    background: white;
-    border-radius: 200px;
-    width: 19px;
-    height: 19px;
-    line-height: 19px;
-    text-indent: 22px;
-    transition: 100ms ease-out;
-    transition-property: background-color, transform;
+  &:after {
+    transition-property: box-shadow, background-color, transform;
+    will-change: box-shadow;
   }
 }
 
-.toggle-state:checked + .toggle-ui {
-  background: darken(@accent-color, 20%);
-
-  &:before {
-    transform: translateX(25px);
-  }
-}
-
-.toggle-state:focus + .toggle-ui {
-  box-shadow: inset 0 0 0 2px fade(black, 10%);
+.toggle-on-label,
+.toggle-off-label {
+  transition-property: color, transform, opacity;
 }

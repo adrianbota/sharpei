@@ -5,33 +5,32 @@
 // Create badge sizes
 // @size: md, lg
 .badge-size-mixin(@size) {
-  @height: ~"@{badge-@{size}-height}";
-  @font-size: ~"@{badge-@{size}-font-size}";
-  @padding: ~"@{badge-@{size}-padding}";
+  @height: "badge-@{size}-height";
+  @font-size: "badge-@{size}-font-size";
+  @padding: "badge-@{size}-padding";
 
-  font-size: @font-size;
-  line-height: @height;
-  height: @height;
-  min-width: @height;
-  padding: 0 @padding;
+  font-size: @@font-size;
+  line-height: @@height;
+  height: @@height;
+  min-width: @@height;
+  padding: 0 @@padding;
 }
 
 // Position badge according to size
 // @size: md, lg
 .badge-position-mixin(@size) {
-  @height-var: "badge-@{size}-height";
-  @height: @@height-var;
+  @height: "badge-@{size}-height";
 
-  right: -(@height / 2);
-  top: -(@height / 2);
+  right: -@@height / 2;
+  top: -@@height / 2;
 }
 
 // Create badge theme
 // @theme: default, accent, candy
 .badge-theme-mixin(@theme) {
-  @background-color: ~"@{badge-@{theme}-background-color}";
-  @text-color: ~"@{badge-@{theme}-text-color}";
+  @background-color: "badge-@{theme}-background-color";
+  @text-color: "badge-@{theme}-text-color";
 
-  background-color: @background-color;
-  color: @text-color;
+  background-color: @@background-color;
+  color: @@text-color;
 }

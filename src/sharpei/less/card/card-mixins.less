@@ -1,11 +1,11 @@
 @import (reference) 'card-variables';
 
 .card-size-mixin(@size) {
-  @padding: ~"@{card-@{size}-padding}";
+  @padding: "card-@{size}-padding";
 
   .card-header,
   .card-body,
   .card-footer {
-    padding: @padding;
+    padding: @@padding;
   }
 }

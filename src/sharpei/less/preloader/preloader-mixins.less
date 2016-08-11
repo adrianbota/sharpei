@@ -2,34 +2,34 @@
 
 // @size: md, sm, lg
 .preloader-size-mixin(@size) {
-  @width: ~"@{preloader-@{size}-width}";
-  @border-width: ~"@{preloader-@{size}-border-width}";
+  @width: "preloader-@{size}-width";
+  @border-width: "preloader-@{size}-border-width";
 
   &,
   &:before,
   &:after {
-    width: @width;
-    height: @width;
-    border-radius: @width;
+    width: @@width;
+    height: @@width;
+    border-radius: @@width;
   }
 
   &:before,
   &:after {
-    border-width: @border-width;
+    border-width: @@border-width;
   }
 }
 
 // @theme: default, accent, candy, default-dark, accent-dark, candy-dark
 .preloader-theme-mixin(@theme) {
-  @base-border-color: ~"@{preloader-@{theme}-base-border-color}";
-  @spinner-border-color: ~"@{preloader-@{theme}-spinner-border-color}";
+  @base-border-color: "preloader-@{theme}-base-border-color";
+  @spinner-border-color: "preloader-@{theme}-spinner-border-color";
 
   &:before {
-    border-color: @base-border-color;
+    border-color: @@base-border-color;
   }
 
   &:after {
-    border-top-color: @spinner-border-color;
-    border-right-color: @spinner-border-color;
+    border-top-color: @@spinner-border-color;
+    border-right-color: @@spinner-border-color;
   }
 }

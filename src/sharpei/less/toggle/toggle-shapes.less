@@ -1,0 +1,14 @@
+@import (reference) '../common/shapes';
+
+.toggle-ui {
+  &,
+  &:after {
+    .toggle-rounded & { &:extend(.rounded-shape all); }
+    .toggle-pill & { &:extend(.pill-shape all); }
+    .toggle-square & { &:extend(.square-shape all); }
+    .toggle-square-top & { &:extend(.square-top-shape all); }
+    .toggle-square-right & { &:extend(.square-right-shape all); }
+    .toggle-square-bottom & { &:extend(.square-bottom-shape all); }
+    .toggle-square-left & { &:extend(.square-left-shape all); }
+  }
+}

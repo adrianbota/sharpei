@@ -6,27 +6,27 @@
 // - Button sizes: btn-md, btn-sm, btn-lg
 // @size: md, sm, lg
 .btn-size-mixin(@size) {
-  @height: ~"@{btn-@{size}-height}";
-  @font-size: ~"@{btn-@{size}-font-size}";
-  @icon-font-size: ~"@{btn-@{size}-icon-font-size}";
-  @icon-spacing: ~"@{btn-@{size}-icon-spacing}";
-  @padding: ~"@{btn-@{size}-padding}";
+  @height: "btn-@{size}-height";
+  @font-size: "btn-@{size}-font-size";
+  @icon-font-size: "btn-@{size}-icon-font-size";
+  @icon-spacing: "btn-@{size}-icon-spacing";
+  @padding: "btn-@{size}-padding";
 
-  font-size: @font-size;
-  line-height: @height;
-  height: @height;
-  min-width: @height;
+  font-size: @@font-size;
+  line-height: @@height;
+  height: @@height;
+  min-width: @@height;
 
   .icon-inside-btn-mixin({
-    font-size: @icon-font-size;
+    font-size: @@icon-font-size;
   });
 
   // icon-only button has no padding or space after the icon
   .btn-not-btn-icon-mixin({
-    padding: 0 @padding;
+    padding: 0 @@padding;
 
     .icon-inside-btn-mixin({
-      margin-right: @icon-spacing;
+      margin-right: @@icon-spacing;
     });
   });
 }
@@ -35,11 +35,11 @@
 // - List sizes: btn-list-md, btn-list-sm, btn-list-lg)
 // @size: md, sm, lg
 .btn-list-size-mixin(@size) {
-  @spacing: ~"@{btn-list-@{size}-spacing}";
+  @spacing: "btn-list-@{size}-spacing";
 
   & > .btn:not(:last-child),
   .btn-state-label:not(:last-child) .btn {
-    margin-right: @spacing;
+    margin-right: @@spacing;
   }
 }
 
@@ -47,11 +47,11 @@
 // - List sizes: btn-v-list-md, btn-v-list-sm, btn-v-list-lg
 // @size: md, sm, lg
 .btn-v-list-size-mixin(@size) {
-  @spacing: ~"@{btn-v-list-@{size}-spacing}";
+  @spacing: "btn-v-list-@{size}-spacing";
 
   & > .btn:not(:last-child),
   .btn-state-label:not(:last-child) .btn {
-    margin-bottom: @spacing;
+    margin-bottom: @@spacing;
   }
 }
 
@@ -65,51 +65,51 @@
 // - dark themes look better on darker backgrounds
 // @theme: default, accent, candy, default-dark, accent-dark, candy-dark
 .btn-theme-mixin(@theme) {
-  @normal-background-color: ~"@{btn-@{theme}-normal-background-color}";
-  @hover-background-color: ~"@{btn-@{theme}-hover-background-color}";
-  @active-background-color: ~"@{btn-@{theme}-active-background-color}";
-  @normal-text-color: ~"@{btn-@{theme}-normal-text-color}";
-  @hover-text-color: ~"@{btn-@{theme}-hover-text-color}";
-  @active-text-color: ~"@{btn-@{theme}-active-text-color}";
-  @normal-highlight-color: ~"@{btn-@{theme}-normal-highlight-color}";
-  @active-highlight-color: ~"@{btn-@{theme}-active-highlight-color}";
+  @normal-background-color: "btn-@{theme}-normal-background-color";
+  @hover-background-color: "btn-@{theme}-hover-background-color";
+  @active-background-color: "btn-@{theme}-active-background-color";
+  @normal-text-color: "btn-@{theme}-normal-text-color";
+  @hover-text-color: "btn-@{theme}-hover-text-color";
+  @active-text-color: "btn-@{theme}-active-text-color";
+  @normal-highlight-color: "btn-@{theme}-normal-highlight-color";
+  @active-highlight-color: "btn-@{theme}-active-highlight-color";
 
   .btn-normal-state-mixin({
-    background-color: @normal-background-color;
-    color: @normal-text-color;
+    background-color: @@normal-background-color;
+    color: @@normal-text-color;
     .btn-focus-border-mixin(transparent);
   });
 
   .btn-focus-state-mixin({
-    .btn-focus-border-mixin(@normal-highlight-color);
+    .btn-focus-border-mixin(@@normal-highlight-color);
   });
 
   .btn-hover-state-mixin({
     text-decoration: none;
-    background-color: @hover-background-color;
-    color: @hover-text-color;
+    background-color: @@hover-background-color;
+    color: @@hover-text-color;
     .btn-focus-border-mixin(transparent);
   });
 
   .btn-active-state-mixin({
-    background-color: @active-background-color;
-    color: @active-text-color;
+    background-color: @@active-background-color;
+    color: @@active-text-color;
     .btn-focus-border-mixin(transparent);
   });
 
   .btn-active-focus-state-mixin({
-    .btn-focus-border-mixin(@active-highlight-color);
+    .btn-focus-border-mixin(@@active-highlight-color);
   });
 
   .btn-disabled-state-mixin({
-    background-color: @normal-background-color;
-    color: @normal-text-color;
+    background-color: @@normal-background-color;
+    color: @@normal-text-color;
     .btn-focus-border-mixin(transparent);
   });
 
   .btn-active-disabled-state-mixin({
-    background-color: @active-background-color;
-    color: @active-text-color;
+    background-color: @@active-background-color;
+    color: @@active-text-color;
     .btn-focus-border-mixin(transparent);
   });
 }

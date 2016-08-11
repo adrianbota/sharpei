@@ -1,0 +1,192 @@
+@import (reference) 'toggle-variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+
+// Create toggle sizes
+// @size: md, sm, lg
+.toggle-size-mixin(@size) {
+  @width: "toggle-@{size}-width";
+  @height: "toggle-@{size}-height";
+  @font-size: "toggle-@{size}-font-size";
+  @padding: "toggle-@{size}-padding";
+
+  width: @@width;
+  height: @@height;
+
+  .toggle-ui {
+    width: @@width;
+    height: @@height;
+
+    &:after {
+      width: @@height - 2 * @@padding;
+      height: @@height - 2 * @@padding;
+      left: @@padding;
+      top: @@padding;
+    }
+  }
+
+  .toggle-on-label,
+  .toggle-off-label {
+    width: @@width - @@height - @@padding;
+    height: @@height - 2 * @@padding;
+    line-height: @@height - 2 * @@padding;
+    font-size: @@font-size;
+    top: @@padding;
+  }
+
+  .toggle-on-label {
+    right: @@width;
+  }
+
+  .toggle-off-label {
+    left: @@height;
+  }
+
+  .toggle-state:checked + .toggle-ui {
+    &:after,
+    .toggle-on-label,
+    .toggle-off-label {
+      transform: translateX(@@width - @@height);
+    }
+  }
+
+  &.toggle-pill {
+    .toggle-on-label {
+      right: @@width - @@padding;
+    }
+
+    .toggle-off-label {
+      left: @@height - @@padding;
+    }
+  }
+}
+
+// Create toggle focus border using drop shadow
+// @color: focus border color
+.toggle-focus-border-mixin(@color) {
+  .inner-border-mixin(@toggle-highlight-width; @color);
+}
+
+// Create toggle theme
+// - dark themes look better on darker backgrounds
+// @theme: default, accent, candy, default-dark, accent-dark, candy-dark
+.toggle-theme-mixin(@theme) {
+  @normal-background-color: "toggle-@{theme}-normal-background-color";
+  @active-background-color: "toggle-@{theme}-active-background-color";
+  @normal-knob-color: "toggle-@{theme}-normal-knob-color";
+  @active-knob-color: "toggle-@{theme}-active-knob-color";
+  @normal-text-color: "toggle-@{theme}-normal-text-color";
+  @active-text-color: "toggle-@{theme}-active-text-color";
+  @normal-highlight-color: "toggle-@{theme}-normal-highlight-color";
+  @active-highlight-color: "toggle-@{theme}-active-highlight-color";
+
+  .toggle-normal-state-mixin({
+    background-color: @@normal-background-color;
+
+    &:after {
+      background-color: @@normal-knob-color;
+      .toggle-focus-border-mixin(fade(@@normal-highlight-color, 0%));
+    }
+
+    .toggle-on-label,
+    .toggle-off-label {
+      color: @@normal-text-color;
+    }
+  });
+
+  .toggle-focus-state-mixin({
+    &:after {
+      .toggle-focus-border-mixin(@@normal-highlight-color);
+    }
+  });
+
+  .toggle-active-state-mixin({
+    background-color: @@active-background-color;
+
+    &:after {
+      background-color: @@active-knob-color;
+      .toggle-focus-border-mixin(fade(@@active-highlight-color, 0%));
+    }
+
+    .toggle-on-label,
+    .toggle-off-label {
+      color: @@active-text-color;
+    }
+  });
+
+  .toggle-active-focus-state-mixin({
+    &:after {
+      .toggle-focus-border-mixin(@@active-highlight-color);
+    }
+  });
+
+  .toggle-disabled-state-mixin({
+    background-color: @@normal-background-color;
+
+    &:after {
+      background-color: @@normal-knob-color;
+      .toggle-focus-border-mixin(fade(@@normal-highlight-color, 0%));
+    }
+
+    .toggle-on-label,
+    .toggle-off-label {
+      color: @@normal-text-color;
+    }
+  });
+
+  .toggle-active-disabled-state-mixin({
+    background-color: @@active-background-color;
+
+    &:after {
+      background-color: @@active-knob-color;
+      .toggle-focus-border-mixin(fade(@@active-highlight-color, 0%));
+    }
+
+    .toggle-on-label,
+    .toggle-off-label {
+      color: @@active-text-color;
+    }
+  });
+}
+
+// Rules for normal toggle state
+.toggle-normal-state-mixin(@rules) {
+  .toggle-ui {
+    @rules();
+  }
+}
+
+// Rules for toggle focus state
+.toggle-focus-state-mixin(@rules) {
+  .toggle-state:focus + .toggle-ui:not(:hover) {
+    @rules();
+  }
+}
+
+// Rules for toggle active state
+.toggle-active-state-mixin(@rules) {
+  .toggle-state:checked + .toggle-ui {
+    @rules();
+  }
+}
+
+// Rules for toggle active focus state
+.toggle-active-focus-state-mixin(@rules) {
+  .toggle-state:checked:focus + .toggle-ui:not(:hover) {
+    @rules();
+  }
+}
+
+// Rules for toggle disabled state
+.toggle-disabled-state-mixin(@rules) {
+  .toggle-state:disabled:disabled + .toggle-ui {
+    @rules();
+  }
+}
+
+// Rules for toggle active disabled state
+.toggle-active-disabled-state-mixin(@rules) {
+  .toggle-state:checked:disabled:disabled + .toggle-ui {
+    @rules();
+  }
+}
