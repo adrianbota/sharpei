@@ -17,11 +17,17 @@ body {
   padding: 0;
 }
 
-body {
+html {
   .font-mixin(14px; 400);
   line-height: 1.4;
-  color: fade(black, 80%);;
+  color: fade(black, 80%);
   background: #e6e6ec;
+}
+
+body {
+  font: inherit;
+  color: inherit;
+  background: none;
 }
 
 hr {
