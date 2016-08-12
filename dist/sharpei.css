@@ -922,6 +922,10 @@ code {
   position: absolute;
   text-align: center;
 }
+.toggle-on-label [class*=icon],
+.toggle-off-label [class*=icon] {
+  line-height: inherit;
+}
 .toggle-state:not(:checked) + .toggle-ui .toggle-on-label,
 .toggle-state:checked + .toggle-ui .toggle-off-label {
   opacity: 0;
@@ -970,6 +974,12 @@ code {
   font-size: 14px;
   top: 3px;
 }
+.toggle-md .toggle-on-label [class*=icon],
+.toggle-md .toggle-off-label [class*=icon],
+.toggle .toggle-on-label [class*=icon],
+.toggle .toggle-off-label [class*=icon] {
+  font-size: 18px;
+}
 .toggle-md .toggle-on-label,
 .toggle .toggle-on-label {
   right: 70px;
@@ -1016,6 +1026,10 @@ code {
   font-size: 14px;
   top: 3px;
 }
+.toggle-sm .toggle-on-label [class*=icon],
+.toggle-sm .toggle-off-label [class*=icon] {
+  font-size: 14px;
+}
 .toggle-sm .toggle-on-label {
   right: 50px;
 }
@@ -1052,8 +1066,12 @@ code {
   width: 39px;
   height: 46px;
   line-height: 46px;
-  font-size: 14px;
+  font-size: 24px;
   top: 5px;
+}
+.toggle-lg .toggle-on-label [class*=icon],
+.toggle-lg .toggle-off-label [class*=icon] {
+  font-size: 24px;
 }
 .toggle-lg .toggle-on-label {
   right: 100px;
@@ -1131,7 +1149,7 @@ code {
 }
 .toggle-accent .toggle-ui .toggle-on-label,
 .toggle-accent .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-accent .toggle-state:focus + .toggle-ui:not(:hover):after {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
@@ -1159,7 +1177,7 @@ code {
 }
 .toggle-accent .toggle-state:disabled:disabled + .toggle-ui .toggle-on-label,
 .toggle-accent .toggle-state:disabled:disabled + .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-accent .toggle-state:checked:disabled:disabled + .toggle-ui {
   background-color: #ac209d;
@@ -1181,7 +1199,7 @@ code {
 }
 .toggle-candy .toggle-ui .toggle-on-label,
 .toggle-candy .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-candy .toggle-state:focus + .toggle-ui:not(:hover):after {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
@@ -1209,7 +1227,7 @@ code {
 }
 .toggle-candy .toggle-state:disabled:disabled + .toggle-ui .toggle-on-label,
 .toggle-candy .toggle-state:disabled:disabled + .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-candy .toggle-state:checked:disabled:disabled + .toggle-ui {
   background-color: #28623c;
@@ -1231,7 +1249,7 @@ code {
 }
 .toggle-default-dark .toggle-ui .toggle-on-label,
 .toggle-default-dark .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-default-dark .toggle-state:focus + .toggle-ui:not(:hover):after {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
@@ -1259,7 +1277,7 @@ code {
 }
 .toggle-default-dark .toggle-state:disabled:disabled + .toggle-ui .toggle-on-label,
 .toggle-default-dark .toggle-state:disabled:disabled + .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-default-dark .toggle-state:checked:disabled:disabled + .toggle-ui {
   background-color: rgba(153, 153, 170, 0.85);
@@ -1281,7 +1299,7 @@ code {
 }
 .toggle-accent-dark .toggle-ui .toggle-on-label,
 .toggle-accent-dark .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-accent-dark .toggle-state:focus + .toggle-ui:not(:hover):after {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
@@ -1309,7 +1327,7 @@ code {
 }
 .toggle-accent-dark .toggle-state:disabled:disabled + .toggle-ui .toggle-on-label,
 .toggle-accent-dark .toggle-state:disabled:disabled + .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-accent-dark .toggle-state:checked:disabled:disabled + .toggle-ui {
   background-color: #e77edc;
@@ -1331,7 +1349,7 @@ code {
 }
 .toggle-candy-dark .toggle-ui .toggle-on-label,
 .toggle-candy-dark .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-candy-dark .toggle-state:focus + .toggle-ui:not(:hover):after {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
@@ -1359,7 +1377,7 @@ code {
 }
 .toggle-candy-dark .toggle-state:disabled:disabled + .toggle-ui .toggle-on-label,
 .toggle-candy-dark .toggle-state:disabled:disabled + .toggle-ui .toggle-off-label {
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
 }
 .toggle-candy-dark .toggle-state:checked:disabled:disabled + .toggle-ui {
   background-color: #52b875;

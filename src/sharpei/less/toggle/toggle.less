@@ -50,6 +50,10 @@
 .toggle-off-label {
   position: absolute;
   text-align: center;
+
+  .icon-inside-toggle-mixin({
+    line-height: inherit;
+  });
 }
 
 .toggle-state:not(:checked) + .toggle-ui .toggle-on-label,

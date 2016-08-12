@@ -8,6 +8,7 @@
   @width: "toggle-@{size}-width";
   @height: "toggle-@{size}-height";
   @font-size: "toggle-@{size}-font-size";
+  @icon-font-size: "toggle-@{size}-icon-font-size";
   @padding: "toggle-@{size}-padding";
 
   width: @@width;
@@ -32,6 +33,10 @@
     line-height: @@height - 2 * @@padding;
     font-size: @@font-size;
     top: @@padding;
+
+    .icon-inside-toggle-mixin({
+      font-size: @@icon-font-size;
+    });
   }
 
   .toggle-on-label {
@@ -187,6 +192,13 @@
 // Rules for toggle active disabled state
 .toggle-active-disabled-state-mixin(@rules) {
   .toggle-state:checked:disabled:disabled + .toggle-ui {
+    @rules();
+  }
+}
+
+// Rules for the icon inside toggle
+.icon-inside-toggle-mixin(@rules) {
+  [class*=icon] {
     @rules();
   }
 }
