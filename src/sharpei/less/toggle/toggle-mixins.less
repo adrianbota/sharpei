@@ -87,10 +87,10 @@
 
   .toggle-normal-state-mixin({
     background-color: @@normal-background-color;
+    .toggle-focus-border-mixin(fade(@@normal-highlight-color, 0%));
 
     &:after {
       background-color: @@normal-knob-color;
-      .toggle-focus-border-mixin(fade(@@normal-highlight-color, 0%));
     }
 
     .toggle-on-label,
@@ -100,17 +100,15 @@
   });
 
   .toggle-focus-state-mixin({
-    &:after {
-      .toggle-focus-border-mixin(@@normal-highlight-color);
-    }
+    .toggle-focus-border-mixin(@@normal-highlight-color);
   });
 
   .toggle-active-state-mixin({
     background-color: @@active-background-color;
+    .toggle-focus-border-mixin(fade(@@active-highlight-color, 0%));
 
     &:after {
       background-color: @@active-knob-color;
-      .toggle-focus-border-mixin(fade(@@active-highlight-color, 0%));
     }
 
     .toggle-on-label,
@@ -120,17 +118,15 @@
   });
 
   .toggle-active-focus-state-mixin({
-    &:after {
-      .toggle-focus-border-mixin(@@active-highlight-color);
-    }
+    .toggle-focus-border-mixin(@@active-highlight-color);
   });
 
   .toggle-disabled-state-mixin({
     background-color: @@normal-background-color;
+    .toggle-focus-border-mixin(fade(@@normal-highlight-color, 0%));
 
     &:after {
       background-color: @@normal-knob-color;
-      .toggle-focus-border-mixin(fade(@@normal-highlight-color, 0%));
     }
 
     .toggle-on-label,
@@ -141,10 +137,10 @@
 
   .toggle-active-disabled-state-mixin({
     background-color: @@active-background-color;
+    .toggle-focus-border-mixin(fade(@@active-highlight-color, 0%));
 
     &:after {
       background-color: @@active-knob-color;
-      .toggle-focus-border-mixin(fade(@@active-highlight-color, 0%));
     }
 
     .toggle-on-label,
