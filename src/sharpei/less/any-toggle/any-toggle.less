@@ -4,7 +4,9 @@
 
 .any-toggle {
   font: inherit;
+  line-height: inherit;
   display: inline-block;
+  vertical-align: middle;
   position: relative;
   margin: 0;
   padding: 0;
@@ -15,10 +17,21 @@
     cursor: not-allowed;
     opacity: @any-toggle-disabled-opacity;
   });
+
+  .icon-inside-any-toggle-mixin({
+    line-height: inherit;
+    vertical-align: middle;
+  });
 }
 
 .any-toggle-state {
   &:extend(.visually-hidden all);
+}
+
+.any-toggle-label {
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: middle;
 }
 
 .any-toggle-hidden-item-mixin({

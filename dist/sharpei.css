@@ -899,6 +899,7 @@ code {
 .toggle {
   display: inline-block;
   position: relative;
+  vertical-align: middle;
   margin: 0;
   padding: 0;
   -webkit-user-select: none;
@@ -1396,7 +1397,9 @@ code {
 }
 .any-toggle {
   font: inherit;
+  line-height: inherit;
   display: inline-block;
+  vertical-align: middle;
   position: relative;
   margin: 0;
   padding: 0;
@@ -1409,6 +1412,19 @@ code {
 .any-toggle .any-toggle-state:disabled:disabled + .any-toggle-items {
   cursor: not-allowed;
   opacity: 0.4;
+}
+.any-toggle [class*=icon] {
+  line-height: inherit;
+  vertical-align: middle;
+}
+.any-toggle [class*=icon] {
+  line-height: inherit;
+  vertical-align: middle;
+}
+.any-toggle-label {
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: middle;
 }
 @keyframes preloader-animation {
   to {
