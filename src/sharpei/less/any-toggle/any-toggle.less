@@ -1,0 +1,26 @@
+@import (reference) '../common/utils';
+@import (reference) 'any-toggle-variables';
+@import (reference) 'any-toggle-mixins';
+
+.any-toggle {
+  font: inherit;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  cursor: pointer;
+
+  .any-toggle-disabled-state-mixin({
+    cursor: not-allowed;
+    opacity: @any-toggle-disabled-opacity;
+  });
+}
+
+.any-toggle-state {
+  &:extend(.visually-hidden all);
+}
+
+.any-toggle-hidden-item-mixin({
+  &:extend(.hidden all);
+});

@@ -1,0 +1,49 @@
+// Rules for any-toggle focus state
+.any-toggle-focus-state-mixin(@rules) {
+  .any-toggle-state:focus + .any-toggle-items:not(:hover) {
+    @rules();
+  }
+}
+
+// Rules for any-toggle active state
+.any-toggle-active-state-mixin(@rules) {
+  .any-toggle-state:checked + .any-toggle-items {
+    @rules();
+  }
+}
+
+// Rules for any-toggle active focus state
+.any-toggle-active-focus-state-mixin(@rules) {
+  .any-toggle-state:checked:focus + .any-toggle-items:not(:hover) {
+    @rules();
+  }
+}
+
+// Rules for any-toggle disabled state
+.any-toggle-disabled-state-mixin(@rules) {
+  .any-toggle-state:disabled:disabled + .any-toggle-items {
+    @rules();
+  }
+}
+
+// Rules for any-toggle active disabled state
+.any-toggle-active-disabled-state-mixin(@rules) {
+  .any-toggle-state:checked:disabled:disabled + .any-toggle-items {
+    @rules();
+  }
+}
+
+// Rules for the icon inside any-toggle
+.icon-inside-any-toggle-mixin(@rules) {
+  [class*=icon] {
+    @rules();
+  }
+}
+
+// Rules for the hidden item
+.any-toggle-hidden-item-mixin(@rules) {
+  .any-toggle-state:not(:checked) + .any-toggle-items .any-toggle-on-item,
+  .any-toggle-state:checked + .any-toggle-items .any-toggle-off-item {
+    @rules();
+  }
+}

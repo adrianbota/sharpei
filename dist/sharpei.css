@@ -124,12 +124,15 @@ code {
 }
 .hidden,
 .visibility-state,
-.visibility-state:not(:checked) + * {
+.visibility-state:not(:checked) + *,
+.any-toggle-state:not(:checked) + .any-toggle-items .any-toggle-on-item,
+.any-toggle-state:checked + .any-toggle-items .any-toggle-off-item {
   display: none;
 }
 .visually-hidden,
 .btn-state,
-.toggle-state {
+.toggle-state,
+.any-toggle-state {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -894,7 +897,6 @@ code {
   font-weight: 500;
 }
 .toggle {
-  font: inherit;
   display: inline-block;
   position: relative;
   margin: 0;
@@ -1391,6 +1393,22 @@ code {
 .toggle-candy-dark .toggle-state:checked:disabled:disabled + .toggle-ui .toggle-on-label,
 .toggle-candy-dark .toggle-state:checked:disabled:disabled + .toggle-ui .toggle-off-label {
   color: white;
+}
+.any-toggle {
+  font: inherit;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.any-toggle .any-toggle-state:disabled:disabled + .any-toggle-items {
+  cursor: not-allowed;
+  opacity: 0.4;
 }
 @keyframes preloader-animation {
   to {
