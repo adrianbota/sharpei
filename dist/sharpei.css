@@ -63,6 +63,10 @@ h6 {
   margin-top: 0;
   padding: 0;
 }
+p {
+  margin-top: 0;
+  padding: 0;
+}
 a {
   color: #e368d6;
   text-decoration: none;
@@ -907,6 +911,7 @@ code {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .toggle .toggle-state:disabled:disabled + .toggle-ui {
   cursor: not-allowed;
@@ -1408,6 +1413,7 @@ code {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .any-toggle .any-toggle-state:disabled:disabled + .any-toggle-items {
   cursor: not-allowed;
