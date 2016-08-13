@@ -24,10 +24,31 @@
   }
 
   .alert-close {
+    appearance: none;
+    font: inherit;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+    -webkit-tap-highlight-color: fade(black, 0%);
+    box-sizing: border-box;
+    width: auto;
+    margin: 0;
+    padding: 0;
     position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(50%, -50%);
+    right: 2px;
+    top: 2px;
+    opacity: 0.5;
+    transition: opacity 0.1s ease-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &:extend(.antialiased all);

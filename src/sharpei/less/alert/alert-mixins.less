@@ -6,6 +6,7 @@
 // @size: md, lg
 .alert-size-mixin(@size) {
   @font-size: "alert-@{size}-font-size";
+  @close-font-size: "alert-@{size}-close-font-size";
   @icon-font-size: "alert-@{size}-icon-font-size";
   @v-padding: "alert-@{size}-v-padding";
   @h-padding: "alert-@{size}-h-padding";
@@ -15,6 +16,18 @@
 
   [class*=icon] {
     font-size: @@icon-font-size;
+  }
+
+  .alert-close {
+    font-size: @@close-font-size;
+    line-height: @@close-font-size;
+    width: @@close-font-size;
+    height: @@close-font-size;
+
+    [class*=icon] {
+      font-size: @@close-font-size;
+      line-height: @@close-font-size;
+    }
   }
 }
 
