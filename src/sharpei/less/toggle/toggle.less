@@ -71,11 +71,11 @@
 }
 
 .toggle-ui {
-  transition-property: background-color;
+  transition-property: box-shadow, background-color;
+  will-change: box-shadow;
 
   &:after {
-    transition-property: box-shadow, background-color, transform;
-    will-change: box-shadow;
+    transition-property: background-color, transform;
   }
 }
 

@@ -1101,11 +1101,11 @@ code {
   transition: 0.1s ease-out;
 }
 .toggle-ui {
-  transition-property: background-color;
+  transition-property: box-shadow, background-color;
+  will-change: box-shadow;
 }
 .toggle-ui:after {
-  transition-property: box-shadow, background-color, transform;
-  will-change: box-shadow;
+  transition-property: background-color, transform;
 }
 .toggle-on-label,
 .toggle-off-label {
