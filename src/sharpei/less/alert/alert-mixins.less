@@ -1,0 +1,29 @@
+@import (reference) 'alert-variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+
+// Create alert sizes
+// @size: md, lg
+.alert-size-mixin(@size) {
+  @font-size: "alert-@{size}-font-size";
+  @icon-font-size: "alert-@{size}-icon-font-size";
+  @v-padding: "alert-@{size}-v-padding";
+  @h-padding: "alert-@{size}-h-padding";
+
+  font-size: @@font-size;
+  padding: @@v-padding @@h-padding;
+
+  [class*=icon] {
+    font-size: @@icon-font-size;
+  }
+}
+
+// Create alert theme
+// @theme: TODO
+.alert-theme-mixin(@theme) {
+  @background-color: "alert-@{theme}-background-color";
+  @text-color: "alert-@{theme}-text-color";
+
+  background-color: @@background-color;
+  color: @@text-color;
+}

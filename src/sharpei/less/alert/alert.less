@@ -1,0 +1,36 @@
+@import (reference) '../common/utils';
+@import (reference) 'alert-mixins';
+@import (reference) 'alert-sizes';
+
+.alert {
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+
+  [class*=icon] {
+    vertical-align: top;
+  }
+
+  .alert-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &:extend(.antialiased all);
+  &:extend(.alert-rounded all);
+  &:extend(.alert-md all);
+}

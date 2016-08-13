@@ -108,6 +108,7 @@ code {
 .btn,
 .badge,
 [data-badge]:after,
+.alert,
 .toggle {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -158,11 +159,13 @@ code {
 .badge-rounded,
 .has-badge-rounded[data-badge]:after,
 .card-rounded,
+.alert-rounded,
 .toggle-rounded .toggle-ui,
 .toggle-rounded .toggle-ui:after,
 .btn,
 .badge,
 [data-badge]:after,
+.alert,
 .toggle .toggle-ui,
 .toggle .toggle-ui:after {
   border-radius: 2px;
@@ -171,6 +174,7 @@ code {
 .btn-pill,
 .badge-pill,
 .has-badge-pill[data-badge]:after,
+.alert-pill,
 .toggle-pill .toggle-ui,
 .toggle-pill .toggle-ui:after {
   border-radius: 10000px;
@@ -179,6 +183,7 @@ code {
 .btn-square,
 .badge-square,
 .has-badge-square[data-badge]:after,
+.alert-square,
 .toggle-square .toggle-ui,
 .toggle-square .toggle-ui:after {
   border-radius: 0;
@@ -826,6 +831,98 @@ code {
 .card-dark .card-header,
 .card-dark .card-footer {
   border-color: #303339;
+}
+.alert {
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+}
+.alert [class*=icon] {
+  vertical-align: top;
+}
+.alert .alert-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+.alert-md,
+.alert {
+  font-size: 14px;
+  padding: 10px 15px;
+}
+.alert-md [class*=icon],
+.alert [class*=icon] {
+  font-size: 18px;
+}
+.alert-sm {
+  font-size: 12px;
+  padding: 5px 7px;
+}
+.alert-sm [class*=icon] {
+  font-size: 16px;
+}
+.alert-lg {
+  font-size: 18px;
+  padding: 20px 25px;
+}
+.alert-lg [class*=icon] {
+  font-size: 24px;
+}
+.alert-default {
+  background-color: rgba(153, 153, 170, 0.25);
+  color: rgba(0, 0, 0, 0.9);
+}
+.alert-default-dark {
+  background-color: rgba(153, 153, 170, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+}
+.alert-warning {
+  background-color: #cccc00;
+  color: rgba(0, 0, 0, 0.9);
+}
+.alert-warning-dark {
+  background-color: #cccc00;
+  color: rgba(0, 0, 0, 0.9);
+}
+.alert-error {
+  background-color: #ff3333;
+  color: white;
+}
+.alert-error-dark {
+  background-color: #ff3333;
+  color: white;
+}
+.alert-success {
+  background-color: #00b300;
+  color: white;
+}
+.alert-success-dark {
+  background-color: #00b300;
+  color: white;
+}
+.alert-info {
+  background-color: #9999ff;
+  color: white;
+}
+.alert-info-dark {
+  background-color: #9999ff;
+  color: white;
+}
+.alert-inline {
+  display: inline-block;
 }
 .grid .cell {
   width: 100%;
