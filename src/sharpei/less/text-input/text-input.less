@@ -1,0 +1,43 @@
+@import (reference) '../common/utils';
+@import (reference) 'text-input-mixins';
+@import (reference) 'text-input-sizes';
+
+.text-input {
+  appearance: none;
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  outline: none;
+  border: @text-input-border-width solid transparent;
+  background: transparent no-repeat;
+  color: inherit;
+  -webkit-tap-highlight-color: fade(black, 0%);
+  transition: 0.1s ease-out;
+  transition-property: border-color, background-color, color, opacity;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .text-input-disabled-state-mixin({
+    cursor: not-allowed;
+    opacity: @text-input-disabled-opacity;
+  });
+
+  &.disabled.disabled:not(button):not(input) {
+    pointer-events: none;
+  }
+
+  &:extend(.antialiased all);
+  &:extend(.text-input-rounded all);
+  &:extend(.text-input-md all);
+}

@@ -106,6 +106,7 @@ code {
 }
 .antialiased,
 .btn,
+.text-input,
 .badge,
 [data-badge]:after,
 .alert,
@@ -156,6 +157,7 @@ code {
 }
 .rounded-shape,
 .btn-rounded,
+.text-input-rounded,
 .badge-rounded,
 .has-badge-rounded[data-badge]:after,
 .card-rounded,
@@ -163,6 +165,7 @@ code {
 .toggle-rounded .toggle-ui,
 .toggle-rounded .toggle-ui:after,
 .btn,
+.text-input,
 .badge,
 [data-badge]:after,
 .alert,
@@ -172,6 +175,7 @@ code {
 }
 .pill-shape,
 .btn-pill,
+.text-input-pill,
 .badge-pill,
 .has-badge-pill[data-badge]:after,
 .alert-pill,
@@ -181,6 +185,7 @@ code {
 }
 .square-shape,
 .btn-square,
+.text-input-square,
 .badge-square,
 .has-badge-square[data-badge]:after,
 .alert-square,
@@ -190,6 +195,7 @@ code {
 }
 .square-top-shape,
 .btn-square-top,
+.text-input-square-top,
 .toggle-square-top .toggle-ui,
 .toggle-square-top .toggle-ui:after,
 .btn-v-group > .btn:not(:first-child),
@@ -199,6 +205,7 @@ code {
 }
 .square-right-shape,
 .btn-square-right,
+.text-input-square-right,
 .toggle-square-right .toggle-ui,
 .toggle-square-right .toggle-ui:after,
 .btn-group > .btn:not(:last-child),
@@ -208,6 +215,7 @@ code {
 }
 .square-bottom-shape,
 .btn-square-bottom,
+.text-input-square-bottom,
 .toggle-square-bottom .toggle-ui,
 .toggle-square-bottom .toggle-ui:after,
 .btn-v-group > .btn:not(:last-child),
@@ -217,6 +225,7 @@ code {
 }
 .square-left-shape,
 .btn-square-left,
+.text-input-square-left,
 .toggle-square-left .toggle-ui,
 .toggle-square-left .toggle-ui:after,
 .btn-group > .btn:not(:first-child),
@@ -681,6 +690,247 @@ code {
   margin: 0;
   padding: 0;
 }
+.text-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  border: 1px solid transparent;
+  background: transparent no-repeat;
+  color: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: 0.1s ease-out;
+  transition-property: border-color, background-color, color, opacity;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.text-input.disabled.disabled,
+.text-input:disabled:disabled,
+.text-input-state:disabled:disabled + .text-input {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.text-input.disabled.disabled:not(button):not(input) {
+  pointer-events: none;
+}
+.text-input-md,
+.text-input {
+  font-size: 14px;
+  min-width: 32px;
+  padding: 8px;
+  background-position: right 4px center;
+}
+.text-input-md:not(textarea):not(select[multiple]),
+.text-input:not(textarea):not(select[multiple]) {
+  line-height: 32px;
+  height: 32px;
+  padding: 0 8px;
+}
+.text-input-sm {
+  font-size: 12px;
+  min-width: 24px;
+  padding: 6px;
+  background-position: right 3px center;
+}
+.text-input-sm:not(textarea):not(select[multiple]) {
+  line-height: 24px;
+  height: 24px;
+  padding: 0 6px;
+}
+.text-input-lg {
+  font-size: 16px;
+  min-width: 56px;
+  padding: 16px;
+  background-position: right 8px center;
+}
+.text-input-lg:not(textarea):not(select[multiple]) {
+  line-height: 56px;
+  height: 56px;
+  padding: 0 16px;
+}
+.text-input-default {
+  background-color: rgba(153, 153, 170, 0.1);
+  border-color: rgba(153, 153, 170, 0.5);
+  color: rgba(0, 0, 0, 0.75);
+}
+select:not([multiple]).text-input-default {
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+}
+.text-input-default.error {
+  border-color: #c66;
+}
+.text-input-default::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default:focus:not(:active):not(.disabled),
+.text-input-state:focus + .text-input-default:not(:active):not(.disabled) {
+  background-color: rgba(153, 153, 170, 0.1);
+  border-color: rgba(153, 153, 170, 0.9);
+  color: rgba(0, 0, 0, 0.9);
+}
+select:not([multiple]).text-input-default:focus:not(:active):not(.disabled),
+select:not([multiple]).text-input-state:focus + .text-input-default:not(:active):not(.disabled) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.9)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.9)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+}
+.text-input-default:focus:not(:active):not(.disabled)::-webkit-input-placeholder,
+.text-input-state:focus + .text-input-default:not(:active):not(.disabled)::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default:focus:not(:active):not(.disabled)::-moz-placeholder,
+.text-input-state:focus + .text-input-default:not(:active):not(.disabled)::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default:focus:not(:active):not(.disabled):-ms-input-placeholder,
+.text-input-state:focus + .text-input-default:not(:active):not(.disabled):-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default:focus:not(:active):not(.disabled)::placeholder,
+.text-input-state:focus + .text-input-default:not(:active):not(.disabled)::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default.disabled.disabled,
+.text-input-default:disabled:disabled,
+.text-input-state:disabled:disabled + .text-input-default {
+  background-color: rgba(153, 153, 170, 0.1);
+  border-color: rgba(153, 153, 170, 0.5);
+  color: rgba(0, 0, 0, 0.75);
+}
+select:not([multiple]).text-input-default.disabled.disabled,
+select:not([multiple]).text-input-default:disabled:disabled,
+select:not([multiple]).text-input-state:disabled:disabled + .text-input-default {
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+}
+.text-input-default.disabled.disabled::-webkit-input-placeholder,
+.text-input-default:disabled:disabled::-webkit-input-placeholder,
+.text-input-state:disabled:disabled + .text-input-default::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default.disabled.disabled::-moz-placeholder,
+.text-input-default:disabled:disabled::-moz-placeholder,
+.text-input-state:disabled:disabled + .text-input-default::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default.disabled.disabled:-ms-input-placeholder,
+.text-input-default:disabled:disabled:-ms-input-placeholder,
+.text-input-state:disabled:disabled + .text-input-default:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default.disabled.disabled::placeholder,
+.text-input-default:disabled:disabled::placeholder,
+.text-input-state:disabled:disabled + .text-input-default::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+.text-input-default-dark {
+  background-color: rgba(153, 153, 170, 0.1);
+  border-color: rgba(153, 153, 170, 0.4);
+  color: rgba(255, 255, 255, 0.75);
+}
+select:not([multiple]).text-input-default-dark {
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+}
+.text-input-default-dark.error {
+  border-color: #933;
+}
+.text-input-default-dark::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark:focus:not(:active):not(.disabled),
+.text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled) {
+  background-color: rgba(153, 153, 170, 0.1);
+  border-color: rgba(153, 153, 170, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+}
+select:not([multiple]).text-input-default-dark:focus:not(:active):not(.disabled),
+select:not([multiple]).text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.8)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.8)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+}
+.text-input-default-dark:focus:not(:active):not(.disabled)::-webkit-input-placeholder,
+.text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled)::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark:focus:not(:active):not(.disabled)::-moz-placeholder,
+.text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled)::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark:focus:not(:active):not(.disabled):-ms-input-placeholder,
+.text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled):-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark:focus:not(:active):not(.disabled)::placeholder,
+.text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled)::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark.disabled.disabled,
+.text-input-default-dark:disabled:disabled,
+.text-input-state:disabled:disabled + .text-input-default-dark {
+  background-color: rgba(153, 153, 170, 0.1);
+  border-color: rgba(153, 153, 170, 0.4);
+  color: rgba(255, 255, 255, 0.75);
+}
+select:not([multiple]).text-input-default-dark.disabled.disabled,
+select:not([multiple]).text-input-default-dark:disabled:disabled,
+select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-dark {
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+}
+.text-input-default-dark.disabled.disabled::-webkit-input-placeholder,
+.text-input-default-dark:disabled:disabled::-webkit-input-placeholder,
+.text-input-state:disabled:disabled + .text-input-default-dark::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark.disabled.disabled::-moz-placeholder,
+.text-input-default-dark:disabled:disabled::-moz-placeholder,
+.text-input-state:disabled:disabled + .text-input-default-dark::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark.disabled.disabled:-ms-input-placeholder,
+.text-input-default-dark:disabled:disabled:-ms-input-placeholder,
+.text-input-state:disabled:disabled + .text-input-default-dark:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-default-dark.disabled.disabled::placeholder,
+.text-input-default-dark:disabled:disabled::placeholder,
+.text-input-state:disabled:disabled + .text-input-default-dark::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.text-input-block {
+  display: block;
+  width: 100%;
+}
 .badge,
 [data-badge]:after {
   letter-spacing: 0;
@@ -947,35 +1197,35 @@ code {
   color: rgba(255, 255, 255, 0.9);
 }
 .alert-warning {
-  background-color: #cccc00;
+  background-color: #cc3;
   color: rgba(0, 0, 0, 0.9);
 }
 .alert-warning-dark {
-  background-color: #cccc00;
+  background-color: #cc3;
   color: rgba(0, 0, 0, 0.9);
 }
 .alert-error {
-  background-color: #ff3333;
+  background-color: #c33;
   color: white;
 }
 .alert-error-dark {
-  background-color: #ff3333;
+  background-color: #c33;
   color: white;
 }
 .alert-success {
-  background-color: #00b300;
-  color: white;
+  background-color: #3c3;
+  color: rgba(0, 0, 0, 0.9);
 }
 .alert-success-dark {
-  background-color: #00b300;
-  color: white;
+  background-color: #3c3;
+  color: rgba(0, 0, 0, 0.9);
 }
 .alert-info {
-  background-color: #9999ff;
+  background-color: #66c;
   color: white;
 }
 .alert-info-dark {
-  background-color: #9999ff;
+  background-color: #66c;
   color: white;
 }
 .alert-inline {

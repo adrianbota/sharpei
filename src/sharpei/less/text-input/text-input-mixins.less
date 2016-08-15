@@ -1,0 +1,140 @@
+@import (reference) 'text-input-variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+
+// Create button sizes
+// - Button sizes: text-input-md, text-input-sm, text-input-lg
+// @size: md, sm, lg
+.text-input-size-mixin(@size) {
+  @height: "text-input-@{size}-height";
+  @font-size: "text-input-@{size}-font-size";
+  @padding: "text-input-@{size}-padding";
+
+  font-size: @@font-size;
+  min-width: @@height;
+  padding: @@padding;
+  background-position: right (@@padding / 2) center;
+
+  &:not(textarea):not(select[multiple]) {
+    line-height: @@height;
+    height: @@height;
+    padding: 0 @@padding;
+  }
+}
+
+.text-input-select-icon(@color) {
+  select:not([multiple])& {
+    background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="@{color}" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="@{color}" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+  }
+}
+
+// Create button theme
+// - dark themes look better on darker backgrounds
+// @theme: default, default-dark
+.text-input-theme-mixin(@theme) {
+  @normal-background-color: "text-input-@{theme}-normal-background-color";
+  @normal-border-color: "text-input-@{theme}-normal-border-color";
+  @normal-text-color: "text-input-@{theme}-normal-text-color";
+  @normal-placeholder-color: "text-input-@{theme}-normal-placeholder-color";
+  @error-border-color: "text-input-@{theme}-error-border-color";
+  @focus-background-color: "text-input-@{theme}-focus-background-color";
+  @focus-border-color: "text-input-@{theme}-focus-border-color";
+  @focus-text-color: "text-input-@{theme}-focus-text-color";
+  @focus-placeholder-color: "text-input-@{theme}-focus-placeholder-color";
+
+  .text-input-normal-state-mixin({
+    background-color: @@normal-background-color;
+    border-color: @@normal-border-color;
+    color: @@normal-text-color;
+    .text-input-select-icon(@@normal-border-color);
+
+    &.error {
+      border-color: @@error-border-color;
+    }
+
+    &::placeholder {
+      color: @@normal-placeholder-color;
+    }
+  });
+
+  .text-input-focus-state-mixin({
+    background-color: @@focus-background-color;
+    border-color: @@focus-border-color;
+    color: @@focus-text-color;
+    .text-input-select-icon(@@focus-border-color);
+
+    &::placeholder {
+      color: @@focus-placeholder-color;
+    }
+  });
+
+  .text-input-disabled-state-mixin({
+    background-color: @@normal-background-color;
+    border-color: @@normal-border-color;
+    color: @@normal-text-color;
+    .text-input-select-icon(@@normal-border-color);
+
+    &::placeholder {
+      color: @@normal-placeholder-color;
+    }
+  });
+}
+
+// Rules for normal button state
+.text-input-normal-state-mixin(@rules) {
+  @rules();
+}
+
+// Rules for button focus state
+.text-input-focus-state-mixin(@rules) {
+  &:focus,
+  .text-input-state:focus + & {
+    &:not(:active):not(.disabled) {
+      @rules();
+    }
+  }
+}
+
+// Rules for button hover state
+.text-input-hover-state-mixin(@rules) {
+  &:hover {
+    @rules();
+  }
+}
+
+// Rules for button active state
+.text-input-active-state-mixin(@rules) {
+  &:active,
+  &.active,
+  .text-input-state:checked + & {
+    @rules();
+  }
+}
+
+// Rules for button active focus state
+.text-input-active-focus-state-mixin(@rules) {
+  &.active:focus,
+  .text-input-state:checked:focus + & {
+    &:not(:active) {
+      @rules();
+    }
+  }
+}
+
+// Rules for button disabled state
+.text-input-disabled-state-mixin(@rules) {
+  &.disabled.disabled,
+  &:disabled:disabled,
+  .text-input-state:disabled:disabled + & {
+    @rules();
+  }
+}
+
+// Rules for button active disabled state
+.text-input-active-disabled-state-mixin(@rules) {
+  &.active.disabled.disabled,
+  &.active:disabled:disabled,
+  .text-input-state:checked:disabled:disabled + & {
+    @rules();
+  }
+}
