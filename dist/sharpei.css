@@ -635,7 +635,8 @@ code {
       -ms-user-select: none;
           user-select: none;
   outline: none;
-  border: 1px solid transparent;
+  border: 0 solid transparent;
+  border-bottom-width: 2px;
   background: transparent no-repeat;
   color: inherit;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -706,7 +707,7 @@ select:not([multiple]).text-input-lg {
 }
 .text-input-default {
   background-color: rgba(153, 153, 170, 0.1);
-  border-color: rgba(153, 153, 170, 0.5);
+  border-color: rgba(153, 153, 170, 0.3);
   color: rgba(0, 0, 0, 0.75);
 }
 select:not([multiple]).text-input-default {
@@ -729,13 +730,13 @@ select:not([multiple]).text-input-default {
 }
 .text-input-default:focus:not(:active):not(.disabled),
 .text-input-state:focus + .text-input-default:not(:active):not(.disabled) {
-  background-color: rgba(153, 153, 170, 0.1);
-  border-color: rgba(153, 153, 170, 0.9);
+  background-color: rgba(153, 153, 170, 0.2);
+  border-color: rgba(153, 153, 170, 0.5);
   color: rgba(0, 0, 0, 0.9);
 }
 select:not([multiple]).text-input-default:focus:not(:active):not(.disabled),
 select:not([multiple]).text-input-state:focus + .text-input-default:not(:active):not(.disabled) {
-  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.9)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.9)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
 }
 .text-input-default:focus:not(:active):not(.disabled)::-webkit-input-placeholder,
 .text-input-state:focus + .text-input-default:not(:active):not(.disabled)::-webkit-input-placeholder {
@@ -757,13 +758,13 @@ select:not([multiple]).text-input-state:focus + .text-input-default:not(:active)
 .text-input-default:disabled:disabled,
 .text-input-state:disabled:disabled + .text-input-default {
   background-color: rgba(153, 153, 170, 0.1);
-  border-color: rgba(153, 153, 170, 0.5);
+  border-color: rgba(153, 153, 170, 0.3);
   color: rgba(0, 0, 0, 0.75);
 }
 select:not([multiple]).text-input-default.disabled.disabled,
 select:not([multiple]).text-input-default:disabled:disabled,
 select:not([multiple]).text-input-state:disabled:disabled + .text-input-default {
-  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.5)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.3)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.3)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
 }
 .text-input-default.disabled.disabled::-webkit-input-placeholder,
 .text-input-default:disabled:disabled::-webkit-input-placeholder,
@@ -787,7 +788,7 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default 
 }
 .text-input-default-dark {
   background-color: rgba(153, 153, 170, 0.1);
-  border-color: rgba(153, 153, 170, 0.4);
+  border-color: rgba(153, 153, 170, 0.2);
   color: rgba(255, 255, 255, 0.75);
 }
 select:not([multiple]).text-input-default-dark {
@@ -810,13 +811,13 @@ select:not([multiple]).text-input-default-dark {
 }
 .text-input-default-dark:focus:not(:active):not(.disabled),
 .text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled) {
-  background-color: rgba(153, 153, 170, 0.1);
-  border-color: rgba(153, 153, 170, 0.8);
+  background-color: rgba(153, 153, 170, 0.2);
+  border-color: rgba(153, 153, 170, 0.4);
   color: rgba(255, 255, 255, 0.9);
 }
 select:not([multiple]).text-input-default-dark:focus:not(:active):not(.disabled),
 select:not([multiple]).text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled) {
-  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.8)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.8)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
 }
 .text-input-default-dark:focus:not(:active):not(.disabled)::-webkit-input-placeholder,
 .text-input-state:focus + .text-input-default-dark:not(:active):not(.disabled)::-webkit-input-placeholder {
@@ -838,13 +839,13 @@ select:not([multiple]).text-input-state:focus + .text-input-default-dark:not(:ac
 .text-input-default-dark:disabled:disabled,
 .text-input-state:disabled:disabled + .text-input-default-dark {
   background-color: rgba(153, 153, 170, 0.1);
-  border-color: rgba(153, 153, 170, 0.4);
+  border-color: rgba(153, 153, 170, 0.2);
   color: rgba(255, 255, 255, 0.75);
 }
 select:not([multiple]).text-input-default-dark.disabled.disabled,
 select:not([multiple]).text-input-default-dark:disabled:disabled,
 select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-dark {
-  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.4)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg width="8px" height="18px" viewBox="0 0 8 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(153, 153, 170, 0.2)" fill-rule="evenodd" points="0 7 4 0 8 7"></polygon><polygon stroke="none" fill="rgba(153, 153, 170, 0.2)" fill-rule="evenodd" points="0 11 4 18 8 11"></polygon></svg>');
 }
 .text-input-default-dark.disabled.disabled::-webkit-input-placeholder,
 .text-input-default-dark:disabled:disabled::-webkit-input-placeholder,
@@ -877,6 +878,7 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   text-align: center;
   text-decoration: none;
   text-transform: none;
+  text-overflow: ellipsis;
   outline: none;
   border: none;
   background: transparent;
@@ -1775,6 +1777,85 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   line-height: inherit;
   vertical-align: middle;
 }
+.checkbox,
+.radio {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 20px;
+  min-width: 20px;
+  vertical-align: middle;
+}
+.checkbox-ui,
+.radio-ui {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+}
+.checkbox-ui:before,
+.radio-ui:before {
+  content: " ";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(153, 153, 170, 0.3);
+  left: 0;
+  top: 0;
+}
+.checkbox-label,
+.radio-label {
+  display: inline-block;
+  line-height: 20px;
+  padding-left: 7px;
+}
+.checkbox-ui:before {
+  border-radius: 3px;
+}
+.radio-ui:before {
+  border-radius: 1000px;
+}
+.checkbox-ui:after,
+.radio-ui:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity 0.1s ease-out;
+}
+.checkbox-state:checked + .checkbox-ui:before,
+.radio-state:checked + .radio-ui:before {
+  background-color: rgba(153, 153, 170, 0.5);
+}
+.checkbox-ui:after,
+.radio-ui:after {
+  opacity: 0;
+}
+.checkbox:hover .checkbox-ui:after,
+.radio:hover .radio-ui:after {
+  opacity: 0.25;
+}
+.checkbox-state:checked + .checkbox-ui:after,
+.radio-state:checked + .radio-ui:after {
+  opacity: 1;
+}
+.checkbox-state + .checkbox-ui:after {
+  background: url('data:image/svg+xml;utf8,<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="rgba(255, 255, 255, 0.9)" fill-rule="evenodd" points="0 5 5 10 13 2 11 0 5 6 2 3"></polygon></svg>') no-repeat center;
+  background-size: contain;
+  width: 14px;
+  height: 14px;
+  margin: 3px;
+}
+.radio-state + .radio-ui:after {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1000px;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+}
 @keyframes preloader-animation {
   to {
     transform: rotate(360deg);
@@ -2081,7 +2162,9 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .visually-hidden,
 .btn-state,
 .toggle-state,
-.any-toggle-state {
+.any-toggle-state,
+.checkbox-state,
+.radio-state {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

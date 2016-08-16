@@ -1,0 +1,119 @@
+@import (reference) '../common/variables';
+
+.checkbox,
+.radio {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 20px;
+  min-width: 20px;
+  vertical-align: middle;
+}
+
+.checkbox-state,
+.radio-state {
+  &:extend(.visually-hidden all);
+}
+
+.checkbox-ui,
+.radio-ui {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+}
+
+.checkbox-ui,
+.radio-ui {
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: fade(@default-color, 30%);
+    left: 0;
+    top: 0;
+  }
+}
+
+.checkbox-label,
+.radio-label {
+  display: inline-block;
+  line-height: 20px;
+  padding-left: 7px;
+}
+
+.checkbox-ui {
+  &:before {
+    border-radius: 3px;
+  }
+}
+
+.radio-ui {
+  &:before {
+    border-radius: 1000px;
+  }
+}
+
+.checkbox-ui,
+.radio-ui {
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 0.1s ease-out;
+  }
+}
+
+.checkbox-state:checked + .checkbox-ui,
+.radio-state:checked + .radio-ui {
+  &:before {
+    background-color: fade(@default-color, 50%);
+  }
+}
+
+.checkbox-ui,
+.radio-ui {
+  &:after {
+    opacity: 0;
+  }
+}
+
+.checkbox:hover .checkbox-ui,
+.radio:hover .radio-ui {
+  &:after {
+    opacity: 0.25;
+  }
+}
+
+.checkbox-state:checked + .checkbox-ui,
+.radio-state:checked + .radio-ui {
+  &:after {
+    opacity: 1;
+  }
+}
+
+.checkbox-state + .checkbox-ui {
+  &:after {
+    @color: fade(white, 90%);
+    background: url('data:image/svg+xml;utf8,<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="@{color}" fill-rule="evenodd" points="0 5 5 10 13 2 11 0 5 6 2 3"></polygon></svg>') no-repeat center;
+    background-size: contain;
+    width: 14px;
+    height: 14px;
+    margin: 3px;
+  }
+}
+
+.radio-state + .radio-ui {
+  &:after {
+    background: fade(white, 90%);
+    border-radius: 1000px;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+  }
+}
