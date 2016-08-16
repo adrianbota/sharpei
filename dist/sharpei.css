@@ -664,7 +664,6 @@ code {
   font-size: 14px;
   min-width: 32px;
   padding: 8px;
-  background-position: right 4px center;
 }
 .text-input-md:not(textarea):not(select[multiple]),
 .text-input:not(textarea):not(select[multiple]) {
@@ -672,27 +671,38 @@ code {
   height: 32px;
   padding: 0 8px;
 }
+select:not([multiple]).text-input-md,
+select:not([multiple]).text-input {
+  background-position: right 8px center;
+  padding-right: 24px;
+}
 .text-input-sm {
   font-size: 12px;
   min-width: 24px;
   padding: 6px;
-  background-position: right 3px center;
 }
 .text-input-sm:not(textarea):not(select[multiple]) {
   line-height: 24px;
   height: 24px;
   padding: 0 6px;
 }
+select:not([multiple]).text-input-sm {
+  background-position: right 6px center;
+  padding-right: 20px;
+}
 .text-input-lg {
   font-size: 16px;
   min-width: 56px;
   padding: 16px;
-  background-position: right 8px center;
 }
 .text-input-lg:not(textarea):not(select[multiple]) {
   line-height: 56px;
   height: 56px;
   padding: 0 16px;
+}
+select:not([multiple]).text-input-lg {
+  background-position: right 16px center;
+  padding-right: 40px;
 }
 .text-input-default {
   background-color: rgba(153, 153, 170, 0.1);

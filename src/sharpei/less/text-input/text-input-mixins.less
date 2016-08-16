@@ -13,12 +13,16 @@
   font-size: @@font-size;
   min-width: @@height;
   padding: @@padding;
-  background-position: right (@@padding / 2) center;
 
   &:not(textarea):not(select[multiple]) {
     line-height: @@height;
     height: @@height;
     padding: 0 @@padding;
+  }
+
+  select:not([multiple])& {
+    background-position: right @@padding center;
+    padding-right: 2 * @@padding + 8px;
   }
 }
 
