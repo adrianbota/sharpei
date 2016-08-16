@@ -82,157 +82,6 @@ code {
   display: inline-block;
   padding: 0 3px;
 }
-.clearfix:after,
-.btn-group:after,
-.btn-list:after,
-.card-header:after,
-.card-body:after,
-.card-footer:after,
-.grid:after,
-.grid .cell:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.pull-left,
-.grid .cell {
-  float: left;
-}
-.pull-right {
-  float: right;
-}
-.antialiased,
-.btn,
-.text-input,
-.badge,
-[data-badge]:after,
-.alert,
-.toggle {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.text-left {
-  text-align: left;
-}
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.hidden,
-.visibility-state,
-.visibility-state:not(:checked) + *,
-.any-toggle-state:not(:checked) + .any-toggle-items .any-toggle-on-item,
-.any-toggle-state:checked + .any-toggle-items .any-toggle-off-item {
-  display: none;
-}
-.visually-hidden,
-.btn-state,
-.toggle-state,
-.any-toggle-state {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  opacity: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.invisible {
-  visibility: hidden;
-}
-.rounded-shape,
-.btn-rounded,
-.text-input-rounded,
-.badge-rounded,
-.has-badge-rounded[data-badge]:after,
-.card-rounded,
-.alert-rounded,
-.toggle-rounded .toggle-ui,
-.toggle-rounded .toggle-ui:after,
-.btn,
-.text-input,
-.badge,
-[data-badge]:after,
-.alert,
-.toggle .toggle-ui,
-.toggle .toggle-ui:after {
-  border-radius: 2px;
-}
-.pill-shape,
-.btn-pill,
-.text-input-pill,
-.badge-pill,
-.has-badge-pill[data-badge]:after,
-.alert-pill,
-.toggle-pill .toggle-ui,
-.toggle-pill .toggle-ui:after {
-  border-radius: 10000px;
-}
-.square-shape,
-.btn-square,
-.text-input-square,
-.badge-square,
-.has-badge-square[data-badge]:after,
-.alert-square,
-.toggle-square .toggle-ui,
-.toggle-square .toggle-ui:after {
-  border-radius: 0;
-}
-.square-top-shape,
-.btn-square-top,
-.text-input-square-top,
-.toggle-square-top .toggle-ui,
-.toggle-square-top .toggle-ui:after,
-.btn-v-group > .btn:not(:first-child),
-.btn-v-group .btn-state-label:not(:first-child) .btn {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.square-right-shape,
-.btn-square-right,
-.text-input-square-right,
-.toggle-square-right .toggle-ui,
-.toggle-square-right .toggle-ui:after,
-.btn-group > .btn:not(:last-child),
-.btn-group .btn-state-label:not(:last-child) .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.square-bottom-shape,
-.btn-square-bottom,
-.text-input-square-bottom,
-.toggle-square-bottom .toggle-ui,
-.toggle-square-bottom .toggle-ui:after,
-.btn-v-group > .btn:not(:last-child),
-.btn-v-group .btn-state-label:not(:last-child) .btn {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.square-left-shape,
-.btn-square-left,
-.text-input-square-left,
-.toggle-square-left .toggle-ui,
-.toggle-square-left .toggle-ui:after,
-.btn-group > .btn:not(:first-child),
-.btn-group .btn-state-label:not(:first-child) .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
 @media print {
   *,
   *:before,
@@ -419,6 +268,46 @@ code {
   color: rgba(0, 0, 0, 0.9);
   box-shadow: inset 0 0 0 2px transparent;
 }
+.btn-simple {
+  background-color: rgba(153, 153, 170, 0);
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-simple:not(:hover):not(:active):not(.disabled) {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.btn-simple:hover {
+  text-decoration: none;
+  background-color: rgba(153, 153, 170, 0.15);
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple:active,
+.btn-simple.active,
+.btn-state:checked + .btn-simple {
+  background-color: rgba(153, 153, 170, 0.3);
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple.active:focus:not(:hover):not(:active),
+.btn-state:checked:focus + .btn-simple:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.btn-simple.disabled.disabled,
+.btn-simple:disabled:disabled,
+.btn-state:disabled:disabled + .btn-simple {
+  background-color: rgba(153, 153, 170, 0);
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple.active.disabled.disabled,
+.btn-simple.active:disabled:disabled,
+.btn-state:checked:disabled:disabled + .btn-simple {
+  background-color: rgba(153, 153, 170, 0.3);
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 2px transparent;
+}
 .btn-accent {
   background-color: #e368d6;
   color: white;
@@ -536,6 +425,46 @@ code {
 .btn-default-dark.active:disabled:disabled,
 .btn-state:checked:disabled:disabled + .btn-default-dark {
   background-color: rgba(153, 153, 170, 0.85);
+  color: white;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple-dark {
+  background-color: rgba(153, 153, 170, 0);
+  color: white;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple-dark:focus:not(:hover):not(:active):not(.disabled),
+.btn-state:focus + .btn-simple-dark:not(:hover):not(:active):not(.disabled) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+.btn-simple-dark:hover {
+  text-decoration: none;
+  background-color: rgba(153, 153, 170, 0.15);
+  color: white;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple-dark:active,
+.btn-simple-dark.active,
+.btn-state:checked + .btn-simple-dark {
+  background-color: rgba(153, 153, 170, 0.3);
+  color: white;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple-dark.active:focus:not(:hover):not(:active),
+.btn-state:checked:focus + .btn-simple-dark:not(:hover):not(:active) {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+.btn-simple-dark.disabled.disabled,
+.btn-simple-dark:disabled:disabled,
+.btn-state:disabled:disabled + .btn-simple-dark {
+  background-color: rgba(153, 153, 170, 0);
+  color: white;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.btn-simple-dark.active.disabled.disabled,
+.btn-simple-dark.active:disabled:disabled,
+.btn-state:checked:disabled:disabled + .btn-simple-dark {
+  background-color: rgba(153, 153, 170, 0.3);
   color: white;
   box-shadow: inset 0 0 0 2px transparent;
 }
@@ -1941,4 +1870,214 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .preloader-candy-dark:after {
   border-top-color: #52b875;
   border-right-color: #52b875;
+}
+.table,
+.table-row,
+.table-cell,
+.table-header,
+.table-body,
+.table-footer {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  margin: 0;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  padding: 0;
+}
+.table-row {
+  padding: 0;
+  transition: 0.1s ease-out;
+  transition-property: background-color, color;
+}
+.table-cell {
+  text-align: left;
+  padding: 10px;
+}
+.table-header,
+.table-footer {
+  padding: 0;
+  background: rgba(153, 153, 170, 0.5);
+}
+.table-header .table-cell,
+.table-footer .table-cell {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.table-body .table-row {
+  background-color: rgba(153, 153, 170, 0.1);
+}
+.table-body .table-row:not(:last-child) {
+  border-bottom: 1px solid rgba(153, 153, 170, 0.2);
+}
+.table-alternate .table-row:nth-child(2n) {
+  background-color: rgba(153, 153, 170, 0.2);
+}
+.table-hilite .table-row:hover {
+  background-color: rgba(153, 153, 255, 0.2);
+}
+.table-hilite .table-row.active {
+  background-color: rgba(187, 187, 85, 0.2);
+}
+.table-body-viewport {
+  overflow: none;
+  overflow-y: auto;
+  max-height: 524px;
+}
+.rounded-shape,
+.btn-rounded,
+.text-input-rounded,
+.badge-rounded,
+.has-badge-rounded[data-badge]:after,
+.card-rounded,
+.alert-rounded,
+.toggle-rounded .toggle-ui,
+.toggle-rounded .toggle-ui:after,
+.btn,
+.text-input,
+.badge,
+[data-badge]:after,
+.alert,
+.toggle .toggle-ui,
+.toggle .toggle-ui:after {
+  border-radius: 2px;
+}
+.pill-shape,
+.btn-pill,
+.text-input-pill,
+.badge-pill,
+.has-badge-pill[data-badge]:after,
+.alert-pill,
+.toggle-pill .toggle-ui,
+.toggle-pill .toggle-ui:after {
+  border-radius: 10000px;
+}
+.square-shape,
+.btn-square,
+.text-input-square,
+.badge-square,
+.has-badge-square[data-badge]:after,
+.alert-square,
+.toggle-square .toggle-ui,
+.toggle-square .toggle-ui:after {
+  border-radius: 0;
+}
+.square-top-shape,
+.btn-square-top,
+.text-input-square-top,
+.toggle-square-top .toggle-ui,
+.toggle-square-top .toggle-ui:after,
+.btn-v-group > .btn:not(:first-child),
+.btn-v-group .btn-state-label:not(:first-child) .btn {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.square-right-shape,
+.btn-square-right,
+.text-input-square-right,
+.toggle-square-right .toggle-ui,
+.toggle-square-right .toggle-ui:after,
+.btn-group > .btn:not(:last-child),
+.btn-group .btn-state-label:not(:last-child) .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.square-bottom-shape,
+.btn-square-bottom,
+.text-input-square-bottom,
+.toggle-square-bottom .toggle-ui,
+.toggle-square-bottom .toggle-ui:after,
+.btn-v-group > .btn:not(:last-child),
+.btn-v-group .btn-state-label:not(:last-child) .btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.square-left-shape,
+.btn-square-left,
+.text-input-square-left,
+.toggle-square-left .toggle-ui,
+.toggle-square-left .toggle-ui:after,
+.btn-group > .btn:not(:first-child),
+.btn-group .btn-state-label:not(:first-child) .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.clearfix:after,
+.btn-group:after,
+.btn-list:after,
+.card-header:after,
+.card-body:after,
+.card-footer:after,
+.grid:after,
+.grid .cell:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.pull-left,
+.grid .cell {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.antialiased,
+.btn,
+.text-input,
+.badge,
+[data-badge]:after,
+.alert,
+.toggle {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hidden,
+.any-toggle-state:not(:checked) + .any-toggle-items .any-toggle-on-item,
+.any-toggle-state:checked + .any-toggle-items .any-toggle-off-item,
+.visibility-state,
+.visibility-state:not(:checked) + * {
+  display: none;
+}
+.visually-hidden,
+.btn-state,
+.toggle-state,
+.any-toggle-state {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  opacity: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.invisible {
+  visibility: hidden;
 }
