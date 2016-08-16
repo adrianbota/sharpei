@@ -1889,10 +1889,17 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   table-layout: fixed;
   padding: 0;
 }
+.table-action {
+  transition: 0.1s ease-out;
+  transition-property: opacity;
+}
 .table-row {
   padding: 0;
   transition: 0.1s ease-out;
   transition-property: background-color, color;
+}
+.table-row:not(:hover) .table-action {
+  opacity: 0;
 }
 .table-cell {
   text-align: left;
