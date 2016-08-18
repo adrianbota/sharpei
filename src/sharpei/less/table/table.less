@@ -1,31 +1,25 @@
+@import (reference) '../common/rules';
+
 .table,
 .table-row,
 .table-cell,
 .table-header,
 .table-body,
 .table-footer {
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: none;
-  margin: 0;
+  &:extend(.reset-element-rule all);
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  padding: 0;
 }
 
 .table-action {
-  transition: 0.1s ease-out;
   transition-property: opacity;
 }
 
 .table-row {
-  padding: 0;
-  transition: 0.1s ease-out;
   transition-property: background-color, color;
 
   &:not(:hover) {
@@ -36,20 +30,18 @@
 }
 
 .table-cell {
-  text-align: left;
+  &:extend(.text-left all);
   padding: 10px;
 }
 
 .table-header,
 .table-footer {
-  padding: 0;
   background: fade(@default-color, 50%);
 
   .table-cell {
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 

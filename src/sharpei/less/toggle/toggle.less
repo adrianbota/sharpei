@@ -1,4 +1,5 @@
 @import (reference) '../common/utils';
+@import (reference) '../common/rules';
 @import (reference) 'toggle-mixins';
 @import (reference) 'toggle-sizes';
 @import (reference) 'toggle-shapes';
@@ -8,31 +9,29 @@
 .toggle-ui,
 .toggle-on-label,
 .toggle-off-label {
-  font: inherit;
+  &:extend(.reset-element-rule all);
   font-weight: 500;
 }
 
 .toggle {
+  &:extend(.antialiased all);
+  &:extend(.toggle-rounded all);
+  &:extend(.toggle-md all);
+
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  margin: 0;
-  padding: 0;
   user-select: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: fade(black, 0%);
 
   .toggle-disabled-state-mixin({
     cursor: not-allowed;
     opacity: @toggle-disabled-opacity;
   });
-
-  &:extend(.antialiased all);
-  &:extend(.toggle-rounded all);
-  &:extend(.toggle-md all);
 }
 
 .toggle-state {
+  &:extend(.reset-element-rule all);
   &:extend(.visually-hidden all);
 }
 
@@ -50,8 +49,9 @@
 
 .toggle-on-label,
 .toggle-off-label {
+  &:extend(.text-center all);
+
   position: absolute;
-  text-align: center;
 
   .icon-inside-toggle-mixin({
     line-height: inherit;
@@ -61,13 +61,6 @@
 .toggle-state:not(:checked) + .toggle-ui .toggle-on-label,
 .toggle-state:checked + .toggle-ui .toggle-off-label {
   opacity: 0;
-}
-
-.toggle-ui,
-.toggle-ui:after,
-.toggle-on-label,
-.toggle-off-label {
-  transition: 0.1s ease-out;
 }
 
 .toggle-ui {

@@ -2,6 +2,7 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  transition: none 100ms ease-out;
 }
 ::-moz-selection {
   background: #b3d4fc;
@@ -133,38 +134,224 @@ code {
     page-break-after: avoid;
   }
 }
-.btn {
+.reset-element-rule,
+.btn,
+.text-input,
+.badge,
+[data-badge]:after,
+.alert,
+.alert .alert-close,
+.toggle,
+.toggle-ui,
+.toggle-on-label,
+.toggle-off-label,
+.toggle-state,
+.any-toggle,
+.any-toggle-state,
+.checkbox,
+.radio,
+.checkbox-state,
+.radio-state,
+.table,
+.table-row,
+.table-cell,
+.table-header,
+.table-body,
+.table-footer {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  background: transparent no-repeat center;
+  border: 0 solid transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: inherit;
   font: inherit;
-  font-weight: 500;
+  height: auto;
   letter-spacing: 0;
-  white-space: nowrap;
-  text-align: center;
+  line-height: inherit;
+  margin: 0;
+  max-width: 100%;
+  outline: 0 solid transparent;
+  padding: 0;
+  position: static;
+  text-align: left;
   text-decoration: none;
+  text-overflow: ellipsis;
   text-transform: none;
+  width: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rounded-shape,
+.btn-rounded,
+.text-input-rounded,
+.badge-rounded,
+.has-badge-rounded[data-badge]:after,
+.card-rounded,
+.alert-rounded,
+.toggle-rounded .toggle-ui,
+.toggle-rounded .toggle-ui:after,
+.btn,
+.text-input,
+.badge,
+[data-badge]:after,
+.alert,
+.toggle .toggle-ui,
+.toggle .toggle-ui:after {
+  border-radius: 2px;
+}
+.pill-shape,
+.btn-pill,
+.text-input-pill,
+.badge-pill,
+.has-badge-pill[data-badge]:after,
+.alert-pill,
+.toggle-pill .toggle-ui,
+.toggle-pill .toggle-ui:after {
+  border-radius: 10000px;
+}
+.square-shape,
+.btn-square,
+.text-input-square,
+.badge-square,
+.has-badge-square[data-badge]:after,
+.alert-square,
+.toggle-square .toggle-ui,
+.toggle-square .toggle-ui:after {
+  border-radius: 0;
+}
+.square-top-shape,
+.btn-square-top,
+.text-input-square-top,
+.toggle-square-top .toggle-ui,
+.toggle-square-top .toggle-ui:after,
+.btn-v-group > .btn:not(:first-child),
+.btn-v-group .btn-state-label:not(:first-child) .btn {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.square-right-shape,
+.btn-square-right,
+.text-input-square-right,
+.toggle-square-right .toggle-ui,
+.toggle-square-right .toggle-ui:after,
+.btn-group > .btn:not(:last-child),
+.btn-group .btn-state-label:not(:last-child) .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.square-bottom-shape,
+.btn-square-bottom,
+.text-input-square-bottom,
+.toggle-square-bottom .toggle-ui,
+.toggle-square-bottom .toggle-ui:after,
+.btn-v-group > .btn:not(:last-child),
+.btn-v-group .btn-state-label:not(:last-child) .btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.square-left-shape,
+.btn-square-left,
+.text-input-square-left,
+.toggle-square-left .toggle-ui,
+.toggle-square-left .toggle-ui:after,
+.btn-group > .btn:not(:first-child),
+.btn-group .btn-state-label:not(:first-child) .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.clearfix:after,
+.btn-group:after,
+.btn-list:after,
+.card-header:after,
+.card-body:after,
+.card-footer:after,
+.grid:after,
+.grid .cell:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.pull-left,
+.grid .cell {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.antialiased,
+.btn,
+.text-input,
+.badge,
+[data-badge]:after,
+.alert,
+.toggle {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.text-left,
+.table-cell {
+  text-align: left;
+}
+.text-center,
+.btn,
+.toggle-on-label,
+.toggle-off-label {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hidden,
+.visibility-state,
+.visibility-state:not(:checked) + *,
+.any-toggle-state:not(:checked) + .any-toggle-items .any-toggle-on-item,
+.any-toggle-state:checked + .any-toggle-items .any-toggle-off-item {
+  display: none;
+}
+.visually-hidden,
+.btn-state,
+.toggle-state,
+.any-toggle-state,
+.checkbox-state,
+.radio-state {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  opacity: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.invisible {
+  visibility: hidden;
+}
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  transition-property: box-shadow, background-color, color, opacity;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: 0.1s ease-out;
-  transition-property: box-shadow, background-color, color, opacity;
-  will-change: box-shadow;
-  position: relative;
   vertical-align: middle;
-  display: inline-block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+  white-space: nowrap;
+  will-change: box-shadow;
 }
 .btn.disabled.disabled,
 .btn:disabled:disabled,
@@ -620,32 +807,13 @@ code {
   padding: 0;
 }
 .text-input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  font: inherit;
   font-weight: 500;
-  letter-spacing: 0;
   white-space: nowrap;
-  text-align: left;
-  text-decoration: none;
-  text-transform: none;
-  outline: none;
-  border: 0 solid transparent;
   border-bottom-width: 2px;
-  background: transparent no-repeat;
-  color: inherit;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: 0.1s ease-out;
   transition-property: border-color, background-color, color, opacity;
   position: relative;
   vertical-align: middle;
   display: inline-block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
 }
 .text-input.disabled.disabled,
 .text-input:disabled:disabled,
@@ -866,24 +1034,11 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 }
 .badge,
 [data-badge]:after {
-  letter-spacing: 0;
   white-space: nowrap;
   text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  text-overflow: ellipsis;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
   vertical-align: middle;
   display: inline-block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 .badge {
   position: relative;
@@ -1017,52 +1172,26 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   border-color: #303339;
 }
 .alert {
-  letter-spacing: 0;
-  text-align: left;
-  text-decoration: none;
-  text-transform: none;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
   vertical-align: middle;
   position: relative;
   display: block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
-  margin: 0;
 }
 .alert [class*=icon] {
   vertical-align: top;
 }
 .alert .alert-close {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  font: inherit;
   line-height: 1;
-  text-decoration: none;
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  box-sizing: border-box;
-  width: auto;
-  margin: 0;
-  padding: 0;
   position: absolute;
   right: 2px;
   top: 2px;
   opacity: 0.5;
-  transition: opacity 0.1s ease-out;
+  transition-property: opacity;
 }
 .alert .alert-close:hover {
   opacity: 0.8;
@@ -1235,21 +1364,17 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .toggle-ui,
 .toggle-on-label,
 .toggle-off-label {
-  font: inherit;
   font-weight: 500;
 }
 .toggle {
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  margin: 0;
-  padding: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .toggle .toggle-state:disabled:disabled + .toggle-ui {
   cursor: not-allowed;
@@ -1268,7 +1393,6 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .toggle-on-label,
 .toggle-off-label {
   position: absolute;
-  text-align: center;
 }
 .toggle-on-label [class*=icon],
 .toggle-off-label [class*=icon] {
@@ -1277,12 +1401,6 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .toggle-state:not(:checked) + .toggle-ui .toggle-on-label,
 .toggle-state:checked + .toggle-ui .toggle-off-label {
   opacity: 0;
-}
-.toggle-ui,
-.toggle-ui:after,
-.toggle-on-label,
-.toggle-off-label {
-  transition: 0.1s ease-out;
 }
 .toggle-ui {
   transition-property: box-shadow, background-color;
@@ -1739,19 +1857,14 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   color: white;
 }
 .any-toggle {
-  font: inherit;
-  line-height: inherit;
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  margin: 0;
-  padding: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .any-toggle .any-toggle-state:disabled:disabled + .any-toggle-items {
   cursor: not-allowed;
@@ -1765,6 +1878,9 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   line-height: inherit;
   vertical-align: middle;
 }
+.any-toggle-items {
+  transition-property: opacity;
+}
 .any-toggle-label {
   display: inline-block;
   line-height: inherit;
@@ -1773,11 +1889,9 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .checkbox,
 .radio {
   display: inline-block;
-  margin: 0;
-  padding: 0;
-  position: relative;
   height: 20px;
   min-width: 20px;
+  position: relative;
   vertical-align: middle;
 }
 .checkbox-ui,
@@ -1951,43 +2065,25 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   border-top-color: #52b875;
   border-right-color: #52b875;
 }
-.table,
-.table-row,
-.table-cell,
-.table-header,
-.table-body,
-.table-footer {
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: none;
-  margin: 0;
-}
 .table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  padding: 0;
 }
 .table-action {
-  transition: 0.1s ease-out;
   transition-property: opacity;
 }
 .table-row {
-  padding: 0;
-  transition: 0.1s ease-out;
   transition-property: background-color, color;
 }
 .table-row:not(:hover) .table-action {
   opacity: 0;
 }
 .table-cell {
-  text-align: left;
   padding: 10px;
 }
 .table-header,
 .table-footer {
-  padding: 0;
   background: rgba(153, 153, 170, 0.5);
 }
 .table-header .table-cell,
@@ -1995,7 +2091,6 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .table-body .table-row {
   background-color: rgba(153, 153, 170, 0.1);
@@ -2016,157 +2111,4 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   overflow: none;
   overflow-y: auto;
   max-height: 524px;
-}
-.rounded-shape,
-.btn-rounded,
-.text-input-rounded,
-.badge-rounded,
-.has-badge-rounded[data-badge]:after,
-.card-rounded,
-.alert-rounded,
-.toggle-rounded .toggle-ui,
-.toggle-rounded .toggle-ui:after,
-.btn,
-.text-input,
-.badge,
-[data-badge]:after,
-.alert,
-.toggle .toggle-ui,
-.toggle .toggle-ui:after {
-  border-radius: 2px;
-}
-.pill-shape,
-.btn-pill,
-.text-input-pill,
-.badge-pill,
-.has-badge-pill[data-badge]:after,
-.alert-pill,
-.toggle-pill .toggle-ui,
-.toggle-pill .toggle-ui:after {
-  border-radius: 10000px;
-}
-.square-shape,
-.btn-square,
-.text-input-square,
-.badge-square,
-.has-badge-square[data-badge]:after,
-.alert-square,
-.toggle-square .toggle-ui,
-.toggle-square .toggle-ui:after {
-  border-radius: 0;
-}
-.square-top-shape,
-.btn-square-top,
-.text-input-square-top,
-.toggle-square-top .toggle-ui,
-.toggle-square-top .toggle-ui:after,
-.btn-v-group > .btn:not(:first-child),
-.btn-v-group .btn-state-label:not(:first-child) .btn {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.square-right-shape,
-.btn-square-right,
-.text-input-square-right,
-.toggle-square-right .toggle-ui,
-.toggle-square-right .toggle-ui:after,
-.btn-group > .btn:not(:last-child),
-.btn-group .btn-state-label:not(:last-child) .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.square-bottom-shape,
-.btn-square-bottom,
-.text-input-square-bottom,
-.toggle-square-bottom .toggle-ui,
-.toggle-square-bottom .toggle-ui:after,
-.btn-v-group > .btn:not(:last-child),
-.btn-v-group .btn-state-label:not(:last-child) .btn {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.square-left-shape,
-.btn-square-left,
-.text-input-square-left,
-.toggle-square-left .toggle-ui,
-.toggle-square-left .toggle-ui:after,
-.btn-group > .btn:not(:first-child),
-.btn-group .btn-state-label:not(:first-child) .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.clearfix:after,
-.btn-group:after,
-.btn-list:after,
-.card-header:after,
-.card-body:after,
-.card-footer:after,
-.grid:after,
-.grid .cell:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.pull-left,
-.grid .cell {
-  float: left;
-}
-.pull-right {
-  float: right;
-}
-.antialiased,
-.btn,
-.text-input,
-.badge,
-[data-badge]:after,
-.alert,
-.toggle {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.text-left {
-  text-align: left;
-}
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.hidden,
-.any-toggle-state:not(:checked) + .any-toggle-items .any-toggle-on-item,
-.any-toggle-state:checked + .any-toggle-items .any-toggle-off-item,
-.visibility-state,
-.visibility-state:not(:checked) + * {
-  display: none;
-}
-.visually-hidden,
-.btn-state,
-.toggle-state,
-.any-toggle-state,
-.checkbox-state,
-.radio-state {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  opacity: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-}
-.invisible {
-  visibility: hidden;
 }

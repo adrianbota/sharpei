@@ -1,47 +1,36 @@
 @import (reference) '../common/utils';
+@import (reference) '../common/rules';
 @import (reference) 'badge-mixins';
 @import (reference) 'badge-sizes';
 
 .badge,
 [data-badge]:after {
-  letter-spacing: 0;
+  &:extend(.reset-element-rule all);
+  &:extend(.antialiased all);
+
   white-space: nowrap;
   text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  text-overflow: ellipsis;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
   vertical-align: middle;
   display: inline-block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
-
-  &:extend(.antialiased all);
 }
 
 .badge {
-  position: relative;
-
   &:extend(.badge-rounded all);
   &:extend(.badge-md all);
   &:extend(.badge-default all);
+
+  position: relative;
 }
 
 [data-badge]:after {
-  content: attr(data-badge);
-  pointer-events: none;
-  position: absolute;
-
   &:extend(.has-badge-rounded[data-badge]:after all);
   &:extend(.has-badge-md[data-badge]:after all);
   &:extend(.has-badge-default[data-badge]:after all);
+
+  content: attr(data-badge);
+  pointer-events: none;
+  position: absolute;
 }
 
 .badge:empty,

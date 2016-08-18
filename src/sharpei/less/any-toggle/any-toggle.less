@@ -1,18 +1,16 @@
 @import (reference) '../common/utils';
+@import (reference) '../common/rules';
 @import (reference) 'any-toggle-variables';
 @import (reference) 'any-toggle-mixins';
 
 .any-toggle {
-  font: inherit;
-  line-height: inherit;
+  &:extend(.reset-element-rule all);
+
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  margin: 0;
-  padding: 0;
   user-select: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: fade(black, 0%);
 
   .any-toggle-disabled-state-mixin({
     cursor: not-allowed;
@@ -26,7 +24,12 @@
 }
 
 .any-toggle-state {
+  &:extend(.reset-element-rule all);
   &:extend(.visually-hidden all);
+}
+
+.any-toggle-items {
+  transition-property: opacity;
 }
 
 .any-toggle-label {

@@ -1,57 +1,37 @@
 @import (reference) '../common/utils';
+@import (reference) '../common/rules';
 @import (reference) 'alert-mixins';
 @import (reference) 'alert-sizes';
 
 .alert {
-  letter-spacing: 0;
-  text-align: left;
-  text-decoration: none;
-  text-transform: none;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
+  &:extend(.reset-element-rule all);
+  &:extend(.antialiased all);
+  &:extend(.alert-rounded all);
+  &:extend(.alert-md all);
+
   vertical-align: middle;
   position: relative;
   display: block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
-  margin: 0;
 
   [class*=icon] {
     vertical-align: top;
   }
 
   .alert-close {
-    appearance: none;
-    font: inherit;
+    &:extend(.reset-element-rule all);
+
     line-height: 1;
-    text-decoration: none;
     text-align: center;
     user-select: none;
     cursor: pointer;
-    outline: none;
-    border: none;
-    background: transparent;
-    color: inherit;
-    -webkit-tap-highlight-color: fade(black, 0%);
-    box-sizing: border-box;
-    width: auto;
-    margin: 0;
-    padding: 0;
     position: absolute;
     right: 2px;
     top: 2px;
     opacity: 0.5;
-    transition: opacity 0.1s ease-out;
+    transition-property: opacity;
 
     &:hover {
       opacity: 0.8;
     }
   }
-
-  &:extend(.antialiased all);
-  &:extend(.alert-rounded all);
-  &:extend(.alert-md all);
 }

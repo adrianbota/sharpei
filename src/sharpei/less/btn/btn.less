@@ -1,34 +1,24 @@
 @import (reference) '../common/utils';
+@import (reference) '../common/rules';
 @import (reference) 'btn-mixins';
 @import (reference) 'btn-sizes';
 
 .btn {
-  appearance: none;
-  font: inherit;
-  font-weight: 500;
-  letter-spacing: 0;
-  white-space: nowrap;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  user-select: none;
+  &:extend(.reset-element-rule all);
+  &:extend(.text-center all);
+  &:extend(.antialiased all);
+  &:extend(.btn-rounded all);
+  &:extend(.btn-md all);
+
   cursor: pointer;
-  outline: none;
-  border: none;
-  background: transparent;
-  color: inherit;
-  -webkit-tap-highlight-color: fade(black, 0%);
-  transition: 0.1s ease-out;
-  transition-property: box-shadow, background-color, color, opacity;
-  will-change: box-shadow;
-  position: relative;
-  vertical-align: middle;
   display: inline-block;
-  box-sizing: border-box;
-  width: auto;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+  font-weight: 500;
+  position: relative;
+  transition-property: box-shadow, background-color, color, opacity;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  will-change: box-shadow;
 
   .btn-disabled-state-mixin({
     cursor: not-allowed;
@@ -43,8 +33,4 @@
     line-height: inherit;
     vertical-align: top;
   });
-
-  &:extend(.antialiased all);
-  &:extend(.btn-rounded all);
-  &:extend(.btn-md all);
 }

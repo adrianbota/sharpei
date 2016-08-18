@@ -1,18 +1,21 @@
+@import (reference) '../common/utils';
+@import (reference) '../common/rules';
 @import (reference) '../common/variables';
 
 .checkbox,
 .radio {
+  &:extend(.reset-element-rule all);
+
   display: inline-block;
-  margin: 0;
-  padding: 0;
-  position: relative;
   height: 20px;
   min-width: 20px;
+  position: relative;
   vertical-align: middle;
 }
 
 .checkbox-state,
 .radio-state {
+  &:extend(.reset-element-rule all);
   &:extend(.visually-hidden all);
 }
 
