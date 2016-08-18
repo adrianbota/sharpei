@@ -630,10 +630,6 @@ code {
   text-align: left;
   text-decoration: none;
   text-transform: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   outline: none;
   border: 0 solid transparent;
   border-bottom-width: 2px;
@@ -668,7 +664,6 @@ code {
 }
 .text-input-md:not(textarea):not(select[multiple]),
 .text-input:not(textarea):not(select[multiple]) {
-  line-height: 32px;
   height: 32px;
   padding: 0 8px;
 }
@@ -683,7 +678,6 @@ select:not([multiple]).text-input {
   padding: 6px;
 }
 .text-input-sm:not(textarea):not(select[multiple]) {
-  line-height: 24px;
   height: 24px;
   padding: 0 6px;
 }
@@ -697,7 +691,6 @@ select:not([multiple]).text-input-sm {
   padding: 16px;
 }
 .text-input-lg:not(textarea):not(select[multiple]) {
-  line-height: 56px;
   height: 56px;
   padding: 0 16px;
 }
@@ -1833,10 +1826,6 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .checkbox-ui:after,
 .radio-ui:after {
   opacity: 0;
-}
-.checkbox:hover .checkbox-ui:after,
-.radio:hover .radio-ui:after {
-  opacity: 0.25;
 }
 .checkbox-state:checked + .checkbox-ui:after,
 .radio-state:checked + .radio-ui:after {
