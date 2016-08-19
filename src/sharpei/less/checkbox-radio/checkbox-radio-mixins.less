@@ -1,0 +1,172 @@
+@import (reference) 'checkbox-radio-variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+
+// Create checkbox/radio sizes
+// @size: md, sm, lg
+.checkbox-radio-size-mixin(@type; @size) {
+  @height: "checkbox-radio-@{size}-height";
+  @label-spacing: "checkbox-radio-@{size}-label-spacing";
+  @tick-size: "@{type}-@{size}-tick-size";
+
+  &,
+  .@{type}-ui {
+    min-width: @@height;
+    min-height: @@height;
+  }
+
+  .@{type}-ui {
+    padding-left: @@height;
+  }
+
+  .@{type}-ui:before {
+    width: @@height;
+    height: @@height;
+  }
+
+  .@{type}-ui:after {
+    width: @@tick-size;
+    height: @@tick-size;
+    margin: (@@height - @@tick-size) / 2;
+  }
+
+  .@{type}-label {
+    line-height: @@height;
+    padding-left: @@label-spacing;
+  }
+}
+
+// Create checkbox/radio focus border using drop shadow
+// @color: focus border color
+.checkbox-radio-focus-border-mixin(@color) {
+  .inner-border-mixin(1000px; @color);
+}
+
+.checkbox-radio-tick-color(@type; @color) when (@type = checkbox) {
+  background-image: url('data:image/svg+xml;utf8,<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon stroke="none" fill="@{color}" fill-rule="evenodd" points="0 5 5 10 13 2 11 0 5 6 2 3"></polygon></svg>');
+}
+
+.checkbox-radio-tick-color(@type; @color) when (@type = radio) {
+  background-color: @color;
+}
+
+// Create checkbox/radio theme
+// - dark themes look better on darker backgrounds
+// @theme: default, default-dark
+.checkbox-radio-theme-mixin(@type; @theme) {
+  @normal-background-color: "checkbox-radio-@{theme}-normal-background-color";
+  @normal-border-color: "checkbox-radio-@{theme}-normal-border-color";
+  @active-background-color: "checkbox-radio-@{theme}-active-background-color";
+  @active-border-color: "checkbox-radio-@{theme}-active-border-color";
+  @tick-color: "checkbox-radio-@{theme}-tick-color";
+  @normal-highlight-color: "checkbox-radio-@{theme}-normal-highlight-color";
+  @active-highlight-color: "checkbox-radio-@{theme}-active-highlight-color";
+
+  .checkbox-radio-normal-state-mixin(@type; {
+    &:before {
+      background-color: @@normal-background-color;
+      border-color: @@normal-border-color;
+      .checkbox-radio-focus-border-mixin(transparent);
+    }
+
+    &:after {
+      .checkbox-radio-tick-color(@type; @@tick-color);
+    }
+  });
+
+  .checkbox-radio-focus-state-mixin(@type; {
+    &:before {
+      .checkbox-radio-focus-border-mixin(@@normal-highlight-color);
+    }
+  });
+
+  .checkbox-radio-active-state-mixin(@type; {
+    &:before {
+      background-color: @@active-background-color;
+      border-color: @@active-border-color;
+      .checkbox-radio-focus-border-mixin(transparent);
+    }
+
+    &:after {
+      .checkbox-radio-tick-color(@type; @@tick-color);
+      opacity: 1;
+    }
+  });
+
+  .checkbox-radio-active-focus-state-mixin(@type; {
+    &:before {
+      .checkbox-radio-focus-border-mixin(@@active-highlight-color);
+    }
+  });
+
+  .checkbox-radio-disabled-state-mixin(@type; {
+    &:before {
+      background-color: @@normal-background-color;
+      border-color: @@normal-border-color;
+      .checkbox-radio-focus-border-mixin(transparent);
+    }
+
+    &:after {
+      .checkbox-radio-tick-color(@type; @@tick-color);
+    }
+  });
+
+  .checkbox-radio-active-disabled-state-mixin(@type; {
+    &:before {
+      background-color: @@active-background-color;
+      border-color: @@active-border-color;
+      .checkbox-radio-focus-border-mixin(transparent);
+    }
+
+    &:after {
+      .checkbox-radio-tick-color(@type; @@tick-color);
+      opacity: 1;
+    }
+  });
+}
+
+// Rules for normal checkbox/radio state
+.checkbox-radio-normal-state-mixin(@type; @rules) {
+  .@{type}-ui {
+    @rules();
+  }
+}
+
+// Rules for checkbox/radio focus state
+.checkbox-radio-focus-state-mixin(@type; @rules) {
+  .@{type}-state:focus + .@{type}-ui {
+    &:not(:hover):not(:active) {
+      @rules();
+    }
+  }
+}
+
+// Rules for checkbox/radio active state
+.checkbox-radio-active-state-mixin(@type; @rules) {
+  .@{type}-state:checked + .@{type}-ui {
+    @rules();
+  }
+}
+
+// Rules for checkbox/radio active focus state
+.checkbox-radio-active-focus-state-mixin(@type; @rules) {
+  .@{type}-state:checked:focus + .@{type}-ui {
+    &:not(:hover):not(:active) {
+      @rules();
+    }
+  }
+}
+
+// Rules for checkbox/radio disabled state
+.checkbox-radio-disabled-state-mixin(@type; @rules) {
+  .@{type}-state:disabled:disabled + .@{type}-ui {
+    @rules();
+  }
+}
+
+// Rules for checkbox/radio active disabled state
+.checkbox-radio-active-disabled-state-mixin(@type; @rules) {
+  .@{type}-state:checked:disabled:disabled + .@{type}-ui {
+    @rules();
+  }
+}

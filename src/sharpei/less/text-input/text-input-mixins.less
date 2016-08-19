@@ -39,20 +39,27 @@
   @normal-border-color: "text-input-@{theme}-normal-border-color";
   @normal-text-color: "text-input-@{theme}-normal-text-color";
   @normal-placeholder-color: "text-input-@{theme}-normal-placeholder-color";
+  @normal-icon-color: "text-input-@{theme}-normal-icon-color";
   @error-border-color: "text-input-@{theme}-error-border-color";
+  @success-border-color: "text-input-@{theme}-success-border-color";
   @focus-background-color: "text-input-@{theme}-focus-background-color";
   @focus-border-color: "text-input-@{theme}-focus-border-color";
   @focus-text-color: "text-input-@{theme}-focus-text-color";
   @focus-placeholder-color: "text-input-@{theme}-focus-placeholder-color";
+  @focus-icon-color: "text-input-@{theme}-focus-icon-color";
 
   .text-input-normal-state-mixin({
     background-color: @@normal-background-color;
     border-color: @@normal-border-color;
     color: @@normal-text-color;
-    .text-input-select-icon(@@focus-border-color);
+    .text-input-select-icon(@@normal-icon-color);
 
     &.error {
       border-color: @@error-border-color;
+    }
+
+    &.success {
+      border-color: @@success-border-color;
     }
 
     &::placeholder {
@@ -64,7 +71,7 @@
     background-color: @@focus-background-color;
     border-color: @@focus-border-color;
     color: @@focus-text-color;
-    .text-input-select-icon(@@focus-border-color);
+    .text-input-select-icon(@@focus-icon-color);
 
     &::placeholder {
       color: @@focus-placeholder-color;
@@ -75,7 +82,7 @@
     background-color: @@normal-background-color;
     border-color: @@normal-border-color;
     color: @@normal-text-color;
-    .text-input-select-icon(@@normal-border-color);
+    .text-input-select-icon(@@normal-icon-color);
 
     &::placeholder {
       color: @@normal-placeholder-color;
