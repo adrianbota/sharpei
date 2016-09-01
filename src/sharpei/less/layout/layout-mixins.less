@@ -1,0 +1,17 @@
+@import (reference) 'layout-variables';
+
+.layout-size-mixin(@size) {
+  @spacing: "layout-@{size}-spacing";
+
+  & > .layout-item:not(:last-child) {
+    margin-right: @@spacing;
+  }
+}
+
+.layout-v-size-mixin(@size) {
+  @spacing: "layout-@{size}-spacing";
+
+  & > .layout-v-item:not(:last-child) {
+    margin-bottom: @@spacing;
+  }
+}

@@ -25,7 +25,7 @@
     opacity: @btn-disabled-opacity;
   });
 
-  &.disabled.disabled:not(button):not(input) {
+  :not(button):not(input)&.disabled.disabled {
     pointer-events: none;
   }
 

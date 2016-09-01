@@ -11,18 +11,19 @@
 
   font-weight: 500;
   white-space: nowrap;
-  border-bottom-width: @text-input-border-width;
+  border-left-width: @text-input-border-width;
   transition-property: border-color, background-color, color, opacity;
   position: relative;
   vertical-align: middle;
   display: inline-block;
+  box-sizing: border-box;
 
   .text-input-disabled-state-mixin({
     cursor: not-allowed;
     opacity: @text-input-disabled-opacity;
   });
 
-  &.disabled.disabled:not(button):not(input) {
+  :not(button):not(input)&.disabled.disabled {
     pointer-events: none;
   }
 }

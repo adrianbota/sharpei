@@ -41,7 +41,10 @@
 
 .checkbox-label,
 .radio-label {
+  &:extend(.reset-element-rule all);
+
   display: inline-block;
+  user-select: none;
 }
 
 .radio-ui:before {

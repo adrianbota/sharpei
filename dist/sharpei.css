@@ -154,6 +154,8 @@ code {
 .radio-state,
 .checkbox-ui:before,
 .radio-ui:before,
+.checkbox-label,
+.radio-label,
 .table,
 .table-row,
 .table-cell,
@@ -278,7 +280,11 @@ code {
 .card-body:after,
 .card-footer:after,
 .grid:after,
-.grid .cell:after {
+.grid .cell:after,
+.layout-v:after,
+.layout:after,
+.layout-v-item:after,
+.layout-item:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -370,7 +376,7 @@ code {
   cursor: not-allowed;
   opacity: 0.4;
 }
-.btn.disabled.disabled:not(button):not(input) {
+:not(button):not(input).btn.disabled.disabled {
   pointer-events: none;
 }
 .btn [class*=icon] {
@@ -820,11 +826,12 @@ code {
 .text-input {
   font-weight: 500;
   white-space: nowrap;
-  border-bottom-width: 2px;
+  border-left-width: 2px;
   transition-property: border-color, background-color, color, opacity;
   position: relative;
   vertical-align: middle;
   display: inline-block;
+  box-sizing: border-box;
 }
 .text-input.disabled.disabled,
 .text-input:disabled:disabled,
@@ -832,19 +839,22 @@ code {
   cursor: not-allowed;
   opacity: 0.4;
 }
-.text-input.disabled.disabled:not(button):not(input) {
+:not(button):not(input).text-input.disabled.disabled {
   pointer-events: none;
 }
 .text-input-md,
 .text-input {
   font-size: 14px;
   min-width: 32px;
-  padding: 8px;
-}
-.text-input-md:not(textarea):not(select[multiple]),
-.text-input:not(textarea):not(select[multiple]) {
   height: 32px;
   padding: 0 8px;
+}
+textarea.text-input-md,
+select[multiple].text-input-md,
+textarea.text-input,
+select[multiple].text-input {
+  height: auto;
+  padding: 8px;
 }
 select:not([multiple]).text-input-md,
 select:not([multiple]).text-input {
@@ -854,11 +864,13 @@ select:not([multiple]).text-input {
 .text-input-sm {
   font-size: 12px;
   min-width: 24px;
-  padding: 6px;
-}
-.text-input-sm:not(textarea):not(select[multiple]) {
   height: 24px;
   padding: 0 6px;
+}
+textarea.text-input-sm,
+select[multiple].text-input-sm {
+  height: auto;
+  padding: 6px;
 }
 select:not([multiple]).text-input-sm {
   background-position: right 6px center;
@@ -867,11 +879,13 @@ select:not([multiple]).text-input-sm {
 .text-input-lg {
   font-size: 16px;
   min-width: 56px;
-  padding: 16px;
-}
-.text-input-lg:not(textarea):not(select[multiple]) {
   height: 56px;
   padding: 0 16px;
+}
+textarea.text-input-lg,
+select[multiple].text-input-lg {
+  height: auto;
+  padding: 16px;
 }
 select:not([multiple]).text-input-lg {
   background-position: right 16px center;
@@ -1943,6 +1957,10 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .checkbox-label,
 .radio-label {
   display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .checkbox-ui:after,
 .radio-ui:after {
@@ -1982,7 +2000,7 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 .checkbox-md .checkbox-label,
 .checkbox .checkbox-label {
   line-height: 20px;
-  padding-left: 7px;
+  padding-left: 5px;
 }
 .checkbox-sm,
 .checkbox-sm .checkbox-ui {
@@ -2003,7 +2021,7 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 }
 .checkbox-sm .checkbox-label {
   line-height: 16px;
-  padding-left: 5px;
+  padding-left: 3px;
 }
 .checkbox-lg,
 .checkbox-lg .checkbox-ui {
@@ -2024,7 +2042,7 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 }
 .checkbox-lg .checkbox-label {
   line-height: 24px;
-  padding-left: 10px;
+  padding-left: 7px;
 }
 .radio-md,
 .radio-md .radio-ui,
@@ -2044,14 +2062,14 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 }
 .radio-md .radio-ui:after,
 .radio .radio-ui:after {
-  width: 8px;
-  height: 8px;
-  margin: 6px;
+  width: 6px;
+  height: 6px;
+  margin: 7px;
 }
 .radio-md .radio-label,
 .radio .radio-label {
   line-height: 20px;
-  padding-left: 7px;
+  padding-left: 5px;
 }
 .radio-sm,
 .radio-sm .radio-ui {
@@ -2072,7 +2090,7 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
 }
 .radio-sm .radio-label {
   line-height: 16px;
-  padding-left: 5px;
+  padding-left: 3px;
 }
 .radio-lg,
 .radio-lg .radio-ui {
@@ -2087,13 +2105,13 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   height: 24px;
 }
 .radio-lg .radio-ui:after {
-  width: 12px;
-  height: 12px;
-  margin: 6px;
+  width: 8px;
+  height: 8px;
+  margin: 8px;
 }
 .radio-lg .radio-label {
   line-height: 24px;
-  padding-left: 10px;
+  padding-left: 7px;
 }
 .checkbox-default .checkbox-ui:before,
 .checkbox .checkbox-ui:before {
@@ -2747,4 +2765,45 @@ select:not([multiple]).text-input-state:disabled:disabled + .text-input-default-
   overflow: none;
   overflow-y: auto;
   max-height: 524px;
+}
+.layout-v,
+.layout,
+.layout-v-item,
+.layout-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.layout-item {
+  float: left;
+}
+.layout-xs > .layout-item:not(:last-child) {
+  margin-right: 5px;
+}
+.layout-sm > .layout-item:not(:last-child) {
+  margin-right: 10px;
+}
+.layout-md > .layout-item:not(:last-child) {
+  margin-right: 20px;
+}
+.layout-lg > .layout-item:not(:last-child) {
+  margin-right: 30px;
+}
+.layout-xl > .layout-item:not(:last-child) {
+  margin-right: 40px;
+}
+.layout-v-xs > .layout-v-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+.layout-v-sm > .layout-v-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.layout-v-md > .layout-v-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.layout-v-lg > .layout-v-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+.layout-v-xl > .layout-v-item:not(:last-child) {
+  margin-bottom: 40px;
 }

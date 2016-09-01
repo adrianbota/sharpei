@@ -12,11 +12,13 @@
 
   font-size: @@font-size;
   min-width: @@height;
-  padding: @@padding;
+  height: @@height;
+  padding: 0 @@padding;
 
-  &:not(textarea):not(select[multiple]) {
-    height: @@height;
-    padding: 0 @@padding;
+  textarea&,
+  select[multiple]& {
+    height: auto;
+    padding: @@padding;
   }
 
   select:not([multiple])& {
