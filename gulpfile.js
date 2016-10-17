@@ -8,7 +8,7 @@ const fileinclude = require('gulp-file-include');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync');
-const config = require('./config.json');
+const config = require('./gulpcfg.json');
 
 const distTaskFn = function () {
   return gulp.src(config.DIST_SRC)
