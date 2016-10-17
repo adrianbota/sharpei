@@ -1,4 +1,4 @@
 # sharpei
 UI Kit - work in progress
 
-[Preview](https://adrianbota.github.io/sharpei/)
+[Preview](http://sharpei.abota.io)
