@@ -1,0 +1,91 @@
+@import (reference) 'table-variables';
+@import (reference) '../common/mixins';
+@import (reference) '../common/utils';
+
+// Create table sizes
+// @size: md, lg
+.table-size-mixin(@size) {
+  @font-size: "table-@{size}-font-size";
+  @v-padding: "table-@{size}-v-padding";
+  @h-padding: "table-@{size}-h-padding";
+  @row-border-width: "table-@{size}-row-border-width";
+
+  font-size: @@font-size;
+
+  .table-body {
+    .table-row:not(:last-child) {
+      border-bottom-width: @@row-border-width;
+    }
+  }
+
+  .table-cell {
+    padding: @@v-padding @@h-padding;
+  }
+}
+
+// Create table theme
+// @theme: TODO
+.table-theme-mixin(@theme) {
+  @header-row-background-color: "table-@{theme}-header-row-background-color";
+  @header-row-text-color: "table-@{theme}-header-row-text-color";
+  @footer-row-background-color: "table-@{theme}-footer-row-background-color";
+  @footer-row-text-color: "table-@{theme}-footer-row-text-color";
+  @body-row-background-color: "table-@{theme}-body-row-background-color";
+  @body-row-border-color: "table-@{theme}-body-row-border-color";
+  @body-row-text-color: "table-@{theme}-body-row-text-color";
+  @body-row-alt-background-color: "table-@{theme}-body-row-alt-background-color";
+  @body-row-alt-border-color: "table-@{theme}-body-row-alt-border-color";
+  @body-row-alt-text-color: "table-@{theme}-body-row-alt-text-color";
+  @body-row-highlight-background-color: "table-@{theme}-body-row-highlight-background-color";
+  @body-row-highlight-border-color: "table-@{theme}-body-row-highlight-border-color";
+  @body-row-highlight-text-color: "table-@{theme}-body-row-highlight-text-color";
+  @body-row-active-background-color: "table-@{theme}-body-row-active-background-color";
+  @body-row-active-border-color: "table-@{theme}-body-row-active-border-color";
+  @body-row-active-text-color: "table-@{theme}-body-row-active-text-color";
+
+  .table-header {
+    .table-row {
+      background-color: @@header-row-background-color;
+      color: @@header-row-text-color;
+    }
+  }
+
+  .table-footer {
+    .table-row {
+      background-color: @@footer-row-background-color;
+      color: @@footer-row-text-color;
+    }
+  }
+
+  .table-body {
+    .table-row {
+      background-color: @@body-row-background-color;
+      border-color: @@body-row-border-color;
+      color: @@body-row-text-color;
+    }
+  }
+
+  &.table-alternate {
+    .table-row {
+      &:nth-child(2n) {
+        background-color: @@body-row-alt-background-color;
+        border-color: @@body-row-alt-border-color;
+        color: @@body-row-alt-text-color;
+      }
+    }
+  }
+
+  &.table-highlight {
+    .table-row:hover {
+      background-color: @@body-row-highlight-background-color;
+      border-color: @@body-row-highlight-border-color;
+      color: @@body-row-highlight-text-color;
+    }
+
+    .table-row.active {
+      background-color: @@body-row-active-background-color;
+      border-color: @@body-row-active-border-color;
+      color: @@body-row-active-text-color;
+    }
+  }
+}

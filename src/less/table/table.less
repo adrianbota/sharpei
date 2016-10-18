@@ -1,4 +1,7 @@
+@import (reference) '../common/utils';
 @import (reference) '../common/rules';
+@import (reference) 'table-mixins';
+@import (reference) 'table-sizes';
 
 .table,
 .table-row,
@@ -10,71 +13,42 @@
 }
 
 .table {
+  &:extend(.antialiased all);
+  &:extend(.table-md all);
+
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-}
 
-.table-action {
-  transition-property: opacity;
-}
+  .table-action {
+    transition-property: opacity;
+  }
 
-.table-row {
-  transition-property: background-color, color;
+  .table-row {
+    transition-property: background-color, border-color, color;
 
-  &:not(:hover) {
-    .table-action {
-      opacity: 0;
+    &:not(:hover) {
+      .table-action {
+        opacity: 0;
+      }
     }
   }
-}
-
-.table-cell {
-  &:extend(.text-left all);
-  padding: 10px;
-}
-
-.table-header,
-.table-footer {
-  background: fade(@default-color, 50%);
 
   .table-cell {
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
+    &:extend(.text-left all);
   }
-}
 
-.table-body {
-  .table-row {
-    background-color: fade(@default-color, 10%);
-
-    &:not(:last-child) {
-      border-bottom: 1px solid fade(@default-color, 20%);
+  .table-header,
+  .table-footer {
+    .table-cell {
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
     }
   }
-}
 
-.table-alternate {
-  .table-row {
-    &:nth-child(2n) {
-      background-color: fade(@default-color, 20%);
-    }
+  .table-body-viewport {
+    overflow: none;
+    overflow-y: auto;
   }
-}
-
-.table-hilite {
-  .table-row:hover {
-    background-color: fade(#99f, 20%);
-  }
-
-  .table-row.active {
-    background-color: fade(#bb5, 20%);
-  }
-}
-
-.table-body-viewport {
-  overflow: none;
-  overflow-y: auto;
-  max-height: 524px;
 }
