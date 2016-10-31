@@ -1,5 +1,3 @@
-### 0.0.0 (January 1, 2000)
+### 0.0.0 (October 31, 2016)
 
-* Foo
-* Bar
-* Baz
+* Build system as npm dependency
