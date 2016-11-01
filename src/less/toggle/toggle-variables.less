@@ -1,4 +1,5 @@
 @import (reference) '../common/variables';
+@import (reference) '../btn/btn-variables';
 
 @toggle-disabled-opacity: 0.4;
 @toggle-highlight-width: 2px;
@@ -21,26 +22,26 @@
 @toggle-lg-icon-font-size: 24px;
 @toggle-lg-padding: 5px;
 
-@toggle-default-normal-background-color: fade(@default-color, 45%);
-@toggle-default-active-background-color: fade(@default-color, 80%);
+@toggle-default-normal-background-color: @btn-default-normal-background-color;
+@toggle-default-active-background-color: @btn-default-active-background-color;
 @toggle-default-normal-knob-color: white;
 @toggle-default-active-knob-color: white;
-@toggle-default-normal-text-color: fade(black, 60%);
-@toggle-default-active-text-color: fade(black, 90%);
-@toggle-default-normal-highlight-color: fade(black, 20%);
-@toggle-default-active-highlight-color: fade(black, 20%);
+@toggle-default-normal-text-color: @btn-default-normal-text-color;
+@toggle-default-active-text-color: @btn-default-active-text-color;
+@toggle-default-normal-highlight-color: @btn-default-normal-highlight-color;
+@toggle-default-active-highlight-color: @btn-default-active-highlight-color;
 
-@toggle-default-dark-normal-background-color: fade(@default-dark-color, 50%);
-@toggle-default-dark-active-background-color: fade(@default-dark-color, 85%);
+@toggle-default-dark-normal-background-color: @btn-default-dark-normal-background-color;
+@toggle-default-dark-active-background-color: @btn-default-dark-active-background-color;
 @toggle-default-dark-normal-knob-color: white;
 @toggle-default-dark-active-knob-color: white;
-@toggle-default-dark-normal-text-color: fade(white, 80%);
-@toggle-default-dark-active-text-color: white;
-@toggle-default-dark-normal-highlight-color: fade(white, 20%);
-@toggle-default-dark-active-highlight-color: fade(white, 25%);
+@toggle-default-dark-normal-text-color: @btn-default-dark-normal-text-color;
+@toggle-default-dark-active-text-color: @btn-default-dark-active-text-color;
+@toggle-default-dark-normal-highlight-color: @btn-default-dark-normal-highlight-color;
+@toggle-default-dark-active-highlight-color: @btn-default-dark-active-highlight-color;
 
 @toggle-accent-normal-background-color: @accent-color;
-@toggle-accent-active-background-color: darken(@accent-color, 25%);
+@toggle-accent-active-background-color: shade(@accent-color, 25%);
 @toggle-accent-normal-knob-color: white;
 @toggle-accent-active-knob-color: white;
 @toggle-accent-normal-text-color: fade(white, 80%);
@@ -48,29 +49,29 @@
 @toggle-accent-normal-highlight-color: fade(white, 40%);
 @toggle-accent-active-highlight-color: fade(white, 40%);
 
-@toggle-accent-dark-normal-background-color: @accent-dark-color;
-@toggle-accent-dark-active-background-color: lighten(@accent-dark-color, 25%);
+@toggle-accent-dark-normal-background-color: @btn-accent-dark-normal-background-color;
+@toggle-accent-dark-active-background-color: @btn-accent-dark-active-background-color;
 @toggle-accent-dark-normal-knob-color: white;
 @toggle-accent-dark-active-knob-color: white;
-@toggle-accent-dark-normal-text-color: fade(white, 80%);
-@toggle-accent-dark-active-text-color: white;
-@toggle-accent-dark-normal-highlight-color: fade(white, 40%);
-@toggle-accent-dark-active-highlight-color: fade(white, 40%);
+@toggle-accent-dark-normal-text-color: @btn-accent-dark-normal-text-color;
+@toggle-accent-dark-active-text-color: @btn-accent-dark-active-text-color;
+@toggle-accent-dark-normal-highlight-color: @btn-accent-dark-normal-highlight-color;
+@toggle-accent-dark-active-highlight-color: @btn-accent-dark-active-highlight-color;
 
-@toggle-candy-normal-background-color: @candy-color;
-@toggle-candy-active-background-color: darken(@candy-color, 25%);
+@toggle-candy-normal-background-color: @btn-candy-normal-background-color;
+@toggle-candy-active-background-color: @btn-candy-active-background-color;
 @toggle-candy-normal-knob-color: white;
 @toggle-candy-active-knob-color: white;
-@toggle-candy-normal-text-color: fade(white, 80%);
-@toggle-candy-active-text-color: white;
-@toggle-candy-normal-highlight-color: fade(white, 40%);
-@toggle-candy-active-highlight-color: fade(white, 40%);
+@toggle-candy-normal-text-color: @btn-candy-normal-text-color;
+@toggle-candy-active-text-color: @btn-candy-active-text-color;
+@toggle-candy-normal-highlight-color: @btn-candy-normal-highlight-color;
+@toggle-candy-active-highlight-color: @btn-candy-active-highlight-color;
 
-@toggle-candy-dark-normal-background-color: @candy-color;
-@toggle-candy-dark-active-background-color: lighten(@candy-color, 25%);
+@toggle-candy-dark-normal-background-color: @btn-candy-dark-normal-background-color;
+@toggle-candy-dark-active-background-color: @btn-candy-dark-active-background-color;
 @toggle-candy-dark-normal-knob-color: white;
 @toggle-candy-dark-active-knob-color: white;
-@toggle-candy-dark-normal-text-color: fade(white, 80%);
-@toggle-candy-dark-active-text-color: white;
-@toggle-candy-dark-normal-highlight-color: fade(white, 40%);
-@toggle-candy-dark-active-highlight-color: fade(white, 40%);
+@toggle-candy-dark-normal-text-color: @btn-candy-dark-normal-text-color;
+@toggle-candy-dark-active-text-color: @btn-candy-dark-active-text-color;
+@toggle-candy-dark-normal-highlight-color: @btn-candy-dark-normal-highlight-color;
+@toggle-candy-dark-active-highlight-color: @btn-candy-dark-active-highlight-color;
