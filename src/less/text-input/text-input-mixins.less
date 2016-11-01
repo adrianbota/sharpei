@@ -52,16 +52,16 @@
 
   .text-input-normal-state-mixin({
     background-color: @@normal-background-color;
-    border-color: @@normal-border-color;
+    border-bottom-color: @@normal-border-color;
     color: @@normal-text-color;
     .text-input-select-icon(@@normal-icon-color);
 
     &.error {
-      border-color: @@error-border-color;
+      border-bottom-color: @@error-border-color;
     }
 
     &.success {
-      border-color: @@success-border-color;
+      border-bottom-color: @@success-border-color;
     }
 
     &::placeholder {
@@ -71,7 +71,7 @@
 
   .text-input-focus-state-mixin({
     background-color: @@focus-background-color;
-    border-color: @@focus-border-color;
+    border-bottom-color: @@focus-border-color;
     color: @@focus-text-color;
     .text-input-select-icon(@@focus-icon-color);
 
@@ -82,7 +82,7 @@
 
   .text-input-disabled-state-mixin({
     background-color: @@normal-background-color;
-    border-color: @@normal-border-color;
+    border-bottom-color: @@normal-border-color;
     color: @@normal-text-color;
     .text-input-select-icon(@@normal-icon-color);
 

@@ -37,10 +37,8 @@
   @body-row-alt-border-color: "table-@{theme}-body-row-alt-border-color";
   @body-row-alt-text-color: "table-@{theme}-body-row-alt-text-color";
   @body-row-highlight-background-color: "table-@{theme}-body-row-highlight-background-color";
-  @body-row-highlight-border-color: "table-@{theme}-body-row-highlight-border-color";
   @body-row-highlight-text-color: "table-@{theme}-body-row-highlight-text-color";
   @body-row-active-background-color: "table-@{theme}-body-row-active-background-color";
-  @body-row-active-border-color: "table-@{theme}-body-row-active-border-color";
   @body-row-active-text-color: "table-@{theme}-body-row-active-text-color";
 
   .table-header {
@@ -78,13 +76,11 @@
   &.table-highlight {
     .table-row:hover {
       background-color: @@body-row-highlight-background-color;
-      border-color: @@body-row-highlight-border-color;
       color: @@body-row-highlight-text-color;
     }
 
     .table-row.active {
       background-color: @@body-row-active-background-color;
-      border-color: @@body-row-active-border-color;
       color: @@body-row-active-text-color;
     }
   }

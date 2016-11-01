@@ -1,7 +1,7 @@
 @import (reference) '../common/variables';
 
 @btn-disabled-opacity: 0.4;
-@btn-highlight-width: 2px;
+@btn-highlight-width: 1px;
 
 @btn-md-height: 32px;
 @btn-md-font-size: 14px;
@@ -69,8 +69,8 @@
 @btn-accent-normal-text-color: white;
 @btn-accent-hover-text-color: white;
 @btn-accent-active-text-color: white;
-@btn-accent-normal-highlight-color: fade(white, 40%);
-@btn-accent-active-highlight-color: fade(white, 40%);
+@btn-accent-normal-highlight-color: shade(@accent-color, 20%);
+@btn-accent-active-highlight-color: shade(@accent-color, 40%);
 
 @btn-accent-dark-normal-background-color: @accent-dark-color;
 @btn-accent-dark-hover-background-color: tint(@accent-dark-color, 5%);
@@ -78,8 +78,8 @@
 @btn-accent-dark-normal-text-color: white;
 @btn-accent-dark-hover-text-color: white;
 @btn-accent-dark-active-text-color: white;
-@btn-accent-dark-normal-highlight-color: fade(white, 40%);
-@btn-accent-dark-active-highlight-color: fade(white, 40%);
+@btn-accent-dark-normal-highlight-color: tint(@accent-dark-color, 25%);
+@btn-accent-dark-active-highlight-color: tint(@accent-dark-color, 40%);
 
 @btn-candy-normal-background-color: @candy-color;
 @btn-candy-hover-background-color: shade(@candy-color, 5%);
@@ -87,8 +87,8 @@
 @btn-candy-normal-text-color: white;
 @btn-candy-hover-text-color: white;
 @btn-candy-active-text-color: white;
-@btn-candy-normal-highlight-color: fade(white, 40%);
-@btn-candy-active-highlight-color: fade(white, 40%);
+@btn-candy-normal-highlight-color: shade(@candy-color, 20%);
+@btn-candy-active-highlight-color: shade(@candy-color, 40%);
 
 @btn-candy-dark-normal-background-color: @candy-dark-color;
 @btn-candy-dark-hover-background-color: tint(@candy-dark-color, 5%);
@@ -96,5 +96,5 @@
 @btn-candy-dark-normal-text-color: white;
 @btn-candy-dark-hover-text-color: white;
 @btn-candy-dark-active-text-color: white;
-@btn-candy-dark-normal-highlight-color: fade(white, 40%);
-@btn-candy-dark-active-highlight-color: fade(white, 40%);
+@btn-candy-dark-normal-highlight-color: tint(@candy-dark-color, 25%);
+@btn-candy-dark-active-highlight-color: tint(@candy-dark-color, 40%);
